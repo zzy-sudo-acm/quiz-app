@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#1f6f55" />
+    <title>极简刷题</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="icon" href="icon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <h1>极简刷题</h1>
+          <p id="statusText">正在加载题库</p>
+        </div>
+        <button id="restartBtn" class="ghost-button" type="button">重新开始</button>
+      </header>
+
+      <section class="mode-row" aria-label="刷题模式">
+        <button id="sequenceBtn" class="mode-button active" type="button">顺序刷题</button>
+        <button id="randomBtn" class="mode-button" type="button">随机刷题</button>
+        <button id="reshuffleBtn" class="ghost-button" type="button">重新洗牌</button>
+      </section>
+
+      <section id="quizPanel" class="quiz-panel" hidden>
+        <div class="meta-row">
+          <span id="progressText">第 1 / 1 题</span>
+          <span id="typeText">单选题</span>
+        </div>
+
+        <h2 id="questionText"></h2>
+
+        <div id="optionsList" class="options-list"></div>
+
+        <button id="submitBtn" class="primary-button" type="button" hidden>提交答案</button>
+
+        <p id="resultText" class="result-text" aria-live="polite"></p>
+
+        <button id="nextBtn" class="primary-button" type="button" disabled>下一题</button>
+      </section>
+
+      <section id="emptyPanel" class="empty-panel" hidden>
+        <h2 id="emptyTitle">题库加载失败</h2>
+        <p id="emptyText">请先运行 python parse_docx.py 生成 questions.json。</p>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>
