@@ -2,6 +2,8 @@
 
 这是一个只使用 Python 和原生 HTML/CSS/JavaScript 的刷题网页，可部署到 GitHub Pages，也可作为 PWA 离线使用。
 
+当你有一场已有题库会考原题的应试考试时候，这个网页可以帮助你快速记忆，相比看word文档更加舒服。
+
 ## 文件
 
 - `parse_docx.py`：从《最终版本.docx》解析题库并生成 `questions.json`
