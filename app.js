@@ -11,6 +11,7 @@ const elements = {
   restartBtn: document.querySelector("#restartBtn"),
   sequenceBtn: document.querySelector("#sequenceBtn"),
   randomBtn: document.querySelector("#randomBtn"),
+  wrongBookBtn: document.querySelector("#wrongBookBtn"),
   reshuffleBtn: document.querySelector("#reshuffleBtn"),
   quizPanel: document.querySelector("#quizPanel"),
   emptyPanel: document.querySelector("#emptyPanel"),
@@ -34,6 +35,8 @@ function createDefaultState() {
     mode: "sequence",
     sequence: createProgress(),
     random: createProgress({ order: [] }),
+    wrongBook: createProgress({ order: [] }),
+    mistakes: [],
   };
 }
 
@@ -53,10 +56,15 @@ function loadState() {
     if (!saved || typeof saved !== "object") {
       return createDefaultState();
     }
+    const mode = ["sequence", "random", "wrongBook"].includes(saved.mode)
+      ? saved.mode
+      : "sequence";
     return {
-      mode: saved.mode === "random" ? "random" : "sequence",
+      mode,
       sequence: { ...createProgress(), ...(saved.sequence || {}) },
       random: { ...createProgress({ order: [] }), ...(saved.random || {}) },
+      wrongBook: { ...createProgress({ order: [] }), ...(saved.wrongBook || {}) },
+      mistakes: Array.isArray(saved.mistakes) ? saved.mistakes : [],
     };
   } catch {
     return createDefaultState();
@@ -73,10 +81,12 @@ function resetProgress(progress, keepOrder = false) {
 }
 
 function sanitizeState() {
+  const validIds = new Set(questions.map((question) => question.id));
+
   state.sequence.index = clampIndex(state.sequence.index);
   state.sequence.selected = cleanSelection(state.sequence.selected);
+  state.mistakes = cleanIdList(state.mistakes, validIds);
 
-  const validIds = new Set(questions.map((question) => question.id));
   const randomOrder = Array.isArray(state.random.order) ? state.random.order : [];
   const orderIsValid =
     randomOrder.length === questions.length &&
@@ -90,6 +100,17 @@ function sanitizeState() {
     state.random.index = clampIndex(state.random.index);
     state.random.selected = cleanSelection(state.random.selected);
   }
+
+  const mistakeIds = new Set(state.mistakes);
+  state.wrongBook.order = cleanIdList(state.wrongBook.order, mistakeIds);
+  const missingWrongIds = state.mistakes.filter((id) => !state.wrongBook.order.includes(id));
+  if (state.mode === "wrongBook" && state.mistakes.length > 0 && state.wrongBook.order.length === 0) {
+    state.wrongBook.order = shuffle(state.mistakes);
+  } else if (state.mode === "wrongBook" && missingWrongIds.length > 0) {
+    state.wrongBook.order = [...state.wrongBook.order, ...shuffle(missingWrongIds)];
+  }
+  state.wrongBook.index = clampIndex(state.wrongBook.index, state.wrongBook.order.length);
+  state.wrongBook.selected = cleanSelection(state.wrongBook.selected);
 }
 
 function cleanSelection(value) {
@@ -98,9 +119,25 @@ function cleanSelection(value) {
     : [];
 }
 
-function clampIndex(value) {
+function cleanIdList(value, validIds) {
+  const seen = new Set();
+  const ids = [];
+  if (!Array.isArray(value)) {
+    return ids;
+  }
+  for (const item of value) {
+    const id = Number(item);
+    if (Number.isInteger(id) && validIds.has(id) && !seen.has(id)) {
+      seen.add(id);
+      ids.push(id);
+    }
+  }
+  return ids;
+}
+
+function clampIndex(value, total = questions.length) {
   const numeric = Number.isInteger(value) ? value : 0;
-  return Math.min(Math.max(numeric, 0), questions.length);
+  return Math.min(Math.max(numeric, 0), total);
 }
 
 function shuffle(items) {
@@ -113,15 +150,39 @@ function shuffle(items) {
 }
 
 function getActiveProgress() {
+  if (state.mode === "wrongBook") {
+    return state.wrongBook;
+  }
   return state[state.mode];
+}
+
+function getActiveTotal() {
+  if (state.mode === "wrongBook") {
+    return state.wrongBook.order.length;
+  }
+  return questions.length;
+}
+
+function getModeTitle() {
+  if (state.mode === "random") {
+    return "随机刷题";
+  }
+  if (state.mode === "wrongBook") {
+    return "错题本";
+  }
+  return "顺序刷题";
 }
 
 function getCurrentQuestion() {
   const progress = getActiveProgress();
-  if (progress.index >= questions.length) {
+  const total = getActiveTotal();
+  if (progress.index >= total) {
     return null;
   }
   if (state.mode === "random") {
+    return questionById.get(progress.order[progress.index]) || null;
+  }
+  if (state.mode === "wrongBook") {
     return questionById.get(progress.order[progress.index]) || null;
   }
   return questions[progress.index] || null;
@@ -133,6 +194,10 @@ function setMode(mode) {
     state.random.order = shuffle(questions.map((question) => question.id));
     resetProgress(state.random, true);
   }
+  if (mode === "wrongBook") {
+    state.wrongBook.order = shuffle(state.mistakes);
+    resetProgress(state.wrongBook, true);
+  }
   saveState();
   render();
 }
@@ -140,6 +205,9 @@ function setMode(mode) {
 function restartCurrentMode() {
   if (state.mode === "random") {
     resetProgress(state.random, true);
+  } else if (state.mode === "wrongBook") {
+    state.wrongBook.order = state.wrongBook.order.filter((id) => state.mistakes.includes(id));
+    resetProgress(state.wrongBook, true);
   } else {
     resetProgress(state.sequence);
   }
@@ -173,6 +241,7 @@ function selectOption(key) {
   } else {
     progress.selected = [key];
     gradeCurrentQuestion();
+    return;
   }
 
   saveState();
@@ -190,6 +259,12 @@ function gradeCurrentQuestion() {
   const answer = [...question.answer].sort();
   progress.answered = true;
   progress.correct = selected.length === answer.length && selected.every((key, index) => key === answer[index]);
+  if (progress.correct && state.mode === "wrongBook") {
+    removeMistake(question.id);
+  }
+  if (!progress.correct) {
+    addMistake(question.id);
+  }
   saveState();
   render();
 }
@@ -199,7 +274,17 @@ function goNext() {
   if (!progress.answered) {
     return;
   }
-  progress.index += 1;
+  const question = getCurrentQuestion();
+  if (state.mode === "wrongBook" && progress.correct && question) {
+    const previousLength = progress.order.length;
+    progress.order = progress.order.filter((id) => id !== question.id);
+    if (progress.order.length === previousLength) {
+      progress.index += 1;
+    }
+    progress.index = clampIndex(progress.index, progress.order.length);
+  } else {
+    progress.index += 1;
+  }
   progress.selected = [];
   progress.answered = false;
   progress.correct = null;
@@ -207,9 +292,21 @@ function goNext() {
   render();
 }
 
+function addMistake(id) {
+  if (!state.mistakes.includes(id)) {
+    state.mistakes.push(id);
+  }
+}
+
+function removeMistake(id) {
+  state.mistakes = state.mistakes.filter((item) => item !== id);
+}
+
 function render() {
   elements.sequenceBtn.classList.toggle("active", state.mode === "sequence");
   elements.randomBtn.classList.toggle("active", state.mode === "random");
+  elements.wrongBookBtn.classList.toggle("active", state.mode === "wrongBook");
+  elements.wrongBookBtn.textContent = `错题本（${state.mistakes.length}）`;
 
   if (!questions.length) {
     showEmpty("题库为空", "请先运行 python parse_docx.py 生成 questions.json。");
@@ -218,6 +315,10 @@ function render() {
 
   const progress = getActiveProgress();
   const question = getCurrentQuestion();
+  if (state.mode === "wrongBook" && state.mistakes.length === 0 && !question) {
+    showEmpty("错题本", "暂无错题，做错的题会自动加入这里", "错题本");
+    return;
+  }
   if (!question) {
     renderFinished();
     return;
@@ -225,8 +326,9 @@ function render() {
 
   elements.emptyPanel.hidden = true;
   elements.quizPanel.hidden = false;
-  elements.statusText.textContent = state.mode === "random" ? "随机刷题" : "顺序刷题";
-  elements.progressText.textContent = `第 ${progress.index + 1} / ${questions.length} 题`;
+  const total = getActiveTotal();
+  elements.statusText.textContent = getModeTitle();
+  elements.progressText.textContent = `第 ${progress.index + 1} / ${total} 题`;
   elements.typeText.textContent = typeLabel[question.type] || question.type;
   elements.questionText.textContent = question.question;
 
@@ -265,8 +367,9 @@ function renderActions(question, progress) {
   elements.submitBtn.hidden = !isMultiple || progress.answered;
   elements.submitBtn.disabled = progress.selected.length === 0 || progress.answered;
 
+  const total = getActiveTotal();
   elements.nextBtn.disabled = !progress.answered;
-  elements.nextBtn.textContent = progress.index + 1 >= questions.length ? "完成本轮" : "下一题";
+  elements.nextBtn.textContent = progress.index + 1 >= total ? "完成本轮" : "下一题";
 
   elements.resultText.className = "result-text";
   if (!progress.answered) {
@@ -284,12 +387,13 @@ function renderActions(question, progress) {
 }
 
 function renderFinished() {
+  const total = getActiveTotal();
   elements.quizPanel.hidden = false;
   elements.emptyPanel.hidden = true;
-  elements.statusText.textContent = state.mode === "random" ? "随机刷题" : "顺序刷题";
-  elements.progressText.textContent = `第 ${questions.length} / ${questions.length} 题`;
+  elements.statusText.textContent = getModeTitle();
+  elements.progressText.textContent = `第 ${total} / ${total} 题`;
   elements.typeText.textContent = "已完成";
-  elements.questionText.textContent = "本轮刷题完成";
+  elements.questionText.textContent = state.mode === "wrongBook" ? "本轮错题练习完成" : "本轮刷题完成";
   elements.optionsList.innerHTML = "";
   elements.submitBtn.hidden = true;
   elements.resultText.className = "result-text";
@@ -298,12 +402,12 @@ function renderFinished() {
   elements.nextBtn.textContent = "已完成";
 }
 
-function showEmpty(title, text) {
+function showEmpty(title, text, status = "题库不可用") {
   elements.quizPanel.hidden = true;
   elements.emptyPanel.hidden = false;
   elements.emptyTitle.textContent = title;
   elements.emptyText.textContent = text;
-  elements.statusText.textContent = "题库不可用";
+  elements.statusText.textContent = status;
 }
 
 async function boot() {
@@ -342,6 +446,7 @@ function registerServiceWorker() {
 
 elements.sequenceBtn.addEventListener("click", () => setMode("sequence"));
 elements.randomBtn.addEventListener("click", () => setMode("random"));
+elements.wrongBookBtn.addEventListener("click", () => setMode("wrongBook"));
 elements.restartBtn.addEventListener("click", restartCurrentMode);
 elements.reshuffleBtn.addEventListener("click", reshuffle);
 elements.submitBtn.addEventListener("click", gradeCurrentQuestion);

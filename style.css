@@ -59,7 +59,7 @@ h1 {
 
 .mode-row {
   display: grid;
-  grid-template-columns: 1fr 1fr auto;
+  grid-template-columns: 1fr 1fr 1fr auto;
   gap: 8px;
   margin-bottom: 14px;
 }
@@ -219,10 +219,6 @@ h2 {
 
   .mode-row {
     grid-template-columns: 1fr 1fr;
-  }
-
-  #reshuffleBtn {
-    grid-column: 1 / -1;
   }
 
   .quiz-panel,
