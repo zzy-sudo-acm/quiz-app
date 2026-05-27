@@ -1,4 +1,4 @@
-const STORAGE_KEY = "minimal_quiz_state_v1";
+const STORAGE_KEY = "minimal_quiz_network_state_v1";
 
 const typeLabel = {
   single: "单选题",
@@ -20,6 +20,7 @@ const elements = {
   progressText: document.querySelector("#progressText"),
   typeText: document.querySelector("#typeText"),
   questionText: document.querySelector("#questionText"),
+  questionMedia: document.querySelector("#questionMedia"),
   optionsList: document.querySelector("#optionsList"),
   submitBtn: document.querySelector("#submitBtn"),
   resultText: document.querySelector("#resultText"),
@@ -309,7 +310,7 @@ function render() {
   elements.wrongBookBtn.textContent = `错题本（${state.mistakes.length}）`;
 
   if (!questions.length) {
-    showEmpty("题库为空", "请先运行 python parse_docx.py 生成 questions.json。");
+    showEmpty("题库为空", "请先运行 node scripts/convert-docx-questions.js 生成 questions.json。");
     return;
   }
 
@@ -332,8 +333,33 @@ function render() {
   elements.typeText.textContent = typeLabel[question.type] || question.type;
   elements.questionText.textContent = question.question;
 
+  renderQuestionImage(question);
   renderOptions(question, progress);
   renderActions(question, progress);
+}
+
+function renderQuestionImage(question) {
+  elements.questionMedia.innerHTML = "";
+  elements.questionMedia.hidden = true;
+
+  if (!question.image) {
+    return;
+  }
+
+  const image = document.createElement("img");
+  image.src = question.image;
+  image.alt = "题目配图";
+  image.loading = "lazy";
+  image.addEventListener("error", () => {
+    elements.questionMedia.innerHTML = "";
+    const fallback = document.createElement("p");
+    fallback.className = "image-fallback";
+    fallback.textContent = "图片加载失败";
+    elements.questionMedia.append(fallback);
+  });
+
+  elements.questionMedia.append(image);
+  elements.questionMedia.hidden = false;
 }
 
 function renderOptions(question, progress) {
@@ -394,6 +420,8 @@ function renderFinished() {
   elements.progressText.textContent = `第 ${total} / ${total} 题`;
   elements.typeText.textContent = "已完成";
   elements.questionText.textContent = state.mode === "wrongBook" ? "本轮错题练习完成" : "本轮刷题完成";
+  elements.questionMedia.innerHTML = "";
+  elements.questionMedia.hidden = true;
   elements.optionsList.innerHTML = "";
   elements.submitBtn.hidden = true;
   elements.resultText.className = "result-text";
@@ -405,6 +433,8 @@ function renderFinished() {
 function showEmpty(title, text, status = "题库不可用") {
   elements.quizPanel.hidden = true;
   elements.emptyPanel.hidden = false;
+  elements.questionMedia.innerHTML = "";
+  elements.questionMedia.hidden = true;
   elements.emptyTitle.textContent = title;
   elements.emptyText.textContent = text;
   elements.statusText.textContent = status;
@@ -419,7 +449,7 @@ async function boot() {
     const data = await response.json();
     if (!Array.isArray(data) || data.length === 0) {
       questions = [];
-      showEmpty("题库为空", "请先运行 python parse_docx.py 生成 questions.json。");
+      showEmpty("题库为空", "请先运行 node scripts/convert-docx-questions.js 生成 questions.json。");
       return;
     }
 

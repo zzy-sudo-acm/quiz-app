@@ -123,6 +123,30 @@ h2 {
   overflow-wrap: anywhere;
 }
 
+.question-media {
+  margin: 0 0 14px;
+}
+
+.question-media img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid #dfe5de;
+  background: #f7f8f7;
+}
+
+.image-fallback {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fff7ed;
+  color: #9a3412;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
 .options-list {
   display: grid;
   gap: 10px;
@@ -171,6 +195,7 @@ h2 {
 .option-text {
   min-width: 0;
   overflow-wrap: anywhere;
+  white-space: pre-wrap;
 }
 
 .primary-button {

@@ -1,7 +1,7 @@
 {
-  "name": "极简刷题",
-  "short_name": "刷题",
-  "description": "离线可用的极简移动端刷题网页",
+  "name": "网络互联刷题",
+  "short_name": "网络互联",
+  "description": "离线可用的网络互联移动端刷题网页",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
