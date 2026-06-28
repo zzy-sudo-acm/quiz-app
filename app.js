@@ -1,4 +1,4 @@
-const STORAGE_KEY = "minimal_quiz_network_state_v1";
+const STORAGE_KEY = "minimal_quiz_web_dev_state_v1";
 
 const typeLabel = {
   single: "单选题",

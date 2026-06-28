@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#1f6f55" />
-    <title>网络互联刷题</title>
+    <title>Web 开发实践刷题</title>
     <link rel="manifest" href="manifest.json" />
     <link rel="icon" href="icon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="style.css" />
@@ -13,7 +13,7 @@
     <main class="app">
       <header class="topbar">
         <div>
-          <h1>网络互联刷题</h1>
+          <h1>Web 开发实践刷题</h1>
           <p id="statusText">正在加载题库</p>
         </div>
         <button id="restartBtn" class="ghost-button" type="button">重新开始</button>
@@ -47,7 +47,7 @@
 
       <section id="emptyPanel" class="empty-panel" hidden>
         <h2 id="emptyTitle">题库加载失败</h2>
-        <p id="emptyText">请先运行 python parse_docx.py 生成 questions.json。</p>
+        <p id="emptyText">请先运行 node scripts/convert-docx-questions.js 生成 questions.json。</p>
       </section>
     </main>
 
