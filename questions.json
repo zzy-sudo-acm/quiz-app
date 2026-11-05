@@ -1,2297 +1,3799 @@
 [
   {
-    "id": 1,
+    "id": 201601,
     "type": "single",
-    "question": "CSS 中 #nav ul li 表示（ ）",
+    "question": "德国古典哲学是马克思主义的直接理论来源之一，其代表人物是（）",
     "options": [
       {
         "key": "A",
-        "text": "选择所有 li 元素"
+        "text": "培根、洛克"
       },
       {
         "key": "B",
-        "text": "选择 #nav 内部 ul 中的所有 li 元素"
+        "text": "斯密、李嘉图"
       },
       {
         "key": "C",
-        "text": "选择 id 为 nav 的元素"
+        "text": "黑格尔、费尔巴哈"
       },
       {
         "key": "D",
-        "text": "选择所有 ul 元素"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "HTML/CSS"
-  },
-  {
-    "id": 2,
-    "type": "single",
-    "question": "CSS 中设置字体大小的属性是（ ）",
-    "options": [
-      {
-        "key": "A",
-        "text": "text-size"
-      },
-      {
-        "key": "B",
-        "text": "font-size"
-      },
-      {
-        "key": "C",
-        "text": "font-style"
-      },
-      {
-        "key": "D",
-        "text": "size"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "HTML/CSS"
-  },
-  {
-    "id": 3,
-    "type": "single",
-    "question": "HTML5 中定义表格行的标签是（ ）",
-    "options": [
-      {
-        "key": "A",
-        "text": "<th>"
-      },
-      {
-        "key": "B",
-        "text": "<tr>"
-      },
-      {
-        "key": "C",
-        "text": "<td>"
-      },
-      {
-        "key": "D",
-        "text": "<table>"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "HTML/CSS"
-  },
-  {
-    "id": 4,
-    "type": "single",
-    "question": "CSS 中设置元素圆角的属性是（ ）",
-    "options": [
-      {
-        "key": "A",
-        "text": "radius"
-      },
-      {
-        "key": "B",
-        "text": "border-style"
-      },
-      {
-        "key": "C",
-        "text": "border-radius"
-      },
-      {
-        "key": "D",
-        "text": "corner-radius"
+        "text": "圣西门、傅立叶"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "HTML/CSS"
+    "year": "2016-2017",
+    "number": 1,
+    "source": "西南石油大学《马克思主义基本原理》2016-2017学年第一学期期末试卷(1).pdf",
+    "page": 1,
+    "sourceHash": "2049e0ed0298bc0e67ce99426eb9168f9767cdf590884366070cb58a4a1f37ba",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "德国古典哲学的代表是黑格尔和费尔巴哈；斯密、李嘉图代表英国古典政治经济学。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 5,
+    "id": 201602,
     "type": "single",
-    "question": "CSS 中组合选择器的正确写法是",
+    "question": "马克思主义以前的旧唯物主义都是“半截子”唯物主义，这是指（）",
     "options": [
       {
         "key": "A",
-        "text": "h1+p"
+        "text": "旧唯物主义是形而上学的唯物主义"
       },
       {
         "key": "B",
-        "text": "h1 p"
+        "text": "旧唯物主义在社会历史观上是唯心主义"
       },
       {
         "key": "C",
-        "text": "h1, p"
+        "text": "旧唯物主义是机械唯物主义"
       },
       {
         "key": "D",
-        "text": "h1>p"
+        "text": "旧唯物主义是割裂了运动与静止的辩证法"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2016-2017",
+    "number": 2,
+    "source": "西南石油大学《马克思主义基本原理》2016-2017学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "2049e0ed0298bc0e67ce99426eb9168f9767cdf590884366070cb58a4a1f37ba",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "旧唯物主义在自然观上是唯物的，在社会历史观上仍陷入唯心主义，因此称为“半截子”。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201603,
+    "type": "single",
+    "question": "《孙子兵法》曰：“投入亡地然后存，陷入死地而后生”。韩信据此背水一战，大败赵军；马谡据此屯兵山下，痛失街亭。同是根据《兵法》但却造成两种不同结果，这说明（）",
+    "options": [
+      {
+        "key": "A",
+        "text": "矛盾具有普遍性，两者没有共性"
+      },
+      {
+        "key": "B",
+        "text": "具体问题具体分析是解决矛盾的关键"
+      },
+      {
+        "key": "C",
+        "text": "《兵法》本身有正确和错误之分"
+      },
+      {
+        "key": "D",
+        "text": "矛盾双方是既对立又统一的关系"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2016-2017",
+    "number": 3,
+    "source": "西南石油大学《马克思主义基本原理》2016-2017学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "2049e0ed0298bc0e67ce99426eb9168f9767cdf590884366070cb58a4a1f37ba",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "原卷写作“马谡据此屯兵山下”，史实通常表述为屯兵山上；此处保留原卷文字，不影响本题考点。",
+    "explanation": "相同理论要结合具体条件运用，具体问题具体分析是解决矛盾的关键。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201604,
+    "type": "single",
+    "question": "马克思主义的精髓是（）",
+    "options": [
+      {
+        "key": "A",
+        "text": "实事求是"
+      },
+      {
+        "key": "B",
+        "text": "阶级斗争理论"
+      },
+      {
+        "key": "C",
+        "text": "社会发展理论"
+      },
+      {
+        "key": "D",
+        "text": "人民群众历史作用理论"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "year": "2016-2017",
+    "number": 4,
+    "source": "西南石油大学《马克思主义基本原理》2016-2017学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "2049e0ed0298bc0e67ce99426eb9168f9767cdf590884366070cb58a4a1f37ba",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "实事求是要求从实际出发、尊重客观规律，是马克思主义的精髓。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201605,
+    "type": "single",
+    "question": "下列说法中，属于正确发挥人的主观能动性的是（）",
+    "options": [
+      {
+        "key": "A",
+        "text": "人有多大胆，地有多大产"
+      },
+      {
+        "key": "B",
+        "text": "不怕做不到，就怕想不到"
+      },
+      {
+        "key": "C",
+        "text": "纸上谈兵，画饼充饥"
+      },
+      {
+        "key": "D",
+        "text": "量力而行，尽力而为"
+      }
+    ],
+    "answer": [
+      "D"
+    ],
+    "year": "2016-2017",
+    "number": 5,
+    "source": "西南石油大学《马克思主义基本原理》2016-2017学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "2049e0ed0298bc0e67ce99426eb9168f9767cdf590884366070cb58a4a1f37ba",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "发挥主观能动性必须尊重客观条件，量力而行与尽力而为相统一。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201606,
+    "type": "single",
+    "question": "感性认识和理性认识的根本区别在于（）",
+    "options": [
+      {
+        "key": "A",
+        "text": "感性认识来源于社会实践，理性认识则来源于抽象思维"
+      },
+      {
+        "key": "B",
+        "text": "感性认识产生于日常生活，理性认识则产生于科学实验"
+      },
+      {
+        "key": "C",
+        "text": "感性认识反映事物的现象，理性认识则反映事物的本质"
+      },
+      {
+        "key": "D",
+        "text": "感性认识包含错误，理性认识则完全正确"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "HTML/CSS"
+    "year": "2016-2017",
+    "number": 6,
+    "source": "西南石油大学《马克思主义基本原理》2016-2017学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "2049e0ed0298bc0e67ce99426eb9168f9767cdf590884366070cb58a4a1f37ba",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "感性认识把握现象，理性认识把握本质；二者都来源于实践。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 6,
+    "id": 201607,
     "type": "single",
-    "question": "HTML5 中用于创建无序列表的标签是（ ）",
+    "question": "上层建筑的内容十分丰富，可以把它们划分为两个部分。这两个部分是（）",
     "options": [
       {
         "key": "A",
-        "text": "<li>"
+        "text": "政治思想和政治制度"
       },
       {
         "key": "B",
-        "text": "<ul>"
+        "text": "法律思想和法律制度"
       },
       {
         "key": "C",
-        "text": "<list>"
+        "text": "立法机关和行政机关"
       },
       {
         "key": "D",
-        "text": "<ol>"
+        "text": "政治上层建筑和思想上层建筑"
       }
     ],
     "answer": [
-      "B"
+      "D"
     ],
-    "knowledge": "HTML/CSS"
+    "year": "2016-2017",
+    "number": 7,
+    "source": "西南石油大学《马克思主义基本原理》2016-2017学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "2049e0ed0298bc0e67ce99426eb9168f9767cdf590884366070cb58a4a1f37ba",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "上层建筑包括政治上层建筑和观念（思想）上层建筑。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 7,
+    "id": 201608,
     "type": "single",
-    "question": "CSS 中后代选择器 div p 的含义是（ ）",
+    "question": "相对剩余价值生产的条件是（）",
     "options": [
       {
         "key": "A",
-        "text": "选择 div 内部所有 p 元素"
+        "text": "个别企业劳动生产率的提高"
       },
       {
         "key": "B",
-        "text": "选择所有 p 和 div 元素"
+        "text": "本部门劳动生产率的提高"
       },
       {
         "key": "C",
-        "text": "选择所有 div 元素"
+        "text": "社会劳动生产率的提高"
       },
       {
         "key": "D",
-        "text": "选择 div 的直接子元素 p"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "HTML/CSS"
-  },
-  {
-    "id": 8,
-    "type": "single",
-    "question": "CSS 中设置外边距的属性是（ ）",
-    "options": [
-      {
-        "key": "A",
-        "text": "spacing"
-      },
-      {
-        "key": "B",
-        "text": "padding"
-      },
-      {
-        "key": "C",
-        "text": "margin"
-      },
-      {
-        "key": "D",
-        "text": "border"
+        "text": "个别企业劳动生产率的提高快于社会劳动生产率的提高"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "HTML/CSS"
+    "year": "2016-2017",
+    "number": 8,
+    "source": "西南石油大学《马克思主义基本原理》2016-2017学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "2049e0ed0298bc0e67ce99426eb9168f9767cdf590884366070cb58a4a1f37ba",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "社会劳动生产率提高，使必要劳动时间缩短，从而相对延长剩余劳动时间。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 9,
+    "id": 201609,
     "type": "single",
-    "question": "HTML5 中用于定义文档标题的标签是（ ）",
+    "question": "在资本各形态中，（）能划分为固定资本和流动资本。",
     "options": [
       {
         "key": "A",
-        "text": "<body>"
+        "text": "生产资本"
       },
       {
         "key": "B",
-        "text": "<meta>"
+        "text": "货币资本"
       },
       {
         "key": "C",
-        "text": "<title>"
+        "text": "商品资本"
       },
       {
         "key": "D",
-        "text": "<head>"
+        "text": "借贷资本"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "year": "2016-2017",
+    "number": 9,
+    "source": "西南石油大学《马克思主义基本原理》2016-2017学年第一学期期末试卷(1).pdf",
+    "page": 3,
+    "sourceHash": "2049e0ed0298bc0e67ce99426eb9168f9767cdf590884366070cb58a4a1f37ba",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "固定资本与流动资本按生产资本各部分价值周转方式划分。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201610,
+    "type": "single",
+    "question": "“让统治阶级在共产主义革命面前发抖吧。无产者在这个革命中失去的只是锁链，他们获得的将是整个世界。”这句话出自以下那一部著作？（）",
+    "options": [
+      {
+        "key": "A",
+        "text": "《德意志意识形态》"
+      },
+      {
+        "key": "B",
+        "text": "《关于费尔巴哈的提纲》"
+      },
+      {
+        "key": "C",
+        "text": "《共产党宣言》"
+      },
+      {
+        "key": "D",
+        "text": "《哥达纲领批判》"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "HTML/CSS"
+    "year": "2016-2017",
+    "number": 10,
+    "source": "西南石油大学《马克思主义基本原理》2016-2017学年第一学期期末试卷(1).pdf",
+    "page": 3,
+    "sourceHash": "2049e0ed0298bc0e67ce99426eb9168f9767cdf590884366070cb58a4a1f37ba",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "这段话出自《共产党宣言》的结尾。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 10,
+    "id": 201701,
     "type": "single",
-    "question": "CSS 中表示纯白色的十六进制颜色值是（ ）",
+    "question": "斯密和李嘉图是",
     "options": [
       {
         "key": "A",
-        "text": "#000000"
+        "text": "德国古典哲学的代表人物"
       },
       {
         "key": "B",
-        "text": "#ff0000"
+        "text": "英国古典政治经济学的代表人物"
       },
       {
         "key": "C",
-        "text": "#00ff00"
+        "text": "英国空想社会主义的代表人物"
       },
       {
         "key": "D",
-        "text": "#ffffff"
-      }
-    ],
-    "answer": [
-      "D"
-    ],
-    "knowledge": "HTML/CSS"
-  },
-  {
-    "id": 11,
-    "type": "single",
-    "question": "CSS 中 color:#00ff00; 表示的颜色是（ ）",
-    "options": [
-      {
-        "key": "A",
-        "text": "黄色"
-      },
-      {
-        "key": "B",
-        "text": "绿色"
-      },
-      {
-        "key": "C",
-        "text": "蓝色"
-      },
-      {
-        "key": "D",
-        "text": "红色"
+        "text": "法国空想社会主义的代表人物"
       }
     ],
     "answer": [
       "B"
     ],
-    "knowledge": "HTML/CSS"
+    "year": "2017-2018",
+    "number": 1,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 1,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "斯密和李嘉图是英国古典政治经济学的代表人物。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 12,
+    "id": 201702,
     "type": "single",
-    "question": "CSS 中用于选择 id 为 header 的元素的选择器是（ ）",
+    "question": "关于马克思主义的产生，下列说法错误的是",
     "options": [
       {
         "key": "A",
-        "text": ".header"
+        "text": "马克思主义是历史时代的产物"
       },
       {
         "key": "B",
-        "text": "*header"
+        "text": "马克思主义是实践经验的总结"
       },
       {
         "key": "C",
-        "text": "header"
+        "text": "马克思主义是科学成果的升华"
       },
       {
         "key": "D",
-        "text": "#header"
+        "text": "马克思主义是先天智慧的结晶"
       }
     ],
     "answer": [
       "D"
     ],
-    "knowledge": "HTML/CSS"
+    "year": "2017-2018",
+    "number": 2,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 1,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "马克思主义产生于社会实践并吸收科学成果，不是先天智慧的产物。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 13,
+    "id": 201703,
     "type": "single",
-    "question": "HTML5 中用于输入文本框的标签是（ ）",
+    "question": "哲学基本问题第二方面内容主要回答的是",
     "options": [
       {
         "key": "A",
-        "text": "<formtext>"
+        "text": "世界的本质是什么的问题"
       },
       {
         "key": "B",
-        "text": "<textbox>"
+        "text": "世界可否被认识的问题"
       },
       {
         "key": "C",
-        "text": "<text>"
+        "text": "世界的存在是怎样的问题"
       },
       {
         "key": "D",
-        "text": "<input>"
+        "text": "世界有否统一性的问题"
       }
     ],
     "answer": [
-      "D"
+      "B"
     ],
-    "knowledge": "HTML/CSS"
+    "year": "2017-2018",
+    "number": 3,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 1,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "哲学基本问题的第二方面是思维和存在有无同一性，即世界能否被认识。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 14,
+    "id": 201704,
     "type": "single",
-    "question": "HTML5 中创建超链接使用的标签是（ ）",
+    "question": "联系的观点和发展的观点是唯物辩证法的",
     "options": [
       {
         "key": "A",
-        "text": "<a>"
+        "text": "总特征"
       },
       {
         "key": "B",
-        "text": "<href>"
+        "text": "精髓"
       },
       {
         "key": "C",
-        "text": "<link>"
+        "text": "实质"
       },
       {
         "key": "D",
-        "text": "<url>"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "HTML/CSS"
-  },
-  {
-    "id": 15,
-    "type": "single",
-    "question": "CSS 中用于设置边框的属性是（ ）",
-    "options": [
-      {
-        "key": "A",
-        "text": "border"
-      },
-      {
-        "key": "B",
-        "text": "frame"
-      },
-      {
-        "key": "C",
-        "text": "outline"
-      },
-      {
-        "key": "D",
-        "text": "Line"
+        "text": "核心"
       }
     ],
     "answer": [
       "A"
     ],
-    "knowledge": "HTML/CSS"
+    "year": "2017-2018",
+    "number": 4,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 1,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "联系与发展是唯物辩证法的总特征；对立统一规律是其实质和核心。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 16,
+    "id": 201705,
     "type": "single",
-    "question": "addEventListener() 的作用是？",
+    "question": "“一把钥匙开一把锁”。这句话强调的是，在解决复杂问题时",
     "options": [
       {
         "key": "A",
-        "text": "删除元素"
+        "text": "要具体地分析矛盾的斗争性"
       },
       {
         "key": "B",
-        "text": "定义变量"
+        "text": "要具体地分析矛盾的同一性"
       },
       {
         "key": "C",
-        "text": "添加事件监听器"
+        "text": "要具体地分析矛盾的特殊性"
       },
       {
         "key": "D",
-        "text": "创建数组"
+        "text": "要具体地分析矛盾的普遍性"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "JavaScript"
+    "year": "2017-2018",
+    "number": 5,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 1,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "不同的问题需要不同的解决办法，体现矛盾的特殊性。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 17,
+    "id": 201706,
     "type": "single",
-    "question": "修改元素内容常用的属性是？",
+    "question": "规律的两个特点是",
     "options": [
       {
         "key": "A",
-        "text": "contentHTML"
+        "text": "普遍性和特殊性"
       },
       {
         "key": "B",
-        "text": "innerHTML"
+        "text": "客观性和自发性"
       },
       {
         "key": "C",
-        "text": "styleHTML"
+        "text": "盲目性和自觉性"
       },
       {
         "key": "D",
-        "text": "valueHTML"
+        "text": "客观性和普遍性"
       }
     ],
     "answer": [
-      "B"
+      "D"
     ],
-    "knowledge": "JavaScript"
+    "year": "2017-2018",
+    "number": 6,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 1,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "规律的基本特点是客观性和普遍性，不以人的意志为转移。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 18,
+    "id": 201707,
     "type": "single",
-    "question": "以下代码的输出结果是？ console.log(typeof 123);",
+    "question": "下列选项中，正确揭示了认识的本质的是",
     "options": [
       {
         "key": "A",
-        "text": "undefined"
+        "text": "认识是主体对客体的能动反映"
       },
       {
         "key": "B",
-        "text": "number"
+        "text": "认识是主体的主观创造"
       },
       {
         "key": "C",
-        "text": "int"
+        "text": "认识是主体对客体的先验反映"
       },
       {
         "key": "D",
-        "text": "Integer"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "JavaScript"
-  },
-  {
-    "id": 19,
-    "type": "single",
-    "question": "获取 HTML 元素常用的方法是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "document.getClass()"
-      },
-      {
-        "key": "B",
-        "text": "document.querySelector()"
-      },
-      {
-        "key": "C",
-        "text": "window.getId()"
-      },
-      {
-        "key": "D",
-        "text": "html.getElement()"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "JavaScript"
-  },
-  {
-    "id": 20,
-    "type": "single",
-    "question": "执行代码 console.log(typeof []); 的结果是什么？",
-    "options": [
-      {
-        "key": "A",
-        "text": "\"object\""
-      },
-      {
-        "key": "B",
-        "text": "\"array\""
-      },
-      {
-        "key": "C",
-        "text": "\"list\""
-      },
-      {
-        "key": "D",
-        "text": "\"arraylist\""
+        "text": "认识是主体的内心体验"
       }
     ],
     "answer": [
       "A"
     ],
-    "knowledge": "JavaScript"
+    "year": "2017-2018",
+    "number": 7,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 1,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "认识是主体在实践基础上对客体的能动反映。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 21,
+    "id": 201708,
     "type": "single",
-    "question": "以下哪个关键字用于声明变量？",
+    "question": "人们认识世界的目的在于",
     "options": [
       {
         "key": "A",
-        "text": "string"
+        "text": "满足猎奇心理"
       },
       {
         "key": "B",
-        "text": "int"
+        "text": "改造客观世界"
       },
       {
         "key": "C",
-        "text": "let"
+        "text": "实现自我价值"
       },
       {
         "key": "D",
-        "text": "define"
+        "text": "创造客观规律"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2017-2018",
+    "number": 8,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 1,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "实践是认识的目的，认识世界是为了改造世界。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201709,
+    "type": "single",
+    "question": "在真理的检验标准问题上，下列各项中说法正确的是",
+    "options": [
+      {
+        "key": "A",
+        "text": "多数人认可的就是真理"
+      },
+      {
+        "key": "B",
+        "text": "个人觉得有用的就是真理"
+      },
+      {
+        "key": "C",
+        "text": "少数人坚持的就是真理"
+      },
+      {
+        "key": "D",
+        "text": "在实践中证实的才是真理"
+      }
+    ],
+    "answer": [
+      "D"
+    ],
+    "year": "2017-2018",
+    "number": 9,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 1,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "实践是检验真理的唯一标准，人数多少或主观感觉都不是标准。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201710,
+    "type": "single",
+    "question": "社会意识具有复杂而精微的结构。从反映社会存在的程度和特点来看，社会意识包括",
+    "options": [
+      {
+        "key": "A",
+        "text": "社会心理和思想体系"
+      },
+      {
+        "key": "B",
+        "text": "意识形态和非意识形态"
+      },
+      {
+        "key": "C",
+        "text": "个体意识和群体意识"
+      },
+      {
+        "key": "D",
+        "text": "主流意识和非主流意识"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "year": "2017-2018",
+    "number": 10,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 1,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "按反映社会存在的程度和特点，社会意识分为社会心理与社会意识形式（思想体系）。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201711,
+    "type": "single",
+    "question": "划分阶级所依据的根本标准是各社会集团的",
+    "options": [
+      {
+        "key": "A",
+        "text": "政治面貌"
+      },
+      {
+        "key": "B",
+        "text": "经济地位"
+      },
+      {
+        "key": "C",
+        "text": "宗教信仰"
+      },
+      {
+        "key": "D",
+        "text": "价值取向"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2017-2018",
+    "number": 11,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 1,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "阶级划分根本上依据不同集团在社会经济结构中的地位，尤其是与生产资料的关系。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201712,
+    "type": "single",
+    "question": "改革不仅存在于社会主义社会中，而且存在于其他社会形态中。这说明改革具有",
+    "options": [
+      {
+        "key": "A",
+        "text": "主体能动性"
+      },
+      {
+        "key": "B",
+        "text": "历史局限性"
+      },
+      {
+        "key": "C",
+        "text": "普遍性"
+      },
+      {
+        "key": "D",
+        "text": "特殊性"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "JavaScript"
+    "year": "2017-2018",
+    "number": 12,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "改革存在于不同社会形态中，体现其普遍性。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 22,
+    "id": 201713,
     "type": "single",
-    "question": "以下哪个是对象的正确写法？",
+    "question": "“社会形态的发展是一个自然历史过程”。这句话说的是",
     "options": [
       {
         "key": "A",
-        "text": "var user = <name: \"Tom\">;"
+        "text": "社会规律和自然规律没有差别"
       },
       {
         "key": "B",
-        "text": "var user = (name = \"Tom\");"
+        "text": "社会发展排斥主体选择的作用"
       },
       {
         "key": "C",
-        "text": "var user = [\"name\": \"Tom\"];"
+        "text": "社会发展取决于主体自由选择"
       },
       {
         "key": "D",
-        "text": "var user = { name: \"Tom\", age: 18 };"
+        "text": "社会发展具有不依人的意志为转移的客观规律性"
       }
     ],
     "answer": [
       "D"
     ],
-    "knowledge": "JavaScript"
+    "year": "2017-2018",
+    "number": 13,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "自然历史过程强调社会发展具有客观规律，并不否认人的能动活动。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 23,
+    "id": 201714,
     "type": "single",
-    "question": "以下哪个对象代表浏览器窗口？",
+    "question": "简单商品经济的基本矛盾是指",
     "options": [
       {
         "key": "A",
-        "text": "console"
+        "text": "价值和使用价值的矛盾"
       },
       {
         "key": "B",
-        "text": "history"
+        "text": "价值和交换价值的矛盾"
       },
       {
         "key": "C",
-        "text": "document"
+        "text": "私人劳动和社会劳动的矛盾"
       },
       {
         "key": "D",
-        "text": "window"
-      }
-    ],
-    "answer": [
-      "D"
-    ],
-    "knowledge": "JavaScript"
-  },
-  {
-    "id": 24,
-    "type": "single",
-    "question": "以下哪个属性可以修改元素的 CSS 样式？",
-    "options": [
-      {
-        "key": "A",
-        "text": "innerHTML"
-      },
-      {
-        "key": "B",
-        "text": "src"
-      },
-      {
-        "key": "C",
-        "text": "value"
-      },
-      {
-        "key": "D",
-        "text": "style"
-      }
-    ],
-    "answer": [
-      "D"
-    ],
-    "knowledge": "JavaScript"
-  },
-  {
-    "id": 25,
-    "type": "single",
-    "question": "定义函数的关键字是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "function"
-      },
-      {
-        "key": "B",
-        "text": "public"
-      },
-      {
-        "key": "C",
-        "text": "private"
-      },
-      {
-        "key": "D",
-        "text": "protected"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "JavaScript"
-  },
-  {
-    "id": 26,
-    "type": "single",
-    "question": "在一段代码中，如果一个变量已经被声明了但还没有被赋予具体的值，那么它的默认值是什么？",
-    "options": [
-      {
-        "key": "A",
-        "text": "0"
-      },
-      {
-        "key": "B",
-        "text": "NaN"
-      },
-      {
-        "key": "C",
-        "text": "null"
-      },
-      {
-        "key": "D",
-        "text": "undefined"
-      }
-    ],
-    "answer": [
-      "D"
-    ],
-    "knowledge": "JavaScript"
-  },
-  {
-    "id": 27,
-    "type": "single",
-    "question": "代码 console.log(1 + \"2\" + 3); 的输出结果是什么？",
-    "options": [
-      {
-        "key": "A",
-        "text": "15"
-      },
-      {
-        "key": "B",
-        "text": "6"
-      },
-      {
-        "key": "C",
-        "text": "NAN"
-      },
-      {
-        "key": "D",
-        "text": "“123”"
-      }
-    ],
-    "answer": [
-      "D"
-    ],
-    "knowledge": "JavaScript"
-  },
-  {
-    "id": 28,
-    "type": "single",
-    "question": "想要把一个 JSON 格式的字符串转换成 JavaScript 的对象或数组，应该使用哪个方法？",
-    "options": [
-      {
-        "key": "A",
-        "text": "JSON.stringify()"
-      },
-      {
-        "key": "B",
-        "text": "object.parse()"
-      },
-      {
-        "key": "C",
-        "text": "JSON.parse()"
-      },
-      {
-        "key": "D",
-        "text": "json.toObject()"
+        "text": "具体劳动和抽象劳动的矛盾"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "JavaScript"
+    "year": "2017-2018",
+    "number": 14,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "原卷提取文字“矛詹”按上下文校正为“矛盾”。",
+    "explanation": "私人劳动和社会劳动的矛盾是简单商品经济的基本矛盾。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 29,
+    "id": 201715,
     "type": "single",
-    "question": "以下哪个是正确的函数定义？",
+    "question": "资本有机构成的提高一般是以",
     "options": [
       {
         "key": "A",
-        "text": "function add(a, b) { return a + b; }"
+        "text": "社会总资本的增大为前提"
       },
       {
         "key": "B",
-        "text": "add function(a, b) { }"
+        "text": "生产资料的增大为前提"
       },
       {
         "key": "C",
-        "text": "def add(a, b){ return a + b; }"
+        "text": "流通资本的增大为前提"
       },
       {
         "key": "D",
-        "text": "function = add(a, b) { }"
+        "text": "单个资本的增大为前提"
+      }
+    ],
+    "answer": [
+      "D"
+    ],
+    "year": "2017-2018",
+    "number": 15,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "单个资本增大为采用更先进技术、扩大生产规模和提高有机构成提供条件。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201716,
+    "type": "single",
+    "question": "从资本周转的角度来考察资本的构成，划分为固定资本和流动资本的是",
+    "options": [
+      {
+        "key": "A",
+        "text": "生产资本"
+      },
+      {
+        "key": "B",
+        "text": "货币资本"
+      },
+      {
+        "key": "C",
+        "text": "商品资本"
+      },
+      {
+        "key": "D",
+        "text": "流通资本"
       }
     ],
     "answer": [
       "A"
     ],
-    "knowledge": "JavaScript"
+    "year": "2017-2018",
+    "number": 16,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "按价值周转方式划分的是生产资本，而不是货币资本或商品资本。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 30,
+    "id": 201717,
     "type": "single",
-    "question": "访问对象属性的正确方式是？ var user = { name: \"Tom\" };",
+    "question": "资本主义国家的民主制度存在形式上平等而事实上不平等的矛盾，根本原因在于",
     "options": [
       {
         "key": "A",
-        "text": "user.name"
+        "text": "宪法是由资产阶级制定的"
       },
       {
         "key": "B",
-        "text": "user->name"
+        "text": "民主的原则是与实践相脱节的"
       },
       {
         "key": "C",
-        "text": "user::name"
+        "text": "劳动人民不能参与国家政权的管理"
       },
       {
         "key": "D",
-        "text": "user[name]"
+        "text": "民主权利的实现受到资本主义生产资料私有制的限制"
+      }
+    ],
+    "answer": [
+      "D"
+    ],
+    "year": "2017-2018",
+    "number": 17,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "资本主义生产资料私有制使民主权利的实际实现受到经济条件限制。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201718,
+    "type": "single",
+    "question": "垄断利润的水平一般会",
+    "options": [
+      {
+        "key": "A",
+        "text": "低于平均利润"
+      },
+      {
+        "key": "B",
+        "text": "高于平均利润"
+      },
+      {
+        "key": "C",
+        "text": "等于平均利润"
+      },
+      {
+        "key": "D",
+        "text": "等于成本价格"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2017-2018",
+    "number": 18,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "垄断利润是超过平均利润的高额利润。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201719,
+    "type": "single",
+    "question": "在经济危机和萧条阶段，资本主义国家向私人企业注入一部分国有资金以维持其生存的经济行为属于",
+    "options": [
+      {
+        "key": "A",
+        "text": "建立资本主义国有经济和国有企业的一种方式"
+      },
+      {
+        "key": "B",
+        "text": "国家和私人资本在企业内部结合的一种方式"
+      },
+      {
+        "key": "C",
+        "text": "国家和私人资本在企业外部结合的一种方式"
+      },
+      {
+        "key": "D",
+        "text": "资本主义国家实行经济计划的一种方式"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2017-2018",
+    "number": 19,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "国家向私人企业注资形成国私合营资本，属于企业内部的结合。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201720,
+    "type": "single",
+    "question": "资本主义国家对国民经济的间接调控主要是运用",
+    "options": [
+      {
+        "key": "A",
+        "text": "经济手段"
+      },
+      {
+        "key": "B",
+        "text": "法律手段"
+      },
+      {
+        "key": "C",
+        "text": "行政手段"
+      },
+      {
+        "key": "D",
+        "text": "计划手段"
       }
     ],
     "answer": [
       "A"
     ],
-    "knowledge": "JavaScript"
+    "year": "2017-2018",
+    "number": 20,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "间接调控主要通过财政、货币等经济手段影响市场主体。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 31,
+    "id": 201721,
     "type": "single",
-    "question": "JavaScript 中用于输出信息到浏览器控制台的方法是？",
+    "question": "垄断资本主义的历史作用是",
     "options": [
       {
         "key": "A",
-        "text": "console.log()"
+        "text": "为一个更高级的生产形式创造物质条件"
       },
       {
         "key": "B",
-        "text": "print()"
+        "text": "建立完善的市场体系和市场机制"
       },
       {
         "key": "C",
-        "text": "alert.log()"
+        "text": "实现生产社会化和经济全球化"
       },
       {
         "key": "D",
-        "text": "write()"
+        "text": "不断发展社会的民主与法制"
       }
     ],
     "answer": [
       "A"
     ],
-    "knowledge": "JavaScript"
+    "year": "2017-2018",
+    "number": 21,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "垄断资本主义使生产社会化发展，为更高级的生产形式创造物质条件。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 32,
+    "id": 201722,
     "type": "single",
-    "question": "在 HTML 页面中引入 JavaScript 文件，应使用哪个标签？",
+    "question": "在社会主义思想史上，标志着科学社会主义理论公开面世的第一个纲领性文件是",
     "options": [
       {
         "key": "A",
-        "text": "<script>"
+        "text": "《共产党宣言》"
       },
       {
         "key": "B",
-        "text": "<link>"
+        "text": "《法兰西内战》"
       },
       {
         "key": "C",
-        "text": "<js>"
+        "text": "《社会主义从空想到科学的发展》"
       },
       {
         "key": "D",
-        "text": "<style>"
+        "text": "《哥达纲领批判》"
       }
     ],
     "answer": [
       "A"
     ],
-    "knowledge": "JavaScript"
+    "year": "2017-2018",
+    "number": 22,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "1848年《共产党宣言》的发表标志着科学社会主义公开问世。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 33,
+    "id": 201723,
     "type": "single",
-    "question": "JavaScript 中表示“未定义”的值是？",
+    "question": "根据邓小平的概括，下列选项不属于社会主义本质的是",
     "options": [
       {
         "key": "A",
-        "text": "undefined"
+        "text": "解放生产力，发展生产力"
       },
       {
         "key": "B",
-        "text": "NaN"
+        "text": "消灭剥削，消除两极分化"
       },
       {
         "key": "C",
-        "text": "false"
+        "text": "允许个别人先富起来"
       },
       {
         "key": "D",
-        "text": "null"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "JavaScript"
-  },
-  {
-    "id": 34,
-    "type": "single",
-    "question": "创建数组的正确方式是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "let arr = <1, 2, 3>;"
-      },
-      {
-        "key": "B",
-        "text": "let arr = {1, 2, 3};"
-      },
-      {
-        "key": "C",
-        "text": "let arr = [1, 2, 3];"
-      },
-      {
-        "key": "D",
-        "text": "let arr = (1, 2, 3);"
+        "text": "最终达到共同富裕"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "JavaScript"
+    "year": "2017-2018",
+    "number": 23,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "社会主义本质包含解放和发展生产力、消灭剥削、消除两极分化、最终达到共同富裕。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 35,
+    "id": 201724,
     "type": "single",
-    "question": "JavaScript 是一种什么类型的语言？",
+    "question": "作为人类社会发展的最高社会形态，共产主义社会的物质基础是",
     "options": [
       {
         "key": "A",
-        "text": "标记语言"
+        "text": "与任何繁荣的封建社会相当的社会生产力"
       },
       {
         "key": "B",
-        "text": "脚本语言"
+        "text": "与一般资本主义社会相当的社会生产力"
       },
       {
         "key": "C",
-        "text": "编译型语言"
+        "text": "与发达资本主义国家相当的社会生产力"
       },
       {
         "key": "D",
-        "text": "数据库语言"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "JavaScript"
-  },
-  {
-    "id": 36,
-    "type": "single",
-    "question": "Vue 是一款什么类型的框架？（）",
-    "options": [
-      {
-        "key": "A",
-        "text": "数据库框架"
-      },
-      {
-        "key": "B",
-        "text": "前端渐进式 MVVM 框架"
-      },
-      {
-        "key": "C",
-        "text": "后端 Java 框架"
-      },
-      {
-        "key": "D",
-        "text": "服务器框架"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 37,
-    "type": "single",
-    "question": "MyBatis 中 Mapper 方法名通常要和 XML 中哪个属性一致？",
-    "options": [
-      {
-        "key": "A",
-        "text": "name"
-      },
-      {
-        "key": "B",
-        "text": "namespace"
-      },
-      {
-        "key": "C",
-        "text": "type"
-      },
-      {
-        "key": "D",
-        "text": "id"
+        "text": "远远高于以往一切社会的高度发达的社会生产力"
       }
     ],
     "answer": [
       "D"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2017-2018",
+    "number": 24,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "共产主义以远远高于以往社会的高度发达生产力为物质基础。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 38,
+    "id": 201725,
     "type": "single",
-    "question": "Vue 中绑定 HTML 元素属性的指令是？（）",
+    "question": "我们实现人生价值的最终归宿是",
     "options": [
       {
         "key": "A",
-        "text": "v-model"
+        "text": "社会主义共同理想"
       },
       {
         "key": "B",
-        "text": "v-show"
+        "text": "共产主义远大理想"
       },
       {
         "key": "C",
-        "text": "v-for"
+        "text": "天下大同的社会理想"
       },
       {
         "key": "D",
-        "text": "v-bind"
-      }
-    ],
-    "answer": [
-      "D"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 39,
-    "type": "single",
-    "question": "MyBatis 的 Mapper 接口通常对应哪个文件？",
-    "options": [
-      {
-        "key": "A",
-        "text": "XML 映射文件"
-      },
-      {
-        "key": "B",
-        "text": "CSS 文件"
-      },
-      {
-        "key": "C",
-        "text": "HTML 页面"
-      },
-      {
-        "key": "D",
-        "text": "JavaScript 文件"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 40,
-    "type": "single",
-    "question": "开启 MyBatis 日志打印 SQL 语句的配置属性是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "mybatis.sql.log"
-      },
-      {
-        "key": "B",
-        "text": "mybatis.configuration.log-impl"
-      },
-      {
-        "key": "C",
-        "text": "mybatis.log.enable"
-      },
-      {
-        "key": "D",
-        "text": "spring.mybatis.log"
+        "text": "克己奉公的道德理想"
       }
     ],
     "answer": [
       "B"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2017-2018",
+    "number": 25,
+    "source": "西南石油大学《马克思主义基本原理》2017-2018学年期末试卷.pdf",
+    "page": 2,
+    "sourceHash": "d319648300f2163b208aa504d3313865fd80ddaf9e7de7a60c55c0d2e963e242",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "按本题教材语境，实现人生价值的最终归宿与共产主义远大理想相联系。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 41,
+    "id": 201801,
     "type": "single",
-    "question": "Axios 发送 GET 请求传参，参数会拼接在？（）",
+    "question": "美国著名心理学家库伯勒·罗丝通过对大量绝症患者的访谈及研究患者临近死亡前的行为和心理活动，将濒临死亡的过程分为五个心理阶段：拒绝、愤怒、讨价还价、抑郁、接受。她也提出这些阶段不一定按特定顺序发生，病人也不一定会经历所有阶段，但是她认为病人至少会经历其中两个阶段。心理学家发现的这一心理模型反映了（）。",
     "options": [
       {
         "key": "A",
-        "text": "请求头"
+        "text": "意识是社会的产物"
       },
       {
         "key": "B",
-        "text": "请求体"
+        "text": "意识是对客观世界的直接反映"
       },
       {
         "key": "C",
-        "text": "URL 后面"
+        "text": "意识能够调控人的行为、生理和心理活动"
       },
       {
         "key": "D",
-        "text": "响应体"
+        "text": "意识能够指导实践改造世界"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2018-2019",
+    "number": 1,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 1,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "材料讨论心理活动对人的状态的影响，体现意识对行为、生理和心理的调控。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 42,
+    "id": 201802,
     "type": "single",
-    "question": "Axios 的作用是？（）",
+    "question": "人的一生其实就是这样的，0岁出场，20岁为情彷徨，30岁基本定向，40岁拼命闯荡，50岁回头望望，60岁告老还乡，70岁搓搓麻将，80岁晒晒太阳，90岁躺在床上，100岁挂在墙上。这段话说明（）。",
     "options": [
       {
         "key": "A",
-        "text": "前后端数据交互、发送 HTTP 请求"
+        "text": "不同事物的矛盾各有其特点"
       },
       {
         "key": "B",
-        "text": "后端接口开发"
+        "text": "同一事物的矛盾在不同发展阶段各有其特点"
       },
       {
         "key": "C",
-        "text": "数据库操作"
+        "text": "构成事物的诸多矛盾各有不同的性质、地位和作用"
       },
       {
         "key": "D",
-        "text": "前端页面样式渲染"
+        "text": "每一矛盾的不同方面各有不同的性质、地位和作用"
       }
     ],
     "answer": [
-      "A"
+      "B"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2018-2019",
+    "number": 2,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "同一个人的不同人生阶段呈现不同矛盾特点，体现矛盾在发展阶段上的特殊性。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 43,
+    "id": 201803,
     "type": "single",
-    "question": "Spring Boot 中配置数据库密码通常使用哪个属性？",
+    "question": "感性认识和理性认识的根本区别在于（）。",
     "options": [
       {
         "key": "A",
-        "text": "spring.datasource.pass"
+        "text": "感性认识是可靠的，理性认识是不可靠的"
       },
       {
         "key": "B",
-        "text": "database.password"
+        "text": "感性认识是对现象的认识，理性认识是对本质的认识"
       },
       {
         "key": "C",
-        "text": "spring.datasource.password"
+        "text": "感性认识来源于实践，理性认识来源于书本"
       },
       {
         "key": "D",
-        "text": "mybatis.password"
+        "text": "感性认识来源于直接经验，理性认识来源于间接经验"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2018-2019",
+    "number": 3,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "感性认识把握现象，理性认识把握本质；不能用来源于实践还是书本来区分。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201804,
+    "type": "single",
+    "question": "划分唯物史观和唯心史观的唯一标准在于是否承认（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "社会历史是发展变化的"
+      },
+      {
+        "key": "B",
+        "text": "社会历史是人们自觉活动的结果"
+      },
+      {
+        "key": "C",
+        "text": "社会存在决定社会意识"
+      },
+      {
+        "key": "D",
+        "text": "人民的思想对社会发展有重要作用"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2018-2019",
+    "number": 4,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "是否承认社会存在决定社会意识，是划分唯物史观和唯心史观的标准。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 44,
+    "id": 201805,
     "type": "single",
-    "question": "修改 Spring Boot 端口号应配置？",
+    "question": "人民群众是历史的创造者，其根本原因在于（）。",
     "options": [
       {
         "key": "A",
-        "text": "tomcat.port=xxx"
+        "text": "人民群众占人口的大多数"
       },
       {
         "key": "B",
-        "text": "boot.port=xxx"
+        "text": "人民群众是社会生产力的体现者"
       },
       {
         "key": "C",
-        "text": "spring.port=xxx"
+        "text": "人民群众具有先进思想"
       },
       {
         "key": "D",
-        "text": "server.port=xxxx"
+        "text": "人民群众掌握历史发展规律"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2018-2019",
+    "number": 5,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "人民群众是社会物质财富的创造者，是社会生产力的主要体现者。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201806,
+    "type": "single",
+    "question": "商品使用价值与价值的关系是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "使用价值的大小决定于价值的大小"
+      },
+      {
+        "key": "B",
+        "text": "价值的大小决定于使用价值的大小"
+      },
+      {
+        "key": "C",
+        "text": "使用价值和价值互相决定"
+      },
+      {
+        "key": "D",
+        "text": "使用价值是价值的物质承担者，价值寓于使用价值之中"
       }
     ],
     "answer": [
       "D"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2018-2019",
+    "number": 6,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "使用价值是价值的物质承担者，价值寓于使用价值之中。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 45,
+    "id": 201807,
     "type": "single",
-    "question": "Vue 遍历数组/对象的指令是？（）",
+    "question": "资本主义经济危机的根源是（）。",
     "options": [
       {
         "key": "A",
-        "text": "v-each"
+        "text": "社会生产和社会需求之间的矛盾"
       },
       {
         "key": "B",
-        "text": "v-foreach"
+        "text": "无产阶级和资产阶级之间的矛盾"
       },
       {
         "key": "C",
-        "text": "v-for"
+        "text": "生产社会化和生产资料资本主义私人占有之间的矛盾"
       },
       {
         "key": "D",
-        "text": "v-loop"
+        "text": "单个企业内部生产的有组织性和整个社会生产的无政府状态之间的矛盾"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2018-2019",
+    "number": 7,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "经济危机根源于生产社会化与资本主义私人占有之间的基本矛盾。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 46,
+    "id": 201808,
     "type": "single",
-    "question": "Vue 中绑定点击事件的指令是？（）",
+    "question": "金融寡头通过“参与制”来实现在经济领域中的统治，具体方法是指金融寡头（）。",
     "options": [
       {
         "key": "A",
-        "text": "v-on:click"
+        "text": "直接参与工业企业的生产经营和管理"
       },
       {
         "key": "B",
-        "text": "v-event"
+        "text": "通过掌握一定数量的股票来层层控制企业"
       },
       {
         "key": "C",
-        "text": "v-bind:click"
+        "text": "直接参与银行的经营和管理"
       },
       {
         "key": "D",
-        "text": "v-click"
+        "text": "通过购买所属公司的全部股票，直接掌控许多企业和大银行"
       }
     ],
     "answer": [
-      "A"
+      "B"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2018-2019",
+    "number": 8,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 3,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "参与制通过控股形成母公司、子公司等层级控制关系，不要求持有全部股票。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 47,
+    "id": 201809,
     "type": "single",
-    "question": "Spring Boot 应用中端口号默认是？",
+    "question": "国家垄断资本主义是（）。",
     "options": [
       {
         "key": "A",
-        "text": "8080"
+        "text": "消除生产无政府状态的垄断主义"
       },
       {
         "key": "B",
-        "text": "80"
+        "text": "资本主义国家同垄断资本相分离的垄断资本主义"
       },
       {
         "key": "C",
-        "text": "8888"
+        "text": "国家政权和私人垄断资本融合在一起的垄断资本主义"
       },
       {
         "key": "D",
-        "text": "3306"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 48,
-    "type": "single",
-    "question": "Spring Boot 项目默认配置文件名称是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "spring.xml"
-      },
-      {
-        "key": "B",
-        "text": "boot.properties"
-      },
-      {
-        "key": "C",
-        "text": "application.properties"
-      },
-      {
-        "key": "D",
-        "text": "config.xml"
+        "text": "带有社会主义因素的垄断资本主义"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2018-2019",
+    "number": 9,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 3,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "国家垄断资本主义是国家政权与私人垄断资本的结合。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 49,
+    "id": 201810,
     "type": "single",
-    "question": "Spring Boot 整合 MyBatis 时，spring.datasource.driver-class-name 用于配置什么",
+    "question": "共产主义社会是人类社会发展的最高社会形态，这一社会形态得以实现的必要条件是（）。",
     "options": [
       {
         "key": "A",
-        "text": "数据库驱动类"
+        "text": "社会关系的高度和谐"
       },
       {
         "key": "B",
-        "text": "项目访问路径"
+        "text": "每个人自由而全面的发展"
       },
       {
         "key": "C",
-        "text": "Mapper 接口路径"
+        "text": "生产力的高度发展"
       },
       {
         "key": "D",
-        "text": "XML 文件路径"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 50,
-    "type": "single",
-    "question": "分层与解耦的主要目的是什么？",
-    "options": [
-      {
-        "key": "A",
-        "text": "让所有代码写在一个类中"
-      },
-      {
-        "key": "B",
-        "text": "降低模块之间依赖，提高维护性和扩展性"
-      },
-      {
-        "key": "C",
-        "text": "取消接口设计"
-      },
-      {
-        "key": "D",
-        "text": "避免使用数据库"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 51,
-    "type": "single",
-    "question": "以下哪项体现了解耦思想？",
-    "options": [
-      {
-        "key": "A",
-        "text": "所有代码写在 main 方法中"
-      },
-      {
-        "key": "B",
-        "text": "数据库密码写死在业务代码中"
-      },
-      {
-        "key": "C",
-        "text": "Controller 直接写 SQL"
-      },
-      {
-        "key": "D",
-        "text": "Service 依赖接口而不是具体实现类"
-      }
-    ],
-    "answer": [
-      "D"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 52,
-    "type": "single",
-    "question": "MyBatis 的 XML 映射文件通常放在哪个目录下？",
-    "options": [
-      {
-        "key": "A",
-        "text": "src/test/java"
-      },
-      {
-        "key": "B",
-        "text": "src/main/resources"
-      },
-      {
-        "key": "C",
-        "text": "target/classes"
-      },
-      {
-        "key": "D",
-        "text": "src/main/java"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 53,
-    "type": "single",
-    "question": "MyBatis 中遍历集合的标签是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "<each>"
-      },
-      {
-        "key": "B",
-        "text": "<foreach>"
-      },
-      {
-        "key": "C",
-        "text": "<loop>"
-      },
-      {
-        "key": "D",
-        "text": "<for>"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 54,
-    "type": "single",
-    "question": "DI 的中文含义是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "数据初始化"
-      },
-      {
-        "key": "B",
-        "text": "数据索引"
-      },
-      {
-        "key": "C",
-        "text": "接口定义"
-      },
-      {
-        "key": "D",
-        "text": "依赖注入"
-      }
-    ],
-    "answer": [
-      "D"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 55,
-    "type": "single",
-    "question": "Spring Boot 整合 MyBatis 通常需要引入哪个依赖？",
-    "options": [
-      {
-        "key": "A",
-        "text": "spring-boot-starter-web"
-      },
-      {
-        "key": "B",
-        "text": "spring-boot-starter-test"
-      },
-      {
-        "key": "C",
-        "text": "spring-boot-starter-thymeleaf"
-      },
-      {
-        "key": "D",
-        "text": "mybatis-spring-boot-starter"
-      }
-    ],
-    "answer": [
-      "D"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 56,
-    "type": "single",
-    "question": "在 MyBatis 映射 XML 文件中，实现多条件拼接时为了自动去除开头多余的 AND 或 OR 关键字，最推荐使用哪个动态 SQL 标签？",
-    "options": [
-      {
-        "key": "A",
-        "text": "<where>"
-      },
-      {
-        "key": "B",
-        "text": "<choose>"
-      },
-      {
-        "key": "C",
-        "text": "<if>"
-      },
-      {
-        "key": "D",
-        "text": "<set>"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 57,
-    "type": "single",
-    "question": "当同一类型存在多个 Bean 时，可使用哪个注解指定具体 Bean？",
-    "options": [
-      {
-        "key": "A",
-        "text": "@RequestBody"
-      },
-      {
-        "key": "B",
-        "text": "@Insert"
-      },
-      {
-        "key": "C",
-        "text": "@PathVariable"
-      },
-      {
-        "key": "D",
-        "text": "@Qualifier"
-      }
-    ],
-    "answer": [
-      "D"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 58,
-    "type": "single",
-    "question": "Spring Boot 整合 MyBatis 时，常见的三层结构是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "Controller、Service、Dao/Mapper"
-      },
-      {
-        "key": "B",
-        "text": "Request、Response、Session"
-      },
-      {
-        "key": "C",
-        "text": "HTML、CSS、JavaScript"
-      },
-      {
-        "key": "D",
-        "text": "XML、YAML、Properties"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 59,
-    "type": "single",
-    "question": "MyBatis 映射文件中的 namespace 通常对应什么？",
-    "options": [
-      {
-        "key": "A",
-        "text": "Mapper 接口的全限定名"
-      },
-      {
-        "key": "B",
-        "text": "SQL 语句名称"
-      },
-      {
-        "key": "C",
-        "text": "表名"
-      },
-      {
-        "key": "D",
-        "text": "数据库名称"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 60,
-    "type": "single",
-    "question": "Vue 中双向数据绑定指令是？（）",
-    "options": [
-      {
-        "key": "A",
-        "text": "v-on"
-      },
-      {
-        "key": "B",
-        "text": "v-model"
-      },
-      {
-        "key": "C",
-        "text": "v-bind"
-      },
-      {
-        "key": "D",
-        "text": "v-if"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 61,
-    "type": "single",
-    "question": "Spring Boot 的主启动类通常包含哪个注解？",
-    "options": [
-      {
-        "key": "A",
-        "text": "@RestController"
-      },
-      {
-        "key": "B",
-        "text": "@Controller"
-      },
-      {
-        "key": "C",
-        "text": "@Configuration"
-      },
-      {
-        "key": "D",
-        "text": "@SpringBootApplication"
-      }
-    ],
-    "answer": [
-      "D"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 62,
-    "type": "single",
-    "question": "Spring Boot 默认内嵌的 Servlet 容器是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "WebLogic"
-      },
-      {
-        "key": "B",
-        "text": "Tomcat"
-      },
-      {
-        "key": "C",
-        "text": "Undertow"
-      },
-      {
-        "key": "D",
-        "text": "Jetty"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 63,
-    "type": "single",
-    "question": "application.properties中spring.datasource.url 的作用是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "配置 Mapper 扫描路径"
-      },
-      {
-        "key": "B",
-        "text": "配置数据库连接地址"
-      },
-      {
-        "key": "C",
-        "text": "配置实体类别名"
-      },
-      {
-        "key": "D",
-        "text": "配置服务器端口"
-      }
-    ],
-    "answer": [
-      "B"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 64,
-    "type": "single",
-    "question": "以下哪个属于 Spring Boot Starter？",
-    "options": [
-      {
-        "key": "A",
-        "text": "lombok"
-      },
-      {
-        "key": "B",
-        "text": "mysql-connector"
-      },
-      {
-        "key": "C",
-        "text": "spring-boot-starter-web"
-      },
-      {
-        "key": "D",
-        "text": "junit"
+        "text": "阶级和国家的消亡"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2018-2019",
+    "number": 10,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 3,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "生产力高度发展是共产主义实现的必要物质条件。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 65,
-    "type": "single",
-    "question": "Spring Boot 启动项目的入口方法是？",
+    "id": 201811,
+    "type": "multiple",
+    "question": "马克思主义的鲜明特征主要包括（）。",
     "options": [
       {
         "key": "A",
-        "text": "main()"
+        "text": "实践性"
       },
       {
         "key": "B",
-        "text": "start()"
+        "text": "发展性"
       },
       {
         "key": "C",
-        "text": "init()"
+        "text": "永恒性"
       },
       {
         "key": "D",
-        "text": "run()"
+        "text": "科学性和革命性"
       }
     ],
     "answer": [
-      "A"
+      "A",
+      "B",
+      "D"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2018-2019",
+    "number": 11,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 3,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "实践性、发展性、科学性和革命性属于马克思主义鲜明特征；“永恒性”不属于。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 66,
-    "type": "single",
-    "question": "在 Spring Boot 项目中，MyBatis 的 Mapper 接口通常使用哪个注解标识？",
+    "id": 201812,
+    "type": "multiple",
+    "question": "下列正确说明运动含义的有()。",
     "options": [
       {
         "key": "A",
-        "text": "@Mapper"
+        "text": "运动是物质的存在方式"
       },
       {
         "key": "B",
-        "text": "@Controller"
+        "text": "运动是新事物的产生和旧事物的灭亡"
       },
       {
         "key": "C",
-        "text": "@Service"
+        "text": "运动是物质的根本属性"
       },
       {
         "key": "D",
-        "text": "@ComponentScan"
+        "text": "运动是指宇宙中发生的一切变化和过程"
       }
     ],
     "answer": [
-      "A"
+      "A",
+      "C",
+      "D"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2018-2019",
+    "number": 12,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 3,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "运动指一切变化和过程，是物质的存在方式和根本属性；新事物替代旧事物是发展的含义。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 67,
-    "type": "single",
-    "question": "Axios 发送 POST 请求，参数默认存放在？（）",
+    "id": 201813,
+    "type": "multiple",
+    "question": "价值的基本特性具有主体性、客观性、多维性和社会历史性，其中的主体性是指（）。",
     "options": [
       {
         "key": "A",
-        "text": "响应头"
+        "text": "同一客体对于不同主体的价值是不同的，带有主体的个性特征"
       },
       {
         "key": "B",
-        "text": "请求头"
+        "text": "主客体之间的关系是主体在实践基础上确立的一种创造性的关系"
       },
       {
         "key": "C",
-        "text": "请求体（Request Body）"
+        "text": "主客体之间的价值关系不是一种自然的现成关系"
       },
       {
         "key": "D",
-        "text": "URL 地址"
+        "text": "客观事物的某种属性能否具有价值及具有何种价值要以人的需要为基准"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "year": "2018-2019",
+    "number": 13,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 3,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "价值主体性体现需要作为尺度、主体差异，以及主体通过实践创造和确立价值关系。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201814,
+    "type": "multiple",
+    "question": "下列属于唯物史观的“社会存在”范畴的有（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "人们的物质生产实践活动"
+      },
+      {
+        "key": "B",
+        "text": "人们在实践活动中所利用的自然资源"
+      },
+      {
+        "key": "C",
+        "text": "人们在实践活动中所形成的各种社会关系"
+      },
+      {
+        "key": "D",
+        "text": "从事实践活动的人"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "year": "2018-2019",
+    "number": 14,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 4,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "社会存在包括物质生产、自然地理环境和人口因素；“各种社会关系”还包含思想关系，不能全部归入。",
+    "answerStatus": "reference",
+    "references": [
+      {
+        "title": "社会存在的含义",
+        "url": "https://edu.sina.com.cn/exam/2005-11-21/154911995.html"
+      }
+    ]
+  },
+  {
+    "id": 201815,
+    "type": "multiple",
+    "question": "空想社会主义不是一个科学的思想体系，其局限性在于没有()。",
+    "options": [
+      {
+        "key": "A",
+        "text": "看到资本主义必然灭亡的命运"
+      },
+      {
+        "key": "B",
+        "text": "揭示资本主义必然灭亡的经济根源"
+      },
+      {
+        "key": "C",
+        "text": "找到建设新社会所依靠的阶级力量"
+      },
+      {
+        "key": "D",
+        "text": "找到通往理想社会的现实道路"
+      }
+    ],
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "year": "2018-2019",
+    "number": 15,
+    "source": "西南石油大学《马克思主义基本原理》2018-2019学年第一学期期末试卷(1).pdf",
+    "page": 4,
+    "sourceHash": "c22fddcfdf32eca1e8201f75a6718f827d48bb0229e28efd3b754037dacceeed",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "空想社会主义批判资本主义，但没有科学揭示其灭亡根源、变革力量和实现路径。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201901,
+    "type": "single",
+    "question": "从哲学上看,运动和静止的关系属于()",
+    "options": [
+      {
+        "key": "A",
+        "text": "现象和本质的关系"
+      },
+      {
+        "key": "B",
+        "text": "一般和个别的关系"
+      },
+      {
+        "key": "C",
+        "text": "绝对和相对的关系"
+      },
+      {
+        "key": "D",
+        "text": "抽象和具体的关系"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 1,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 1,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "运动是绝对的，静止是相对的，二者相统一。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 68,
+    "id": 201902,
     "type": "single",
-    "question": "Maven 中定义项目依赖的文件是？",
+    "question": "哲学的基本问题是()",
     "options": [
       {
         "key": "A",
-        "text": "build.gradle"
+        "text": "世界观和方法论的关系问题"
       },
       {
         "key": "B",
-        "text": "pom.xml"
+        "text": "思维和存在的关系问题"
       },
       {
         "key": "C",
-        "text": "package.json"
+        "text": "运动和静止的关系问题"
       },
       {
         "key": "D",
-        "text": "settings.xml"
+        "text": "普遍性和特殊性的关系问题"
       }
     ],
     "answer": [
       "B"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 2,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 1,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "哲学的基本问题是思维和存在的关系问题。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 69,
+    "id": 201903,
     "type": "single",
-    "question": "Spring Boot 中配置数据库连接信息通常写在哪个文件中？",
+    "question": "下列观点中属于客观唯心主义的是()",
     "options": [
       {
         "key": "A",
-        "text": "mapper.xml"
+        "text": "天地万物皆在吾心中"
       },
       {
         "key": "B",
-        "text": "pom.xml"
+        "text": "存在就是被感知"
       },
       {
         "key": "C",
-        "text": "web.xml"
+        "text": "物是感觉的集合"
       },
       {
         "key": "D",
-        "text": "application.yml 或 application.properties"
+        "text": "万物是“绝对精神”的体现"
       }
     ],
     "answer": [
       "D"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 3,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 1,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "把独立于人的“绝对精神”当作世界本原，属于客观唯心主义。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 70,
+    "id": 201904,
     "type": "single",
-    "question": "@RequestMapping、@GetMapping、@PostMapping 的作用是？",
+    "question": "“世界不是既成的事物的集合体，而是过程的集合体”。这是一种()",
     "options": [
       {
         "key": "A",
-        "text": "请求路径映射"
+        "text": "唯物辩证法的观点"
       },
       {
         "key": "B",
-        "text": "配置数据库"
+        "text": "形而上学的观点"
       },
       {
         "key": "C",
-        "text": "开启事务"
+        "text": "相对主义的观点"
       },
       {
         "key": "D",
-        "text": "自动装配 Bean"
+        "text": "唯心主义的观点"
       }
     ],
     "answer": [
       "A"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 4,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 1,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "世界处于不断运动、变化和发展中，体现唯物辩证法。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 71,
+    "id": 201905,
     "type": "single",
-    "question": "MyBatis 映射文件中用于查询的标签是？",
+    "question": "在唯物辩证法看来，粮食同稻谷、小麦、大豆、高梁等之间的关系属于()",
     "options": [
       {
         "key": "A",
-        "text": "<delete>"
+        "text": "全体和部分的关系"
       },
       {
         "key": "B",
-        "text": "<update>"
+        "text": "本质和现象的关系"
       },
       {
         "key": "C",
-        "text": "<insert>"
+        "text": "一般和个别的关系"
       },
       {
         "key": "D",
-        "text": "<select>"
-      }
-    ],
-    "answer": [
-      "D"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 72,
-    "type": "single",
-    "question": "@SpringBootApplication 不包含以下哪个注解？",
-    "options": [
-      {
-        "key": "A",
-        "text": "@ComponentScan"
-      },
-      {
-        "key": "B",
-        "text": "@Configuration"
-      },
-      {
-        "key": "C",
-        "text": "@RestController"
-      },
-      {
-        "key": "D",
-        "text": "@EnableAutoConfiguration"
+        "text": "内容和形式的关系"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 5,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 1,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "粮食是一般概念，稻谷、小麦等是其具体表现，属于一般和个别的关系。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 73,
+    "id": 201906,
     "type": "single",
-    "question": "Spring Boot 中依赖管理通常使用什么工具？",
+    "question": "区分量变和质变的根本标志是()",
     "options": [
       {
         "key": "A",
-        "text": "Docker"
+        "text": "事物的变化是否显著"
       },
       {
         "key": "B",
-        "text": "Git"
+        "text": "事物的变化是否迅速"
       },
       {
         "key": "C",
-        "text": "SVN"
+        "text": "事物的性质是否发生了变化"
       },
       {
         "key": "D",
-        "text": "Maven"
+        "text": "事物的变化是否超出度的范围"
       }
     ],
     "answer": [
       "D"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 6,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 1,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "是否超出度的范围是区分量变和质变的根本标志。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 74,
+    "id": 201907,
     "type": "single",
-    "question": "分层架构中，Controller 层主要负责？",
+    "question": "规律具有两个特点，一个是普遍性，另一个是()",
     "options": [
       {
         "key": "A",
-        "text": "直接操作数据库表"
+        "text": "客观性"
       },
       {
         "key": "B",
-        "text": "维护服务器硬件"
+        "text": "变动性"
       },
       {
         "key": "C",
-        "text": "编写前端样式"
+        "text": "社会性"
       },
       {
         "key": "D",
-        "text": "接收请求并返回响应"
+        "text": "能动性"
       }
     ],
     "answer": [
-      "D"
+      "A"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 7,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 1,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "规律具有客观性和普遍性。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 75,
+    "id": 201908,
     "type": "single",
-    "question": "Vue + SpringBoot出现 跨域问题的根本原因是？（）",
+    "question": "认识的主体和客体之间最基本的关系是()",
     "options": [
       {
         "key": "A",
-        "text": "浏览器 bug"
+        "text": "反映与被反映的认识关系"
       },
       {
         "key": "B",
-        "text": "端口、域名、协议不同"
+        "text": "改造与被改造的实践关系"
       },
       {
         "key": "C",
-        "text": "网络卡顿"
+        "text": "需要与满足需要的价值关系"
       },
       {
         "key": "D",
-        "text": "代码错误"
+        "text": "创造与被创造的主从关系"
       }
     ],
     "answer": [
       "B"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 8,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 1,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "实践关系是主体与客体之间最基本的关系，认识关系由此产生。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 76,
+    "id": 201909,
     "type": "single",
-    "question": "在良好的后端分层设计中，Controller 通常调用哪一层？",
+    "question": "一个完整的认识过程包括两次飞跃，其中第二次飞跃是()",
     "options": [
       {
         "key": "A",
-        "text": "配置文件层"
+        "text": "从概念到判断的过程"
       },
       {
         "key": "B",
-        "text": "Dao层"
+        "text": "从认识到实践的过程"
       },
       {
         "key": "C",
-        "text": "Service 层"
+        "text": "从判断到推理的过程"
       },
       {
         "key": "D",
-        "text": "数据库层"
+        "text": "从感觉到概念的过程"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2019-2020",
+    "number": 9,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 1,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "第一次飞跃由感性认识到理性认识，第二次飞跃由认识到实践。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201910,
+    "type": "single",
+    "question": "一个正确的认识需要多次反复才能完成，并且认识是永无止境的发展过程。这说明人类的认识是()",
+    "options": [
+      {
+        "key": "A",
+        "text": "感性和理性的统一"
+      },
+      {
+        "key": "B",
+        "text": "理论和实践的统一"
+      },
+      {
+        "key": "C",
+        "text": "正确和错误的统一"
+      },
+      {
+        "key": "D",
+        "text": "有限和无限的统一"
+      }
+    ],
+    "answer": [
+      "D"
+    ],
+    "year": "2019-2020",
+    "number": 10,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 1,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "具体认识受条件限制，而人类认识整体不断发展，体现有限与无限的统一。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201911,
+    "type": "single",
+    "question": "中国共产党的思想路线的核心是()",
+    "options": [
+      {
+        "key": "A",
+        "text": "一切从实际出发"
+      },
+      {
+        "key": "B",
+        "text": "理论联系实际"
+      },
+      {
+        "key": "C",
+        "text": "实事求是"
+      },
+      {
+        "key": "D",
+        "text": "在实践中检验真理和发展真理"
       }
     ],
     "answer": [
       "C"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 11,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 2,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "中国共产党的思想路线以实事求是为核心。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 77,
+    "id": 201912,
     "type": "single",
-    "question": "Spring Boot 整合 MyBatis 后，Mapper 接口对象通常由谁创建和管理？",
+    "question": "下列概念中，反映人与人之间经济关系的是()",
     "options": [
       {
         "key": "A",
-        "text": "Spring 容器"
+        "text": "生产力"
       },
       {
         "key": "B",
-        "text": "浏览器"
+        "text": "生产关系"
       },
       {
         "key": "C",
-        "text": "程序员手动 new"
+        "text": "生产方式"
       },
       {
         "key": "D",
-        "text": "数据库服务器"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 78,
-    "type": "single",
-    "question": "在 Spring 中，IoC 的中文含义是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "控制反转"
-      },
-      {
-        "key": "B",
-        "text": "输入输出控制"
-      },
-      {
-        "key": "C",
-        "text": "接口对象转换"
-      },
-      {
-        "key": "D",
-        "text": "内部对象调用"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 79,
-    "type": "single",
-    "question": "IoC 的核心思想是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "对象创建和依赖关系交给 Spring 容器管理"
-      },
-      {
-        "key": "B",
-        "text": "所有类都必须继承 Controller"
-      },
-      {
-        "key": "C",
-        "text": "SQL 语句自动生成页面"
-      },
-      {
-        "key": "D",
-        "text": "所有对象都由程序员手动 new"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 80,
-    "type": "single",
-    "question": "MyBatis 的主要作用是？",
-    "options": [
-      {
-        "key": "A",
-        "text": "简化 Java 对数据库的持久层操作"
-      },
-      {
-        "key": "B",
-        "text": "替代 Spring Boot"
-      },
-      {
-        "key": "C",
-        "text": "管理前端路由"
-      },
-      {
-        "key": "D",
-        "text": "编译 JavaScript"
-      }
-    ],
-    "answer": [
-      "A"
-    ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
-  },
-  {
-    "id": 81,
-    "type": "single",
-    "question": "MyBatis 中 parameterType 表示什么？",
-    "options": [
-      {
-        "key": "A",
-        "text": "SQL 返回值类型"
-      },
-      {
-        "key": "B",
-        "text": "参数类型"
-      },
-      {
-        "key": "C",
-        "text": "Mapper 文件类型"
-      },
-      {
-        "key": "D",
-        "text": "数据库类型"
+        "text": "生产资料"
       }
     ],
     "answer": [
       "B"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 12,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 2,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "生产关系是人们在物质生产过程中形成的经济关系。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 82,
+    "id": 201913,
     "type": "single",
-    "question": "以下哪个注解通常用于标识业务层？",
+    "question": "社会形态的发展是一种自然历史过程，这是一种()",
     "options": [
       {
         "key": "A",
-        "text": "@Service"
+        "text": "历史唯物主义的观点"
       },
       {
         "key": "B",
-        "text": "@RestController"
+        "text": "历史唯心主义的观点"
       },
       {
         "key": "C",
-        "text": "@Controller"
+        "text": "机械决定论的观点"
       },
       {
         "key": "D",
-        "text": "@Mapper"
+        "text": "历史宿命论的观点"
       }
     ],
     "answer": [
       "A"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 13,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 2,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "把社会发展理解为具有客观规律的自然历史过程，是历史唯物主义观点。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 83,
+    "id": 201914,
     "type": "single",
-    "question": "Spring Boot 支持的配置文件格式包括？",
+    "question": "除了生产力与生产关系的矛盾，另一对社会基本矛盾是()",
     "options": [
       {
         "key": "A",
-        "text": "yaml"
+        "text": "社会存在与社会意识的矛盾"
       },
       {
         "key": "B",
-        "text": "以上都是"
+        "text": "人口因素与资源环境的矛盾"
       },
       {
         "key": "C",
-        "text": "properties"
+        "text": "统治阶级与被统治阶级的矛盾"
       },
       {
         "key": "D",
-        "text": "yml"
+        "text": "经济基础与上层建筑的矛盾"
+      }
+    ],
+    "answer": [
+      "D"
+    ],
+    "year": "2019-2020",
+    "number": 14,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 2,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "社会基本矛盾包括生产力与生产关系、经济基础与上层建筑两对矛盾。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201915,
+    "type": "single",
+    "question": "“革命是解放生产力，改革也是解放生产力”。这一论断表明社会改革与社会革命()",
+    "options": [
+      {
+        "key": "A",
+        "text": "都以夺取国家政权为目的"
+      },
+      {
+        "key": "B",
+        "text": "都不改变社会制度的根本性质"
+      },
+      {
+        "key": "C",
+        "text": "都是要解决社会基本矛盾"
+      },
+      {
+        "key": "D",
+        "text": "都不需要采取暴力冲突的形式"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "year": "2019-2020",
+    "number": 15,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 2,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "革命与改革都服务于解决社会基本矛盾、解放和发展生产力，具体方式不同。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201916,
+    "type": "single",
+    "question": "从本质上看，货币是()",
+    "options": [
+      {
+        "key": "A",
+        "text": "特殊的资本"
+      },
+      {
+        "key": "B",
+        "text": "普通的商品"
+      },
+      {
+        "key": "C",
+        "text": "一般等价物"
+      },
+      {
+        "key": "D",
+        "text": "固定地充当一般等价物的商品"
+      }
+    ],
+    "answer": [
+      "D"
+    ],
+    "year": "2019-2020",
+    "number": 16,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 2,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "货币是固定充当一般等价物的特殊商品；本题D比C完整。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201917,
+    "type": "single",
+    "question": "资本主义相对过剩人口是指()",
+    "options": [
+      {
+        "key": "A",
+        "text": "劳动力供给超过资本对劳动力的需求而出现的过剩人口"
+      },
+      {
+        "key": "B",
+        "text": "人口增长超过生活资料的增长而出现的过剩人口"
+      },
+      {
+        "key": "C",
+        "text": "人口增长超过生产资料的增长而出现的过剩人口"
+      },
+      {
+        "key": "D",
+        "text": "人口增长超过资本增长而出现的过剩人口"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "year": "2019-2020",
+    "number": 17,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 2,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "相对过剩是相对于资本增殖所需的劳动力而言，并非相对于生活资料。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201918,
+    "type": "single",
+    "question": "用于发放工资的货币执行的是货币的()",
+    "options": [
+      {
+        "key": "A",
+        "text": "价值尺度职能"
+      },
+      {
+        "key": "B",
+        "text": "流通手段职能"
+      },
+      {
+        "key": "C",
+        "text": "支付手段职能"
+      },
+      {
+        "key": "D",
+        "text": "贮藏手段职能"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "year": "2019-2020",
+    "number": 18,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 2,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "工资支付通常滞后于劳动提供，货币执行支付手段职能。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201919,
+    "type": "single",
+    "question": "资本主义国家的立法机构是()",
+    "options": [
+      {
+        "key": "A",
+        "text": "法院"
+      },
+      {
+        "key": "B",
+        "text": "检察机构"
+      },
+      {
+        "key": "C",
+        "text": "议会或国会"
+      },
+      {
+        "key": "D",
+        "text": "政府"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "year": "2019-2020",
+    "number": 19,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 2,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "资本主义国家的立法机构一般为议会或国会。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201920,
+    "type": "single",
+    "question": "公式 W…P…W′ 表示的是产业资本循环的（ ）",
+    "options": [
+      {
+        "key": "A",
+        "text": "购买阶段"
+      },
+      {
+        "key": "B",
+        "text": "生产阶段"
+      },
+      {
+        "key": "C",
+        "text": "销售阶段"
+      },
+      {
+        "key": "D",
+        "text": "流通阶段"
       }
     ],
     "answer": [
       "B"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 20,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 2,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "P表示生产过程，W…P…W′是从生产资料等投入到新商品形成的生产阶段。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 84,
+    "id": 201921,
     "type": "single",
-    "question": "DI 的主要作用是？",
+    "question": "资本主义再生产周期四个阶段的顺序一般为()",
     "options": [
       {
         "key": "A",
-        "text": "取消接口设计"
+        "text": "萧条—危机—复苏—高涨"
       },
       {
         "key": "B",
-        "text": "提高 SQL 复杂度"
+        "text": "复苏—高涨—危机—萧条"
       },
       {
         "key": "C",
-        "text": "替代数据库"
+        "text": "危机—萧条—复苏—高涨"
       },
       {
         "key": "D",
-        "text": "降低对象之间的耦合度"
+        "text": "高涨—萧条—危机—复苏"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "year": "2019-2020",
+    "number": 21,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 2,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "教材通常从危机开始表述周期：危机、萧条、复苏、高涨。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201922,
+    "type": "single",
+    "question": "剩余价值率和利润率的关系是()",
+    "options": [
+      {
+        "key": "A",
+        "text": "剩余价值率等于利润率"
+      },
+      {
+        "key": "B",
+        "text": "剩余价值率大于利润率"
+      },
+      {
+        "key": "C",
+        "text": "剩余价值率小于利润率"
+      },
+      {
+        "key": "D",
+        "text": "剩余价值率与利润率成反比"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2019-2020",
+    "number": 22,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 2,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "剩余价值率为m/v，利润率为m/(c+v)，存在不变资本时前者大于后者。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201923,
+    "type": "single",
+    "question": "农产品的社会生产价格由()",
+    "options": [
+      {
+        "key": "A",
+        "text": "优等地的生产条件决定"
+      },
+      {
+        "key": "B",
+        "text": "中等地的生产条件决定"
+      },
+      {
+        "key": "C",
+        "text": "劣等地的生产条件决定"
+      },
+      {
+        "key": "D",
+        "text": "各类土地的平均生产条件决定"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "year": "2019-2020",
+    "number": 23,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 3,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "为满足社会需求，劣等地也要耕种，农业社会生产价格以劣等地条件为基础。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201924,
+    "type": "single",
+    "question": "处于垄断地位的大银行在当代资本主义社会中的地位表现在()",
+    "options": [
+      {
+        "key": "A",
+        "text": "它已掌控了所有银行业务"
+      },
+      {
+        "key": "B",
+        "text": "它已成为社会经济生活中的万能垄断者"
+      },
+      {
+        "key": "C",
+        "text": "它已控制了整个国民经济"
+      },
+      {
+        "key": "D",
+        "text": "它已掌握了国民经济的命脉"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2019-2020",
+    "number": 24,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 3,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "垄断大银行由普通中介变成支配经济联系的“万能垄断者”。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201925,
+    "type": "single",
+    "question": "从作用上看，国家垄断资本主义对国民经济的调节和管理()",
+    "options": [
+      {
+        "key": "A",
+        "text": "维护了全社会的利益"
+      },
+      {
+        "key": "B",
+        "text": "维护了全体资本家的利益"
+      },
+      {
+        "key": "C",
+        "text": "维护了垄断资产阶级的整体利益"
+      },
+      {
+        "key": "D",
+        "text": "维护了全体私有者的利益"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "year": "2019-2020",
+    "number": 25,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 3,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "国家垄断资本主义的调节最终服务于垄断资产阶级整体利益。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201926,
+    "type": "single",
+    "question": "从性质上看，发达资本主义国家对发展中国家的“经济援助”是()",
+    "options": [
+      {
+        "key": "A",
+        "text": "帮助发展中国家克服经济困难的一种方式"
+      },
+      {
+        "key": "B",
+        "text": "新殖民主义的一种方式"
+      },
+      {
+        "key": "C",
+        "text": "扼杀发展中国家经济发展的手段"
+      },
+      {
+        "key": "D",
+        "text": "促进发展中国家经济独立的工具"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2019-2020",
+    "number": 26,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 3,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "按本题政治经济学语境，附带控制条件的经济援助属于新殖民主义方式。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201927,
+    "type": "single",
+    "question": "当代资本主义国家在经济关系方面的一系列新变化表明()",
+    "options": [
+      {
+        "key": "A",
+        "text": "其社会性质已经根本改变"
+      },
+      {
+        "key": "B",
+        "text": "其基本矛盾已经彻底解决"
+      },
+      {
+        "key": "C",
+        "text": "其阶级对立已经消失"
+      },
+      {
+        "key": "D",
+        "text": "其社会性质发生了部分质变"
       }
     ],
     "answer": [
       "D"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 27,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 3,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "本题沿用旧教材的题目口径，建议与任课教师答案核对。",
+    "explanation": "本题旧教材用“部分质变”描述经济关系的局部调整；这不表示资本主义根本性质或基本矛盾消失。",
+    "answerStatus": "reference",
+    "references": []
   },
   {
-    "id": 85,
+    "id": 201928,
     "type": "single",
-    "question": "Spring 中常用的依赖注入注解是？",
+    "question": "无产阶级革命的发生归根结底是由()",
     "options": [
       {
         "key": "A",
-        "text": "@MapperScan"
+        "text": "生产力发展水平决定的"
       },
       {
         "key": "B",
-        "text": "@RequestMapping"
+        "text": "生产关系的性质决定的"
       },
       {
         "key": "C",
-        "text": "@Select"
+        "text": "被统治阶级的意愿决定的"
       },
       {
         "key": "D",
-        "text": "@Autowired"
+        "text": "统治阶级的倒行逆施决定的"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "year": "2019-2020",
+    "number": 28,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 3,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "革命的根本原因要从生产力与生产关系的矛盾运动中理解，最终取决于生产力发展。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201929,
+    "type": "single",
+    "question": "马克思主义政党产生的条件是()",
+    "options": [
+      {
+        "key": "A",
+        "text": "马克思主义理论的诞生"
+      },
+      {
+        "key": "B",
+        "text": "工人运动的发展"
+      },
+      {
+        "key": "C",
+        "text": "马克思主义理论的传播"
+      },
+      {
+        "key": "D",
+        "text": "马克思主义与工人运动相结合"
       }
     ],
     "answer": [
       "D"
     ],
-    "knowledge": "Vue / Spring Boot / MyBatis"
+    "year": "2019-2020",
+    "number": 29,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 3,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "马克思主义政党是马克思主义理论与工人运动相结合的产物。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201930,
+    "type": "single",
+    "question": "社会主义社会和共产主义社会都存在的经济关系是()",
+    "options": [
+      {
+        "key": "A",
+        "text": "生产资料的社会公有制"
+      },
+      {
+        "key": "B",
+        "text": "按劳分配"
+      },
+      {
+        "key": "C",
+        "text": "按需分配"
+      },
+      {
+        "key": "D",
+        "text": "市场经济体制"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "year": "2019-2020",
+    "number": 30,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 3,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "两个阶段均以生产资料社会公有制为基础，个人消费品分配方式有所区别。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201931,
+    "type": "multiple",
+    "question": "中国共产党十一届三中全会以来，马克思主义中国化的理论成果有()",
+    "options": [
+      {
+        "key": "A",
+        "text": "毛泽东思想"
+      },
+      {
+        "key": "B",
+        "text": "邓小平理论"
+      },
+      {
+        "key": "C",
+        "text": "“三个代表”重要思想"
+      },
+      {
+        "key": "D",
+        "text": "科学发展观"
+      }
+    ],
+    "answer": [
+      "B",
+      "C",
+      "D"
+    ],
+    "year": "2019-2020",
+    "number": 31,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 3,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "题目列出的选项中，邓小平理论、“三个代表”重要思想和科学发展观形成于十一届三中全会之后。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201932,
+    "type": "multiple",
+    "question": "下列各项体现矛盾双方相互依存或相互转化的有()",
+    "options": [
+      {
+        "key": "A",
+        "text": "祸兮福所倚，福兮祸所伏"
+      },
+      {
+        "key": "B",
+        "text": "安而不忘危，治而不忘乱"
+      },
+      {
+        "key": "C",
+        "text": "乐极生悲，苦尽甘来"
+      },
+      {
+        "key": "D",
+        "text": "城门失火，殃及池鱼"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "year": "2019-2020",
+    "number": 32,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 3,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "祸福、安危、苦乐体现矛盾双方依存或转化；城门失火殃及池鱼体现事物联系。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201933,
+    "type": "multiple",
+    "question": "感性认识的基本形式有()",
+    "options": [
+      {
+        "key": "A",
+        "text": "感觉"
+      },
+      {
+        "key": "B",
+        "text": "知觉"
+      },
+      {
+        "key": "C",
+        "text": "概念"
+      },
+      {
+        "key": "D",
+        "text": "表象"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "D"
+    ],
+    "year": "2019-2020",
+    "number": 33,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 4,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "感性认识包括感觉、知觉、表象；概念属于理性认识。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201934,
+    "type": "multiple",
+    "question": "下列各项属于观念上层建筑的有()",
+    "options": [
+      {
+        "key": "A",
+        "text": "军队和法庭"
+      },
+      {
+        "key": "B",
+        "text": "哲学和宗教"
+      },
+      {
+        "key": "C",
+        "text": "艺术和道德"
+      },
+      {
+        "key": "D",
+        "text": "逻辑学和语言学"
+      }
+    ],
+    "answer": [
+      "B",
+      "C"
+    ],
+    "year": "2019-2020",
+    "number": 34,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 4,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "哲学、宗教、艺术、道德属于观念上层建筑；军队和法庭属于政治上层建筑。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201935,
+    "type": "multiple",
+    "question": "下列各项正确表述可变资本含义的有()",
+    "options": [
+      {
+        "key": "A",
+        "text": "可变资本是以生产资料形式存在的资本"
+      },
+      {
+        "key": "B",
+        "text": "可变资本是以劳动力形式存在的资本"
+      },
+      {
+        "key": "C",
+        "text": "可变资本是在生产过程中发生价值增殖的那部分资本"
+      },
+      {
+        "key": "D",
+        "text": "可变资本是在生产过程中发生价值转移的那部分资本"
+      }
+    ],
+    "answer": [
+      "B",
+      "C"
+    ],
+    "year": "2019-2020",
+    "number": 35,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 4,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "可变资本用于购买劳动力，劳动创造超过劳动力价值的新价值。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201936,
+    "type": "multiple",
+    "question": "产业资本循环的职能形式有()",
+    "options": [
+      {
+        "key": "A",
+        "text": "货币资本"
+      },
+      {
+        "key": "B",
+        "text": "流通资本"
+      },
+      {
+        "key": "C",
+        "text": "生产资本"
+      },
+      {
+        "key": "D",
+        "text": "商品资本"
+      }
+    ],
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "year": "2019-2020",
+    "number": 36,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 4,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "产业资本依次采取货币资本、生产资本、商品资本三种职能形式。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201937,
+    "type": "multiple",
+    "question": "商业资本的作用有()",
+    "options": [
+      {
+        "key": "A",
+        "text": "促进产业资本家提高经济效益"
+      },
+      {
+        "key": "B",
+        "text": "帮助产业资本家节省流通费用"
+      },
+      {
+        "key": "C",
+        "text": "加速产业资本的周转"
+      },
+      {
+        "key": "D",
+        "text": "缩短流通时间"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "year": "2019-2020",
+    "number": 37,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 4,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "商业资本专门承担商品流通职能，有助于节约流通费用、缩短流通时间并加速周转。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201938,
+    "type": "multiple",
+    "question": "发达市场经济国家调控货币量的主要手段有()",
+    "options": [
+      {
+        "key": "A",
+        "text": "公开市场业务"
+      },
+      {
+        "key": "B",
+        "text": "最低准备金率政策"
+      },
+      {
+        "key": "C",
+        "text": "再贴现利率政策"
+      },
+      {
+        "key": "D",
+        "text": "利率政策"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C"
+    ],
+    "year": "2019-2020",
+    "number": 38,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 4,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "本题沿用旧教材的题目口径，建议与任课教师答案核对。",
+    "explanation": "本题采用教材列举的三项主要工具：公开市场业务、准备金率、再贴现率；一般利率政策与其相关，但不作为本题独立第四项。",
+    "answerStatus": "reference",
+    "references": [
+      {
+        "title": "调控货币量的三项主要方法",
+        "url": "https://www.hqwx.com/gjzk-kaoshi/tiku/zhishidian/5897/3063843.html"
+      }
+    ]
+  },
+  {
+    "id": 201939,
+    "type": "multiple",
+    "question": "从人员构成上看，马克思主义政党()",
+    "options": [
+      {
+        "key": "A",
+        "text": "由工人阶级的先进分子组成"
+      },
+      {
+        "key": "B",
+        "text": "由工人阶级的全体成员组成"
+      },
+      {
+        "key": "C",
+        "text": "有其他阶级的先进分子加入"
+      },
+      {
+        "key": "D",
+        "text": "有其他阶层的先进分子加入"
+      }
+    ],
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "year": "2019-2020",
+    "number": 39,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 4,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "马克思主义政党以工人阶级先进分子为基础，也吸收其他阶级和阶层的先进分子。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 201940,
+    "type": "multiple",
+    "question": "共产主义社会经济上的特征主要有()",
+    "options": [
+      {
+        "key": "A",
+        "text": "生产资料的单一社会公有制"
+      },
+      {
+        "key": "B",
+        "text": "对社会经济的计划管理与调节"
+      },
+      {
+        "key": "C",
+        "text": "个人消费品实行按需分配"
+      },
+      {
+        "key": "D",
+        "text": "生产力极大提高、物质财富极大丰富"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "year": "2019-2020",
+    "number": 40,
+    "source": "西南石油大学《马克思主义基本原理》2019-2020学年期末考试卷.pdf",
+    "page": 4,
+    "sourceHash": "0c885ed66dbfbdee9c81d6cf722161d0a9b3939c391654f0cca508cee1c8fbd9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "本题所列公有制、计划管理、按需分配及生产力高度发展，均属于其教材中的共产主义经济特征。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202101,
+    "type": "single",
+    "question": "单位商品价值量与劳动生产率的关系是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "二者成正比"
+      },
+      {
+        "key": "B",
+        "text": "二者成反比"
+      },
+      {
+        "key": "C",
+        "text": "二者总按相同比例变化"
+      },
+      {
+        "key": "D",
+        "text": "二者总按不同比例变化"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2021-2022",
+    "number": 1,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 1,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "单位商品价值量与社会劳动生产率成反比；这里的劳动生产率按社会劳动生产率理解。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202102,
+    "type": "single",
+    "question": "资本积累的源泉是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "剩余劳动"
+      },
+      {
+        "key": "B",
+        "text": "可变资本"
+      },
+      {
+        "key": "C",
+        "text": "资本积累"
+      },
+      {
+        "key": "D",
+        "text": "剩余价值"
+      }
+    ],
+    "answer": [
+      "D"
+    ],
+    "year": "2021-2022",
+    "number": 2,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 1,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "资本积累是剩余价值的资本化，源泉是剩余价值。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202103,
+    "type": "single",
+    "question": "政治经济学中的金融资本指的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "超大型、垄断性的银行资本"
+      },
+      {
+        "key": "B",
+        "text": "在银行保险证券投资等金融领域活动的资本"
+      },
+      {
+        "key": "C",
+        "text": "垄断的工业资本与垄断的银行资本融合形成的资本"
+      },
+      {
+        "key": "D",
+        "text": "资本主义国家中央银行和商业银行资本的总和"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "year": "2021-2022",
+    "number": 3,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 1,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "金融资本是垄断工业资本与垄断银行资本融合形成的资本。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202104,
+    "type": "single",
+    "question": "无产阶级专政的最终目标是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "消灭资产阶级"
+      },
+      {
+        "key": "B",
+        "text": "建立社会主义制度"
+      },
+      {
+        "key": "C",
+        "text": "取得国家政权"
+      },
+      {
+        "key": "D",
+        "text": "消灭剥削、消灭阶级，进入无阶级社会"
+      }
+    ],
+    "answer": [
+      "D"
+    ],
+    "year": "2021-2022",
+    "number": 4,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 1,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "无产阶级专政的最终目标是消灭剥削和阶级，走向无阶级社会。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202105,
+    "type": "single",
+    "question": "实现人的自由而全面的发展，是共产主义社会的根本特征。共产主义社会中人的自由发展不包括（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "建立在个体高度自由自觉基础上的发展"
+      },
+      {
+        "key": "B",
+        "text": "实现了人的“自由个性”的发展"
+      },
+      {
+        "key": "C",
+        "text": "摆脱了对“人的依赖关系”和对“物的依赖关系”"
+      },
+      {
+        "key": "D",
+        "text": "随心所欲、不受任何限制的发展"
+      }
+    ],
+    "answer": [
+      "D"
+    ],
+    "year": "2021-2022",
+    "number": 5,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "自由发展并非随心所欲，它建立在认识和利用客观规律的基础上。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202106,
+    "type": "single",
+    "question": "作为马克思主义产生的阶级基础的19世纪三大工人起义不包括（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "1871年法国巴黎公社运动"
+      },
+      {
+        "key": "B",
+        "text": "1831年和1834年法国里昂工人两次起义"
+      },
+      {
+        "key": "C",
+        "text": "1836年在英国爆发的延续十余年的宪章运动"
+      },
+      {
+        "key": "D",
+        "text": "1844年德国西里西亚纺织工人起义"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "year": "2021-2022",
+    "number": 6,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "马克思主义形成之前的三大工人运动包括里昂起义、宪章运动和西里西亚起义；巴黎公社发生于1871年。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202107,
+    "type": "single",
+    "question": "中国古代哲学家荀子说：“心不使焉，则白黑在前而目不见，雷鼓在侧而耳不闻”。这段话表明意识具有（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "客观性"
+      },
+      {
+        "key": "B",
+        "text": "能动性"
+      },
+      {
+        "key": "C",
+        "text": "对象性"
+      },
+      {
+        "key": "D",
+        "text": "任意性"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2021-2022",
+    "number": 7,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "注意、意识活动影响感知，体现意识的能动性。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202108,
+    "type": "single",
+    "question": "对传统文化的批判继承态度依据的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "辩证唯物主义真理观"
+      },
+      {
+        "key": "B",
+        "text": "辩证否定的原理"
+      },
+      {
+        "key": "C",
+        "text": "历史唯物主义群众观"
+      },
+      {
+        "key": "D",
+        "text": "对立统一的原理"
+      }
+    ],
+    "answer": [
+      "B"
+    ],
+    "year": "2021-2022",
+    "number": 8,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "辩证否定是扬弃，既克服又保留，是批判继承的理论依据。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202109,
+    "type": "single",
+    "question": "对马克思主义既要坚持，又要发展。这种正确态度的理论基础是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "认识是主体对客体的能动反映"
+      },
+      {
+        "key": "B",
+        "text": "实践是认识的来源和目的"
+      },
+      {
+        "key": "C",
+        "text": "真理是绝对性和相对性的统一"
+      },
+      {
+        "key": "D",
+        "text": "能动的反映是摹写和创造的统一"
+      }
+    ],
+    "answer": [
+      "C"
+    ],
+    "year": "2021-2022",
+    "number": 9,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "真理的绝对性要求坚持，相对性要求随实践发展而丰富和发展。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202110,
+    "type": "single",
+    "question": "马克思主义认为，社会形态的发展是一个自然历史过程。下列对此观点的理解正确的是（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "社会形态的发展具有客观规律性"
+      },
+      {
+        "key": "B",
+        "text": "社会形态的发展受自然规律的支配"
+      },
+      {
+        "key": "C",
+        "text": "社会形态的发展是一个纯粹自发的过程"
+      },
+      {
+        "key": "D",
+        "text": "社会形态的发展不受人类思想和行为的影响"
+      }
+    ],
+    "answer": [
+      "A"
+    ],
+    "year": "2021-2022",
+    "number": 10,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 2,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "自然历史过程强调社会形态发展有客观规律，不是否认人的活动。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202111,
+    "type": "multiple",
+    "question": "社会存在是社会生活的物质方面，主要包括物质生产方式、自然地理环境和人口因素。生产方式（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "是劳动者和劳动资料结合的特殊方式"
+      },
+      {
+        "key": "B",
+        "text": "是社会历史发展的决定力量"
+      },
+      {
+        "key": "C",
+        "text": "是经济基础与上层建筑的统一"
+      },
+      {
+        "key": "D",
+        "text": "集中地体现了人类社会的物质性"
+      }
+    ],
+    "answer": [
+      "B",
+      "D"
+    ],
+    "year": "2021-2022",
+    "number": 11,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 3,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "生产方式是生产力与生产关系的统一，是社会发展的决定力量，体现社会的物质性。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202112,
+    "type": "multiple",
+    "question": "商品的价值和使用价值是对立统一的关系，表现在（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "使用价值是价值的物质承担者"
+      },
+      {
+        "key": "B",
+        "text": "价值寓于使用价值之中"
+      },
+      {
+        "key": "C",
+        "text": "有价值的一定有使用价值"
+      },
+      {
+        "key": "D",
+        "text": "二者互相排斥，不可兼得"
+      }
+    ],
+    "answer": [
+      "A",
+      "B",
+      "C",
+      "D"
+    ],
+    "year": "2021-2022",
+    "number": 12,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 3,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "使用价值承载价值；商品所有者通过交换实现价值而让渡使用价值，体现二者对立统一。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202113,
+    "type": "multiple",
+    "question": "意识和物质的对立只是在非常有限的范围内才有绝对的意义，超出这个范围，其对立便是相对的。这是因为（）。",
+    "options": [
+      {
+        "key": "A",
+        "text": "意识根源于物质"
+      },
+      {
+        "key": "B",
+        "text": "意识是物质的固有属性和存在方式"
+      },
+      {
+        "key": "C",
+        "text": "意识是物质的反映"
+      },
+      {
+        "key": "D",
+        "text": "意识可以转化为物质"
+      }
+    ],
+    "answer": [
+      "A",
+      "C",
+      "D"
+    ],
+    "year": "2021-2022",
+    "number": 13,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 3,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "意识由物质产生并反映物质，也能通过实践转化为物质力量；运动才是物质的根本属性和存在方式。",
+    "answerStatus": "reference",
+    "references": []
+  },
+  {
+    "id": 202114,
+    "type": "multiple",
+    "question": "马克思主义认识论与唯心主义认识论的区别在于是否承认()。",
+    "options": [
+      {
+        "key": "A",
+        "text": "世界的可知性"
+      },
+      {
+        "key": "B",
+        "text": "认识是主体对客体的反映"
+      },
+      {
+        "key": "C",
+        "text": "认识起源于经验"
+      },
+      {
+        "key": "D",
+        "text": "社会实践是认识的基础"
+      }
+    ],
+    "answer": [
+      "B",
+      "D"
+    ],
+    "year": "2021-2022",
+    "number": 14,
+    "source": "西南石油大学《马克思主义基本原理》2021-2022学年第一学期期末试卷(1).pdf",
+    "page": 3,
+    "sourceHash": "3044895e69870a413a47d0b7d62af6734932bc6dede76afa58283ccd097c6ff9",
+    "answerSource": "AI整理参考答案，非原卷标准答案",
+    "note": "",
+    "explanation": "关键在于坚持认识是主体对客体的反映，并以社会实践为基础；可知性和经验说不是唯物主义所独有。",
+    "answerStatus": "reference",
+    "references": [
+      {
+        "title": "认识论区别与联系",
+        "url": "https://yz.chsi.com.cn/kyzx/politics/200806/20080606/7191107.html"
+      }
+    ]
   }
 ]

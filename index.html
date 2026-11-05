@@ -1,56 +1,28 @@
 <!doctype html>
 <html lang="zh-CN">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#1f6f55" />
-    <title>Web 开发实践刷题</title>
-    <link rel="manifest" href="manifest.json" />
-    <link rel="icon" href="icon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main class="app">
-      <header class="topbar">
-        <div>
-          <h1>Web 开发实践刷题</h1>
-          <p id="statusText">正在加载题库</p>
-        </div>
-        <button id="restartBtn" class="ghost-button" type="button">重新开始</button>
-      </header>
-
-      <section class="mode-row" aria-label="刷题模式">
-        <button id="sequenceBtn" class="mode-button active" type="button">顺序刷题</button>
-        <button id="randomBtn" class="mode-button" type="button">随机刷题</button>
-        <button id="wrongBookBtn" class="mode-button" type="button">错题本（0）</button>
-        <button id="reshuffleBtn" class="ghost-button" type="button">重新洗牌</button>
-      </section>
-
-      <section id="quizPanel" class="quiz-panel" hidden>
-        <div class="meta-row">
-          <span id="progressText">第 1 / 1 题</span>
-          <span id="typeText">单选题</span>
-        </div>
-
-        <h2 id="questionText"></h2>
-
-        <div id="questionMedia" class="question-media" hidden></div>
-
-        <div id="optionsList" class="options-list"></div>
-
-        <button id="submitBtn" class="primary-button" type="button" hidden>提交答案</button>
-
-        <p id="resultText" class="result-text" aria-live="polite"></p>
-
-        <button id="nextBtn" class="primary-button" type="button" disabled>下一题</button>
-      </section>
-
-      <section id="emptyPanel" class="empty-panel" hidden>
-        <h2 id="emptyTitle">题库加载失败</h2>
-        <p id="emptyText">请先运行 node scripts/convert-docx-questions.js 生成 questions.json。</p>
-      </section>
-    </main>
-
-    <script src="app.js" defer></script>
-  </body>
-</html>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#4655ad"><meta name="description" content="马原历年选择题练习，按年份刷题、查看参考解析、复习错题。"><title>马原 · 真题练习</title><link rel="icon" href="./icon.svg"><link rel="manifest" href="./manifest.json"><link rel="stylesheet" href="./style.css"><script src="./app.js" defer></script></head>
+<body>
+<a href="#questionText" class="skip-link">跳到题目</a>
+<header class="topbar"><a class="brand" href="./"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h7v15H4zM13 5h7v15h-7M7 9h1M16 9h1M7 13h1M16 13h1"/></svg></span><span>马原<span class="brand-separator">/</span><span class="brand-sub">真题练习</span></span></a><details class="file-menu"><summary>题库文件 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 10 4 4 4-4"/></svg></summary><div class="file-actions"><button id="importBtn">导入题库</button><button id="exportBtn" disabled>导出当前题库</button><button id="defaultBtn" hidden>使用内置题库</button><p>JSON 格式 · 仅保存在此浏览器</p></div></details><input id="importFile" type="file" accept=".json,application/json" hidden></header>
+<div id="notice" role="status" hidden></div>
+<div class="layout">
+<aside class="sidebar" aria-label="练习设置"><div class="sidebar-title">我的练习</div><nav class="mode-nav" aria-label="练习方式">
+<button data-mode="sequence" class="nav-button active"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6h.01M4 12h.01M4 18h.01"/></svg>顺序练习</button>
+<button data-mode="random" class="nav-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h3c5 0 7 12 12 12h3m-4-4 4 4-4 4M3 18h3c2 0 3-2 4-4m4-4c1-2 2-4 4-4h3m-4-4 4 4-4 4"/></svg>随机练习</button>
+<button data-mode="wrong" class="nav-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM9 8l6 6m0-6-6 6"/></svg>错题本 <span id="wrongCount" class="count">0</span></button>
+<button data-mode="starred" class="nav-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>我的收藏 <span id="starCount" class="count">0</span></button></nav>
+<div class="year-section"><label class="sidebar-title" for="yearSelect">试卷年份</label><select id="yearSelect"><option value="all">全部年份</option></select><div id="yearList" class="year-list"></div></div>
+<div class="sidebar-note"><span class="save-dot"></span><span id="saveStatus">进度自动保存在此浏览器</span></div></aside>
+<main class="workspace"><div class="workspace-heading"><div><h1 id="modeTitle">顺序练习</h1><p id="bankSummary">正在读取历年试卷…</p></div><button id="restartBtn" class="quiet-button" disabled>再练本组</button></div>
+<div class="toolbar"><div class="type-filter" role="group" aria-label="筛选题型"><button data-type="all" class="active">全部题型</button><button data-type="single">单选</button><button data-type="multiple">多选</button></div><label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="searchInput" type="search" placeholder="搜索题目" aria-label="搜索题目" autocomplete="off"></label></div>
+<div class="study-layout"><div class="study-column">
+<section id="quizPanel" class="quiz-panel" hidden aria-label="答题区域">
+<div class="question-meta"><span id="typeText" class="type-tag"></span><span id="sourceText"></span><button id="starBtn" class="star-button" aria-pressed="false" aria-label="收藏本题"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span>收藏</span></button></div>
+<div class="question-heading"><span id="questionNumber" aria-hidden="true"></span><h2 id="questionText" tabindex="-1"></h2></div><p id="selectHint" class="select-hint"></p><div id="optionsList" class="options-list" role="group" aria-label="答案选项"></div>
+<section id="feedback" class="feedback" hidden aria-live="polite"><strong id="resultText"></strong><p id="answerText"></p><p id="explanationText"></p><p id="questionNote" class="question-note" hidden></p><div id="referenceLinks"></div><small id="answerSource"></small></section>
+<div class="quiz-actions"><button id="prevBtn" class="secondary-button">上一题</button><span id="progressText"></span><button id="submitBtn" class="primary-button" disabled>提交答案</button><button id="nextBtn" class="primary-button" hidden>下一题 →</button></div></section>
+<section id="emptyPanel" class="empty-panel" aria-live="polite"><h2 id="emptyTitle">正在准备题库</h2><p id="emptyText">稍等片刻，马上开始。</p><button id="emptyAction" class="primary-button" hidden>返回全部题目</button></section>
+<p class="source-note">题目摘自历年试卷。参考答案与解析由 AI 整理，非学校标准答案；请以任课教师答案为准。</p><p class="keyboard-note">键盘 <kbd>A</kbd>–<kbd>D</kbd> 选择 · <kbd>Enter</kbd> 提交 / 下一题</p></div>
+<aside class="answer-sheet" aria-label="答题卡"><div class="sheet-heading"><h2>答题卡</h2><span id="sheetTotal">0 题</span></div><div class="progress-track"><span id="progressBar"></span></div><p id="completionText">尚未开始</p><div class="sheet-legend"><span><i class="correct"></i>答对</span><span><i class="wrong"></i>待巩固</span><span><i></i>未答</span></div><div id="questionGrid" class="question-grid"></div><div class="session-summary" id="sessionSummary">每天一点，把知识记牢。</div></aside></div>
+<footer><span>马克思主义基本原理</span><span>专注这一题，就很好。</span></footer></main></div>
+</body></html>

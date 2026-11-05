@@ -1,4 +1,4 @@
-const CACHE_NAME = "quiz-pwa-v4";
+const CACHE_NAME = "mayuan-quiz-v1";
 const APP_FILES = [
   "./index.html",
   "./style.css",
@@ -26,7 +26,7 @@ self.addEventListener("activate", (event) => {
     caches
       .keys()
       .then((keys) =>
-        Promise.all(keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key)))
+        Promise.all(keys.filter((key) => (key.startsWith("quiz-pwa-") || key.startsWith("mayuan-quiz-")) && key !== CACHE_NAME).map((key) => caches.delete(key)))
       )
       .then(() => self.clients.claim())
   );

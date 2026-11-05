@@ -1,12 +1,12 @@
 {
-  "name": "Web 开发实践刷题",
-  "short_name": "Web 刷题",
-  "description": "离线可用的 Web 开发实践移动端刷题网页",
+  "name": "马原 · 真题练习",
+  "short_name": "马原刷题",
+  "description": "马原历年选择题与错题复习",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f7f5ef",
-  "theme_color": "#1f6f55",
+  "background_color": "#f5f6fa",
+  "theme_color": "#4655ad",
   "icons": [
     {
       "src": "./icon.svg",

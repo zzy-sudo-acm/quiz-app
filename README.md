@@ -1,73 +1,76 @@
-# Web 开发实践刷题网页
+# 马原 · 真题练习
 
-这是一个只使用静态 HTML/CSS/JavaScript 的移动端刷题网页，可部署到 GitHub Pages，也可作为 PWA 近似离线使用。题库来自 `web开发实践选择题.docx`。
+静态 HTML/CSS/JavaScript 网站，部署于 GitHub Pages，无服务器后端。题库、错题、收藏和进度保存在浏览器本地，不跨设备同步。
 
-## 文件
+## 题库
 
-- `index.html`：页面入口
-- `style.css`：移动端优先样式
-- `app.js`：顺序/随机/错题本、判题、`localStorage` 进度保存
-- `questions.json`：前端直接读取的静态题库
-- `web开发实践选择题.docx`：当前题库源文件
-- `web开发实践选择题-答案核对.md`：缺答案题目的补全答案核对表
-- `scripts/convert-docx-questions.js`：把 Word 转成静态题库的开发脚本
-- `convert-report.md`：转换统计和答案来源说明
-- `manifest.json`：PWA 应用清单
-- `service-worker.js`：离线缓存核心文件
-- `icon.svg`：PWA 图标
+内置 104 道历年选择题：85 道单选、19 道多选。
 
-## 当前题库统计
+| 学年 | 单选 | 多选 |
+|---|---:|---:|
+| 2016–2017 | 10 | 0 |
+| 2017–2018 | 25 | 0 |
+| 2018–2019 | 10 | 5 |
+| 2019–2020 | 30 | 10 |
+| 2021–2022 | 10 | 4 |
 
-- 导入题目：85 道
-- 单选题：85 道
-- 需要人工审题补全答案：35 道
-- 从 Word 原文读取正确答案：50 道
+来自用户提供的西南石油大学历年试卷。扫描版与文字版的重复试卷不重复计入，不同年份重复考查的题目保留。原卷未附标准答案，答案与解析为 AI 整理参考，非学校标准答案。每题保留年份、原题号、页码、来源文件名与哈希。2019–2020 第27、38题沿用旧教材口径，页面有特别提示。
 
-详见 `convert-report.md`。
+## 使用
 
-## 重新转换 Word 题库
+- 顺序练习、随机练习、错题本、收藏。
+- 按年份、题型筛选，按题干及选项文字搜索。
+- 单选和多选均先选择，再提交；多选必须全部选对。
+- 错题重新答对后自动移出；答题卡可直接跳转。
+- “再练本组”只重置本轮，保留错题与收藏。
+- 右上角“题库文件”可导入或导出 JSON。导入验证失败时保持当前题库。
+- 当前题库及答题进度刷新后保留；清除浏览器站点数据会清除它们。
+- 键盘 A–H 选项，题干或选项聚焦时 Enter 提交。按钮也可用 Tab/Enter 操作。
 
-转换脚本不需要额外 npm 依赖，直接用 Node.js 运行：
+## 本地运行
 
-```bash
-node scripts/convert-docx-questions.js
+```sh
+python -m http.server 8765 --bind 127.0.0.1
 ```
 
-也可以指定 Word 路径：
+访问 http://127.0.0.1:8765/ 。不要直接双击 index.html，浏览器会限制本地文件读取。
 
-```bash
-node scripts/convert-docx-questions.js "C:\path\to\web开发实践选择题.docx"
+## 导入格式
+
+兼容原项目 questions.json 数组结构，也接受包含 questions 数组的对象。
+
+```json
+[
+  {
+    "id": 201601,
+    "type": "single",
+    "question": "题干",
+    "options": [
+      {"key": "A", "text": "选项 A"},
+      {"key": "B", "text": "选项 B"}
+    ],
+    "answer": ["A"],
+    "year": "2016-2017",
+    "number": 1,
+    "page": 1,
+    "source": "原始试卷.pdf",
+    "answerSource": "参考答案来源",
+    "explanation": "解析"
+  }
+]
 ```
 
-脚本会生成或覆盖：
+id 为唯一正整数；type 为 single 或 multiple；每题 2–8 个 A–H 选项；答案必须对应选项。单选有一个答案，多选至少两个。文件最大 10 MB、最多10000题。附加的 note、references 等字段可选。正文作为纯文本显示。
 
-- `questions.json`
-- `convert-report.md`
+## 验证
 
-## 本地预览
-
-```bash
-python -m http.server 8000
-```
-
-然后打开：
-
-```text
-http://localhost:8000/
+```sh
+node scripts/verify-bank.cjs
+node --check app.js
 ```
 
 ## GitHub Pages
 
-仓库地址：
+沿用仓库的 main 分支根目录部署，无需安装依赖或构建。站点文件为 index.html、style.css、app.js、questions.json、manifest.json、icon.svg、service-worker.js。PWA 在首次成功联网加载后缓存页面和题库；更新后刷新页面取得新版资源。
 
-```text
-https://github.com/zzy-sudo-acm/quiz-app
-```
-
-线上地址：
-
-```text
-https://zzy-sudo-acm.github.io/quiz-app/
-```
-
-推送到 `main` 分支后，如果 GitHub Pages 配置为 `main` 分支 `/root`，页面会自动更新。首次打开新版本后，service worker 会更新到 `quiz-pwa-v4` 并刷新缓存；如果手机端仍显示旧题库，联网刷新一次页面即可。
+旧 Web 开发原始文档与转换脚本保留于仓库历史/现有辅助文件中，网站仅加载新的马原 questions.json。
