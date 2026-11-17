@@ -1,4 +1,4 @@
-const CACHE_NAME = "quiz-book-v1";
+const CACHE_NAME = "quiz-book-v3";
 const APP_FILES = [
   "./index.html",
   "./style.css",
@@ -7,7 +7,6 @@ const APP_FILES = [
   "./cloud-questions.json",
   "./manifest.json",
   "./icon.svg",
-  "./assets/source-sans-3-latin.woff2",
 ];
 
 function cacheUrl(path) {

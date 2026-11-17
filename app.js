@@ -2,19 +2,21 @@
 const IMPORT_KEY = "mayuan_import_v1";
 const BANK_KEY = "quiz_selected_bank";
 const $ = (id) => document.getElementById(id);
-const modes = ["sequence", "random", "wrong", "starred"];
+const modeNames = {sequence: "顺序练习", random: "随机练习", wrong: "错题本", starred: "我的收藏"};
 const banks = {
   cloud: {
     file: "./cloud-questions.json",
+    name: "云计算",
     title: "云计算选择题",
     source: "题目来自《学习通选择题》。参考答案根据课程资料推导。云计算基础第 6 题有歧义，作答后不计分。",
   },
   mayuan: {
     file: "./questions.json",
+    name: "马原",
     title: "马原历年选择题",
     source: "题目摘自历年试卷，答案为整理后的参考答案。请以任课教师给出的答案为准。",
   },
-  imported: {title: "我的题库", source: ""},
+  imported: {name: "我的题库", title: "我的题库", source: ""},
 };
 let questions = [], byId = new Map(), state, storageKey = "", activeBank = "cloud";
 let importedBank;
@@ -96,7 +98,7 @@ function activate(bank, bankId) {
   if(validOrder) {
     for(const key of ["round","drafts","history"]) if(saved[key] && typeof saved[key]==="object" && !Array.isArray(saved[key])) state[key]=saved[key];
     for(const key of ["wrong","starred"]) if(Array.isArray(saved[key])) state[key]=[...new Set(saved[key].filter(id=>byId.has(id)))];
-    state.mode=modes.includes(saved.mode)?saved.mode:"sequence";
+    state.mode=Object.hasOwn(modeNames,saved.mode)?saved.mode:"sequence";
     state.type=["all","single","multiple"].includes(saved.type)?saved.type:"all";
     state.year=typeof saved.year==="string"?saved.year:"all";
     state.search=typeof saved.search==="string"?saved.search:"";
@@ -111,7 +113,8 @@ function activate(bank, bankId) {
   $("bankSelect").querySelector('[value="imported"]').hidden = !importedBank;
   $("bankSelect").value = activeBank;
   $("exportBtn").disabled=false;
-  $("bankTitle").textContent = banks[activeBank].title;
+  $("bankTitle").textContent = banks[activeBank].name;
+  $("footerBank").textContent = banks[activeBank].title;
   document.title = banks[activeBank].title + " | 刷题簿";
   $("sourceNote").textContent = banks[activeBank].source;
   $("sourceNote").hidden = !banks[activeBank].source;
@@ -130,11 +133,25 @@ function renderGroups() {
   }
   const label = activeBank === "cloud" ? "章节" : activeBank === "mayuan" ? "年份" : "分组";
   $("groupFilter").hidden = groups.size <= 1;
-  $("groupLabel").textContent = label;
+  $("groupLabel").textContent = activeBank === "mayuan" ? "试卷年份" : label;
   $("yearSelect").setAttribute("aria-label", label);
-  $("yearSelect").replaceChildren(new Option("全部" + label, "all"));
-  for (const [group, count] of groups) {
-    $("yearSelect").add(new Option(group + " (" + count + ")", group));
+  $("yearSelect").replaceChildren();
+  const yearList = $("yearList");
+  yearList.replaceChildren();
+  for (const [group, count] of [["all", questions.length], ...groups]) {
+    const name = group === "all" ? "全部" + label : group;
+    $("yearSelect").add(new Option(group === "all" ? name : name + " (" + count + ")", group));
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "year-button";
+    button.dataset.year = group;
+    const title = document.createElement("span");
+    const total = document.createElement("span");
+    title.textContent = name;
+    total.textContent = count;
+    button.append(title, total);
+    button.addEventListener("click", () => changeFilter("year", group));
+    yearList.append(button);
   }
   if (state.year === "all" || groups.has(state.year)) return true;
   state.year = "all";
@@ -168,11 +185,17 @@ function go(index){
   else $("emptyTitle").focus();
 }
 function render(){
+  $("modeTitle").textContent = modeNames[state.mode];
   const count = questions.length + " 题";
   $("bankSummary").textContent = activeBank === "cloud" ? "学习通题库 / " + count : count;
   document.querySelectorAll("[data-mode]").forEach(b=>{b.classList.toggle("active",b.dataset.mode===state.mode);b.setAttribute("aria-pressed",String(b.dataset.mode===state.mode));});
+  document.querySelectorAll("[data-type]").forEach(b=>{b.classList.toggle("active",b.dataset.type===state.type);b.setAttribute("aria-pressed",String(b.dataset.type===state.type));});
+  for (const button of $("yearList").children) {
+    const active = button.dataset.year === state.year;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
+  }
   $("yearSelect").value=state.year;
-  $("typeSelect").value=state.type;
   $("wrongCount").textContent=state.wrong.length;$("starCount").textContent=state.starred.length;
   $("restartBtn").disabled=!state.order.length;
   renderSheet();renderQuestion();
@@ -184,8 +207,9 @@ function renderSheet(){
   const correct=results.filter(result=>result.correct===true).length;
   $("sheetTotal").textContent=total+" 题";
   $("completionText").textContent="已完成 "+done+" / "+total+" 题";
-  $("progressBar").max = total || 1;
-  $("progressBar").value = done;
+  $("progressBar").style.width = (total ? done / total * 100 : 0) + "%";
+  $("sheetProgress").setAttribute("aria-valuemax", total || 1);
+  $("sheetProgress").setAttribute("aria-valuenow", done);
   $("sessionSummary").hidden = !scored;
   $("sessionSummary").textContent = scored ? "答对 " + correct + " / " + scored + " 题，正确率 " + Math.round(correct/scored*100) + "%" : "";
   $("ungradedLegend").hidden = scored === done;
@@ -199,7 +223,10 @@ function renderSheet(){
     b.textContent=i+1;
     b.className=kind;
     b.setAttribute("aria-label","第 "+(i+1)+" 题，"+status+"，"+groupFor(q));
-    if(i===state.index)b.setAttribute("aria-current","step");
+    if (i === state.index) {
+      b.classList.add("current");
+      b.setAttribute("aria-current", "step");
+    }
     b.addEventListener("click",()=>go(i));cells.append(b);
   });
   grid.replaceChildren(cells);
@@ -236,7 +263,7 @@ function renderQuestion(){
   $("sourceText").title=q.source||"";
   $("questionNumber").textContent=String(state.index+1).padStart(2,"0");
   $("questionText").textContent=q.question;
-  $("selectHint").hidden=q.type!=="multiple";
+  $("selectHint").textContent = q.type === "multiple" ? "请选择所有符合题意的选项，少选、多选均不算答对" : "选择一个答案，然后提交";
   const starred=state.starred.includes(q.id);
   $("starBtn").setAttribute("aria-pressed",String(starred));$("starBtn").setAttribute("aria-label",starred?"取消收藏本题":"收藏本题");
   $("starBtn").querySelector("span").textContent=starred?"已收藏":"收藏";
@@ -302,7 +329,7 @@ async function boot(){
   }catch(error){showEmpty("题库暂时无法加载","请检查网络后重试，也可以导入 JSON 题库。");$("emptyAction").textContent="重新加载";}
 }
 document.querySelectorAll("[data-mode]").forEach(b=>b.addEventListener("click",()=>{if(state)changeFilter("mode",b.dataset.mode);}));
-$("typeSelect").addEventListener("change",e=>{if(state)changeFilter("type",e.target.value);});
+document.querySelectorAll("[data-type]").forEach(b=>b.addEventListener("click",()=>{if(state)changeFilter("type",b.dataset.type);}));
 $("bankSelect").addEventListener("change",async e=>{
   try { await switchBank(e.target.value); notice(""); }
   catch { notice("题库加载失败，请检查网络后再试。",true); }
