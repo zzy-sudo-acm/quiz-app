@@ -28,4 +28,12 @@ assert.equal(vm.runInContext('equalAnswers(["B","A"],["A","B"])',context),true);
 assert.equal(vm.runInContext('equalAnswers(["A"],["A","B"])',context),false);
 assert.equal(vm.runInContext('new Set(shuffle(bank.map(q=>q.id))).size',context),104);
 assert.equal(vm.runInContext('fingerprint(bank)===fingerprint(validateBank(bank))',context),true);
-console.log('PASS: 104 questions, schema validation, malformed imports, answer grading, shuffle, stable fingerprint.');
+const cloud = JSON.parse(fs.readFileSync(path.join(root, 'cloud-questions.json'), 'utf8'));
+context.cloud = cloud;
+assert.equal(vm.runInContext('validateBank(cloud).length', context), 91);
+assert.deepEqual(cloud.filter(q => q.answer.length === 0).map(q => q.id), [6]);
+assert.equal(cloud[5].answerStatus, 'ungraded');
+assert.throws(() => vm.runInContext('validateBank([{...cloud[5], answerStatus: "reference"}])', context));
+assert.throws(() => vm.runInContext('validateBank([{...cloud[5], answer: ["A"]}])', context));
+
+console.log('PASS: 104 Mayuan questions, 91 cloud questions, ungraded question, schema and grading checks.');

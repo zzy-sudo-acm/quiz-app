@@ -1,11 +1,13 @@
-const CACHE_NAME = "mayuan-quiz-v1";
+const CACHE_NAME = "quiz-book-v1";
 const APP_FILES = [
   "./index.html",
   "./style.css",
   "./app.js",
   "./questions.json",
+  "./cloud-questions.json",
   "./manifest.json",
   "./icon.svg",
+  "./assets/source-sans-3-latin.woff2",
 ];
 
 function cacheUrl(path) {
@@ -15,10 +17,10 @@ function cacheUrl(path) {
 self.addEventListener("install", (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then(async (cache) => {
-      await cache.addAll(APP_FILES);
+      await cache.addAll(APP_FILES.map((path) => new Request(cacheUrl(path), { cache: "reload" })));
+      await self.skipWaiting();
     })
   );
-  self.skipWaiting();
 });
 
 self.addEventListener("activate", (event) => {
@@ -26,7 +28,7 @@ self.addEventListener("activate", (event) => {
     caches
       .keys()
       .then((keys) =>
-        Promise.all(keys.filter((key) => (key.startsWith("quiz-pwa-") || key.startsWith("mayuan-quiz-")) && key !== CACHE_NAME).map((key) => caches.delete(key)))
+        Promise.all(keys.filter((key) => /^(quiz-pwa|mayuan-quiz|quiz-book)-/.test(key) && key !== CACHE_NAME).map((key) => caches.delete(key)))
       )
       .then(() => self.clients.claim())
   );
@@ -57,10 +59,10 @@ self.addEventListener("fetch", (event) => {
 
   event.respondWith(
     fetch(request)
-      .then((response) => {
+      .then(async (response) => {
         if (response && response.ok) {
-          const copy = response.clone();
-          caches.open(CACHE_NAME).then((cache) => cache.put(requestUrl.href, copy));
+          const cache = await caches.open(CACHE_NAME);
+          await cache.put(requestUrl.href, response.clone()).catch(() => {});
         }
         return response;
       })

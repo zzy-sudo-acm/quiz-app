@@ -1,12 +1,12 @@
 {
-  "name": "马原 · 真题练习",
-  "short_name": "马原刷题",
-  "description": "马原历年选择题与错题复习",
+  "name": "刷题簿",
+  "short_name": "刷题簿",
+  "description": "云计算与马原选择题练习",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#f5f6fa",
-  "theme_color": "#4655ad",
+  "background_color": "#f1f3ef",
+  "theme_color": "#f1f3ef",
   "icons": [
     {
       "src": "./icon.svg",
