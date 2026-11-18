@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>刷题簿 · 界面预览</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    background: light-dark(#f4f6fa, #181a20);
+    color: light-dark(#242d40, #edf0f8);
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.55 "Segoe UI", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif; }
+  main { max-width: 1092px; margin: 0 auto; padding: 18px 16px; }
+  .preview-page-nav { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 10px; }
+  .preview-page-nav span { color: light-dark(#59657c, #b1bacc); }
+  .preview-page-nav a { color: light-dark(#3e4f89, #b7c6ff); text-underline-offset: .2em; }
+  .preview-switch .btn {
+    border: 1px solid light-dark(#dce2ed, #414959);
+    border-radius: 7px;
+    min-height: 38px;
+    padding: 6px 12px;
+    font: inherit;
+    color: inherit;
+    background: light-dark(#fcfcfd, #202329);
+    cursor: pointer;
+  }
+  .preview-switch .btn[aria-pressed="true"] {
+    border-color: transparent;
+    color: light-dark(#fff, #222c4a);
+    background: light-dark(#3e4f89, #b7c6ff);
+  }
+  .cursor-interaction:not(:disabled) { cursor: pointer; }
+  :focus-visible { outline: 2px solid light-dark(#3e4f89, #b7c6ff); outline-offset: 2px; }
+  @media (max-width: 480px) { main { padding: 10px 10px 16px; } }
+</style>
+</head>
+<body>
+<main>
+<nav class="preview-page-nav" aria-label="预览导航"><span>界面预览</span><a href="../">返回刷题首页</a></nav>
+<div id="quiz-study-preview">
+  <div class="preview-switch" role="group" aria-label="预览布局">
+    <button class="btn" type="button" data-view="wide" aria-pressed="true">桌面布局</button>
+    <button class="btn" type="button" data-view="compact" aria-pressed="false">手机布局</button>
+  </div>
+  <div class="quiz-screen">
+    <header class="quiz-top">
+      <div class="quiz-brand"><strong>刷题簿</strong><span>云计算</span></div>
+      <div class="quiz-scope"><span>章节练习</span><strong>Docker</strong></div>
+    </header>
+    <div class="quiz-layout">
+      <section class="quiz-work" aria-label="Docker 练习">
+        <div class="quiz-body">
+          <div class="quiz-meta">
+            <span id="quiz-demo-position" class="quiz-position"></span>
+            <span class="quiz-type">单选题</span>
+            <button class="quiz-plain quiz-star cursor-interaction" type="button" aria-pressed="false"><span>收藏</span></button>
+          </div>
+          <h2 id="quiz-demo-title"></h2>
+          <fieldset class="quiz-options" aria-labelledby="quiz-demo-title"></fieldset>
+          <div class="quiz-feedback" aria-live="polite" hidden>
+            <strong></strong>
+            <span class="quiz-comparison"></span>
+            <p></p>
+          </div>
+        </div>
+        <div class="quiz-actions">
+          <button class="quiz-plain quiz-prev cursor-interaction" type="button">上一题</button>
+          <button class="quiz-plain quiz-open-sheet cursor-interaction" type="button" aria-haspopup="dialog">答题卡</button>
+          <button class="quiz-primary cursor-interaction" type="button" disabled>提交答案</button>
+        </div>
+      </section>
+      <aside class="quiz-aside" aria-label="答题卡">
+        <h3>答题卡</h3>
+        <div class="quiz-sheet"></div>
+      </aside>
+    </div>
+    <dialog class="quiz-dialog" aria-labelledby="quiz-dialog-heading">
+      <div class="quiz-dialog-head">
+        <h3 id="quiz-dialog-heading">答题卡</h3>
+        <button class="quiz-plain quiz-close cursor-interaction" type="button">关闭</button>
+      </div>
+      <div class="quiz-sheet"></div>
+    </dialog>
+  </div>
+  <template class="quiz-sheet-template">
+    <p class="quiz-completed"></p>
+    <progress aria-label="章节进度"></progress>
+    <div class="quiz-numbers" role="group" aria-label="跳转到题目"></div>
+    <div class="quiz-legend"><span>— 未答</span><span class="quiz-good">✓ 答对</span><span class="quiz-revisit">× 待巩固</span></div>
+  </template>
+  <script type="application/json" class="quiz-demo-data">[{"question":"以下哪个命令用于从Dockerfile构建一个镜像？","options":[{"key":"A","text":"docker run"},{"key":"B","text":"docker build"},{"key":"C","text":"docker create"},{"key":"D","text":"docker image create"}],"answer":["B"],"explanation":"Dockerfile 构建镜像：docker build。"},{"question":"在Dockerfile中，用于指定基础镜像的指令是？","options":[{"key":"A","text":"FROM"},{"key":"B","text":"RUN"},{"key":"C","text":"BASE"},{"key":"D","text":"MAINTAINER"}],"answer":["A"],"explanation":"指定基础镜像：FROM；RUN 是构建时执行命令。"},{"question":"以下哪个命令可以将一个正在运行的容器转换为一个新的镜像？","options":[{"key":"A","text":"docker save"},{"key":"B","text":"docker commit"},{"key":"C","text":"docker export"},{"key":"D","text":"docker create image"}],"answer":["B"],"explanation":"从容器创建新镜像：docker commit；不包含挂载卷的数据。"},{"question":"哪个命令能够将一个镜像导出为tar归档文件？","options":[{"key":"A","text":"docker commit"},{"key":"B","text":"docker load"},{"key":"C","text":"docker export"},{"key":"D","text":"docker save"}],"answer":["D"],"explanation":"镜像导出 tar：docker save；load 负责加载。"},{"question":"要实现容器与宿主机之间的端口映射，例如将容器的80端口映射到宿主机的8080端口，应该使用哪个参数？","options":[{"key":"A","text":"-p 8080:80"},{"key":"B","text":"-p 80:8080"},{"key":"C","text":"-v 80:8080"},{"key":"D","text":"--expose 80:8080"}],"answer":["A"],"explanation":"容器 80 映射宿主机 8080：-p 8080:80，外部在左。"},{"question":"以下哪种方式是实现容器数据持久化的最佳实践？","options":[{"key":"A","text":"将数据直接写入容器的可写层。"},{"key":"B","text":"使用Docker Volume（数据卷）。"},{"key":"C","text":"使用docker commit命令定期提交容器。"},{"key":"D","text":"将数据写入容器内的/tmp目录。"}],"answer":["B"],"explanation":"数据持久化：使用 Docker Volume。"},{"question":"docker run -it ubuntu /bin/bash命令中的 -it参数组合通常表示什么？","options":[{"key":"A","text":"在容器中分配一个伪终端并保持STDIN打开，以便进行交互。"},{"key":"B","text":"立即终止容器运行。"},{"key":"C","text":"在容器内启动一个后台进程。"},{"key":"D","text":"忽略所有信号。"}],"answer":["A"],"explanation":"-it：保持标准输入开放并分配伪终端，便于交互。"},{"question":"关于Docker Compose的描述，哪项是正确的？","options":[{"key":"A","text":"它是一个用于编排单个容器的命令行工具。"},{"key":"B","text":"它使用YAML文件来定义和运行多容器的Docker应用。"},{"key":"C","text":"它主要用于监控Docker容器的性能。"},{"key":"D","text":"它是Docker Swarm的替代品，用于集群管理。"}],"answer":["B"],"explanation":"Compose 定义什么：用 YAML 定义和运行多容器应用。"},{"question":"以下关于Docker容器与虚拟机相比的优势，描述最准确的是？","options":[{"key":"A","text":"容器提供了更强的硬件隔离性"},{"key":"B","text":"容器直接运行在宿主机内核上，启动更快、资源开销更小"},{"key":"C","text":"容器内置了完整的操作系统，功能更全面。"},{"key":"D","text":"容器不需要考虑依赖库的问题。"}],"answer":["B"],"explanation":"容器相对 VM 的优势：共享宿主机内核，通常启动快、资源开销小。"},{"question":"以下哪个命令可以用来查看本地已有的 Docker 镜像？（ ）","options":[{"key":"A","text":"docker run"},{"key":"B","text":"docker images"},{"key":"C","text":"docker ps"},{"key":"D","text":"docker pull"}],"answer":["B"],"explanation":"看本地镜像：docker images；ps 看容器。"},{"question":"命令docker run -d -p 8080:80 nginx中，-d参数的作用是？","options":[{"key":"A","text":"绑定端口映射"},{"key":"B","text":"以交互模式运行容器"},{"key":"C","text":"以守护进程（后台）模式运行容器"},{"key":"D","text":"自动删除停止后的容器"}],"answer":["C"],"explanation":"-d：后台运行，不是自动删除。"},{"question":"若要删除本地一个未被使用的 Docker 镜像，应使用哪个命令？","options":[{"key":"A","text":"docker rmi \u003c镜像ID/名称>"},{"key":"B","text":"docker rm \u003c镜像ID/名称>"},{"key":"C","text":"docker remove \u003c镜像ID/名称>"},{"key":"D","text":"docker delete \u003c镜像ID/名称>"}],"answer":["A"],"explanation":"删未使用镜像：docker rmi；rm 删容器。"},{"question":"以下哪个命令能创建一个可供多个容器共享的 Docker 数据卷？","options":[{"key":"A","text":"docker volume create myvolume"},{"key":"B","text":"docker mount create myvolume"},{"key":"C","text":"docker volume add myvolume"},{"key":"D","text":"docker create volume myvolume"}],"answer":["A"],"explanation":"创建数据卷：docker volume create myvolume。"},{"question":"在 Docker 网络模式中，哪种模式下容器可以直接使用宿主机的网络栈，与宿主机共享 IP 地址？（","options":[{"key":"A","text":"bridge 模式"},{"key":"B","text":"host 模式"},{"key":"C","text":"none 模式"},{"key":"D","text":"container 模式"}],"answer":["B"],"explanation":"共用宿主机网络栈：host 模式。"},{"question":"若要查看 Docker 容器挂载的数据卷详情，应使用哪个命令","options":[{"key":"A","text":"docker volume inspect \u003c卷名>"},{"key":"B","text":"docker inspect volume \u003c卷名>"},{"key":"C","text":"docker volume view \u003c卷名>"},{"key":"D","text":"docker show volume \u003c卷名>"}],"answer":["A"],"explanation":"查看卷详情：docker volume inspect 卷名；容器全部挂载看 docker inspect 容器名。"},{"question":"命令docker run -v /host/path:/container/path nginx中，-v参数的作用是","options":[{"key":"A","text":"限制容器使用的 CPU 资源"},{"key":"B","text":"挂载宿主机目录到容器内"},{"key":"C","text":"为容器分配固定 IP 地址"},{"key":"D","text":"设置容器的环境变量"}],"answer":["B"],"explanation":"-v /host:/container：把宿主机目录挂到容器内。"},{"question":"在 Docker Compose 配置文件中，哪个关键字用于定义服务依赖关系，确保服务按顺序启动？","options":[{"key":"A","text":"depends_on"},{"key":"B","text":"links"},{"key":"C","text":"order"},{"key":"D","text":"sequence"}],"answer":["A"],"explanation":"Compose 服务启动依赖：depends_on；普通写法不保证应用已经就绪。"},{"question":"以下关于 Docker 镜像和容器的关系，说法正确的是？","options":[{"key":"A","text":"一个镜像只能创建一个容器"},{"key":"B","text":"容器是镜像的只读副本"},{"key":"C","text":"镜像是容器的运行时实例"},{"key":"D","text":"容器是镜像的可写层，基于镜像启动"}],"answer":["D"],"explanation":"镜像与容器的关系：D 是选项中最接近者；准确说容器基于只读镜像层并增加可写层，不只是那一层。"},{"question":"以下哪个命令可以从 Docker Hub 拉取一个名为ubuntu的镜像？","options":[{"key":"A","text":"docker get ubuntu"},{"key":"B","text":"docker pull ubuntu"},{"key":"C","text":"docker fetch ubuntu"},{"key":"D","text":"docker download ubuntu"}],"answer":["B"],"explanation":"拉 ubuntu 镜像：docker pull ubuntu。"},{"question":"以下哪种情况会导致docker run命令创建新容器失败？","options":[{"key":"A","text":"本地不存在指定镜像，但远程仓库存在"},{"key":"B","text":"容器名称与已存在的容器重复"},{"key":"C","text":"宿主机有足够的 CPU 资源"},{"key":"D","text":"未指定端口映射"}],"answer":["B"],"explanation":"run 创建失败的情况：与现有容器同名会冲突；已停止的容器也占名字。"},{"question":"Docker 是什么？","options":[{"key":"A","text":"一种关系型数据库管理系统"},{"key":"B","text":"一种容器化平台"},{"key":"C","text":"一种编程语言"},{"key":"D","text":"一种网络路由协议"}],"answer":["B"],"explanation":"Docker 是什么：容器化平台。"},{"question":"Docker 镜像（Image）与容器（Container）的关系是什么？","options":[{"key":"A","text":"镜像是容器运行所依据的模板"},{"key":"B","text":"容器是镜像的压缩文件"},{"key":"C","text":"镜像和容器完全相同"},{"key":"D","text":"容器只能用于创建镜像，不能运行应用"}],"answer":["A"],"explanation":"镜像和容器关系：镜像是容器运行依据的模板。"},{"question":"Docker Hub 的主要作用是什么？","options":[{"key":"A","text":"编译 Linux 内核"},{"key":"B","text":"运行本地容器的唯一工具"},{"key":"C","text":"提供镜像托管、分发等服务"},{"key":"D","text":"自动替代所有 Dockerfile"}],"answer":["C"],"explanation":"Docker Hub：镜像托管和分发，不替代 Dockerfile。"},{"question":"执行 docker ps -a 的作用是什么？","options":[{"key":"A","text":"查看所有本地镜像"},{"key":"B","text":"查看所有容器，包括已停止的容器"},{"key":"C","text":"删除所有容器"},{"key":"D","text":"查看 Docker 网络"}],"answer":["B"],"explanation":"docker ps -a：所有容器，包括已停止的。"},{"question":"以下哪个命令可以将容器的 80 端口映射到宿主机的 8080 端口？","options":[{"key":"A","text":"docker run -v 8080:80 nginx"},{"key":"B","text":"docker run --network 8080:80 nginx"},{"key":"C","text":"docker run -p 8080:80 nginx"},{"key":"D","text":"docker run --name 8080:80 nginx"}],"answer":["C"],"explanation":"80 映射到 8080：docker run -p 8080:80 nginx。"},{"question":"以下哪个命令用于将本地镜像推送到镜像仓库？","options":[{"key":"A","text":"docker pull"},{"key":"B","text":"docker push"},{"key":"C","text":"docker exec"},{"key":"D","text":"docker pause"}],"answer":["B"],"explanation":"推送镜像：docker push；pull 是拉取。"},{"question":"Dockerfile 的主要作用是什么？","options":[{"key":"A","text":"定义构建 Docker 镜像所需的指令"},{"key":"B","text":"保存容器运行时的全部日志"},{"key":"C","text":"管理宿主机用户密码"},{"key":"D","text":"直接替代 Docker daemon"}],"answer":["A"],"explanation":"Dockerfile 的用途：定义构建镜像的指令。"},{"question":"Dockerfile 中，WORKDIR /app 的作用是什么？","options":[{"key":"A","text":"删除 /app 目录"},{"key":"B","text":"将宿主机的 /app 自动挂载进容器"},{"key":"C","text":"设置后续相关指令的工作目录"},{"key":"D","text":"将镜像推送到仓库"}],"answer":["C"],"explanation":"WORKDIR /app：设置后续相关指令工作目录，不是宿主机挂载。"},{"question":"Docker Volume（数据卷）的主要作用是什么？","options":[{"key":"A","text":"自动压缩 Docker 镜像"},{"key":"B","text":"持久化存储数据，并支持容器之间共享数据"},{"key":"C","text":"自动升级宿主机操作系统"},{"key":"D","text":"替代 Docker 网络"}],"answer":["B"],"explanation":"Volume 的用途：持久化并支持容器共享数据。"},{"question":"删除容器后，默认情况下，Docker 管理的数据卷通常会怎样？","options":[{"key":"A","text":"一定会被立即删除"},{"key":"B","text":"一定会被转换成镜像"},{"key":"C","text":"通常仍然保留，除非被显式删除或使用了相应的自动清理选项"},{"key":"D","text":"自动上传到 Docker Hub"}],"answer":["C"],"explanation":"删容器后卷怎样：通常保留，显式删除或相应清理选项另论。"},{"question":"Docker Compose 的主要用途是什么？","options":[{"key":"A","text":"定义和管理由多个服务组成的应用"},{"key":"B","text":"只用于编译 Linux 内核"},{"key":"C","text":"只用于删除 Docker 镜像"},{"key":"D","text":"只能管理一个容器，不能定义多个服务"}],"answer":["A"],"explanation":"Compose 的用途：定义和管理多个服务组成的应用。"},{"question":"如果希望容器删除后，数据库数据仍然能够保留，最合适的做法是什么？","options":[{"key":"A","text":"只使用 docker logs 保存数据"},{"key":"B","text":"只使用 docker stop 停止容器"},{"key":"C","text":"将数据库数据仅保存在容器可写层中"},{"key":"D","text":"将数据库数据存储在持久化数据卷或合适的持久化存储中"}],"answer":["D"],"explanation":"重建容器仍保留数据库：把数据库存进持久化卷或合适的持久存储。"},{"question":"以下哪个命令通常用于根据 Compose 配置创建并启动服务？","options":[{"key":"A","text":"docker images up"},{"key":"B","text":"docker compose up -d"},{"key":"C","text":"docker network build"},{"key":"D","text":"docker volume start"}],"answer":["B"],"explanation":"Compose 创建启动：docker compose up -d。"},{"question":"Docker 的默认桥接网络通常叫什么？","options":[{"key":"A","text":"host"},{"key":"B","text":"none"},{"key":"C","text":"bridge"},{"key":"D","text":"overlay"}],"answer":["C"],"explanation":"默认桥接网络名：bridge；docker0 是常见宿主机网桥接口。"},{"question":"Dockerfile 中的 EXPOSE 8080 主要表示什么？","options":[{"key":"A","text":"声明容器应用预期使用的端口，不会单独完成宿主机端口发布"},{"key":"B","text":"自动将宿主机的 8080 端口映射到容器"},{"key":"C","text":"自动开放宿主机所有端口"},{"key":"D","text":"启动容器内的防火墙"}],"answer":["A"],"explanation":"EXPOSE 8080：声明端口，不单独完成宿主机发布。"},{"question":"Linux 宿主机上，Docker 默认 bridge 网络通常对应的网桥接口是（ ）","options":[{"key":"A","text":"docker0"},{"key":"B","text":"eth1"},{"key":"C","text":"lo"},{"key":"D","text":"wlan0"}],"answer":["A"],"explanation":"默认 bridge 网桥接口：Linux 上通常是 docker0。"},{"question":"两个容器连接到同一个用户自定义 bridge 网络后，通常可以通过什么方式访问对方？（ ）","options":[{"key":"A","text":"只能使用公网 IP"},{"key":"B","text":"通过容器名称进行解析和访问"},{"key":"C","text":"必须通过 Docker Hub"},{"key":"D","text":"必须重新构建镜像"}],"answer":["B"],"explanation":"同一自定义 bridge 互通：可通过容器名解析访问。"},{"question":"当宿主机某个端口已经被占用时，再尝试将其他容器发布到相同宿主机 IP、端口及协议组合，通常会（ ）","options":[{"key":"A","text":"自动覆盖已有容器"},{"key":"B","text":"出现端口绑定冲突"},{"key":"C","text":"自动删除原有容器"},{"key":"D","text":"自动修改 Dockerfile"}],"answer":["B"],"explanation":"相同宿主机 IP 端口协议被占：端口绑定冲突，不会自动覆盖或换端口。"},{"question":"在生产环境中，为提高 Docker 容器网络安全性，以下哪种做法更合理？（ ）","options":[{"key":"A","text":"使用独立网络隔离不同业务，并仅发布必要端口"},{"key":"B","text":"将所有容器连接到 host 网络"},{"key":"C","text":"将所有容器端口公开到互联网"},{"key":"D","text":"关闭所有网络访问控制"}],"answer":["A"],"explanation":"合理网络安全做法：独立网络隔离业务，仅发布必要端口。"},{"question":"Docker 中，容器重建后其 IP 地址可能发生变化，因此通常建议（ ）","options":[{"key":"A","text":"始终使用固定 IP，不使用名称"},{"key":"B","text":"优先使用容器名称或服务名称进行通信"},{"key":"C","text":"通过容器 ID 直接代替 IP 进行 TCP 连接"},{"key":"D","text":"禁止所有容器间通信"}],"answer":["B"],"explanation":"重建后 IP 可能变：优先用容器名或服务名通信。"}]</script>
+</div>
+<style>
+  #quiz-study-preview {
+    container-type: inline-size;
+    --quiz-bg: light-dark(#fcfcfd, #202329);
+    --quiz-side: light-dark(#f1f3f8, #272c35);
+    --quiz-ink: light-dark(#242d40, #edf0f8);
+    --quiz-muted: light-dark(#59657c, #b1bacc);
+    --quiz-rule: light-dark(#dce2ed, #414959);
+    --quiz-accent: light-dark(#3e4f89, #b7c6ff);
+    --quiz-on-accent: light-dark(#fff, #222c4a);
+    --quiz-selected: light-dark(#edf1ff, #303b58);
+    --quiz-success: light-dark(#206449, #9bdbb6);
+    --quiz-success-bg: light-dark(#eaf4ee, #253b32);
+    --quiz-wrong: light-dark(#865014, #f4c58b);
+    --quiz-wrong-bg: light-dark(#fbf0df, #473623);
+    font-family: "Segoe UI", "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+  }
+  #quiz-study-preview [hidden] { display: none !important; }
+  #quiz-study-preview .preview-switch { display: flex; gap: 8px; margin-bottom: 12px; }
+  #quiz-study-preview .quiz-screen {
+    border: 1px solid var(--quiz-rule);
+    border-radius: 14px;
+    background: var(--quiz-bg);
+    color: var(--quiz-ink);
+    overflow: clip;
+    font-size: 14px;
+    line-height: 1.55;
+    text-autospace: ideograph-alpha ideograph-numeric;
+  }
+  #quiz-study-preview .quiz-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    min-height: 62px;
+    padding: 10px 26px;
+    border-bottom: 1px solid var(--quiz-rule);
+  }
+  #quiz-study-preview .quiz-brand, #quiz-study-preview .quiz-scope {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  #quiz-study-preview .quiz-brand strong { font-size: 17px; }
+  #quiz-study-preview .quiz-brand svg { width: 19px; height: 19px; color: var(--quiz-accent); }
+  #quiz-study-preview .quiz-brand span { color: var(--quiz-muted); border-left: 1px solid var(--quiz-rule); padding-left: 10px; }
+  #quiz-study-preview .quiz-scope { color: var(--quiz-muted); font-size: 12px; }
+  #quiz-study-preview .quiz-scope strong { color: var(--quiz-ink); font-size: 14px; }
+  #quiz-study-preview .quiz-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 246px;
+    align-items: stretch;
+  }
+  #quiz-study-preview .quiz-work { display: flex; flex-direction: column; min-width: 0; }
+  #quiz-study-preview .quiz-body { padding: 25px 28px 22px; flex: 1; }
+  #quiz-study-preview .quiz-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; }
+  #quiz-study-preview .quiz-position { font-size: 13px; font-weight: 650; font-variant-numeric: tabular-nums; color: var(--quiz-accent); }
+  #quiz-study-preview .quiz-type { color: var(--quiz-muted); font-size: 12px; }
+  #quiz-study-preview .quiz-star { margin-left: auto; }
+  #quiz-study-preview .quiz-star[aria-pressed="true"] { color: var(--quiz-accent); background: var(--quiz-selected); }
+  #quiz-study-preview .quiz-star[aria-pressed="true"] svg { fill: var(--quiz-accent); }
+  #quiz-study-preview h2 {
+    max-width: 34em;
+    margin: 11px 0 22px;
+    font-size: 22px;
+    font-weight: 680;
+    line-height: 1.55;
+    letter-spacing: -.02em;
+    text-wrap: pretty;
+    overflow-wrap: anywhere;
+  }
+  #quiz-study-preview .quiz-options { padding: 0; margin: 0; min-width: 0; border: 0; border-top: 1px solid var(--quiz-rule); }
+  #quiz-study-preview .quiz-option {
+    position: relative;
+    display: grid;
+    grid-template-columns: 28px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px;
+    min-height: 49px;
+    padding: 9px 11px;
+    border-bottom: 1px solid var(--quiz-rule);
+  }
+  #quiz-study-preview .quiz-option input { position: absolute; margin: 0; width: 1px; height: 1px; opacity: 0; }
+  #quiz-study-preview .quiz-option:has(input:focus-visible) { outline: 2px solid var(--quiz-accent); outline-offset: -2px; }
+  #quiz-study-preview .quiz-option:has(input:not(:disabled)):hover,
+  #quiz-study-preview .quiz-option:not([data-status]):has(input:checked) { background: var(--quiz-selected); }
+  #quiz-study-preview .quiz-option[data-status="correct"] { background: var(--quiz-success-bg); }
+  #quiz-study-preview .quiz-option[data-status="incorrect"] { background: var(--quiz-wrong-bg); }
+  #quiz-study-preview .quiz-key {
+    display: grid;
+    place-items: center;
+    height: 27px;
+    width: 27px;
+    border: 1px solid var(--quiz-rule);
+    border-radius: 6px;
+    color: var(--quiz-muted);
+    font-weight: 650;
+    font-size: 12px;
+  }
+  #quiz-study-preview .quiz-option:has(input:checked) .quiz-key {
+    background: var(--quiz-accent);
+    color: var(--quiz-on-accent);
+    border-color: var(--quiz-accent);
+  }
+  #quiz-study-preview .quiz-option-text { overflow-wrap: anywhere; }
+  #quiz-study-preview .quiz-option-text code {
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: var(--quiz-ink);
+    background: color-mix(in srgb, var(--quiz-ink) 7%, transparent);
+  }
+  #quiz-study-preview .quiz-option-mark { font-size: 11px; font-weight: 650; }
+  #quiz-study-preview .quiz-good { color: var(--quiz-success); }
+  #quiz-study-preview .quiz-revisit { color: var(--quiz-wrong); }
+  #quiz-study-preview .quiz-feedback { margin-top: 17px; padding: 13px 12px; background: var(--quiz-success-bg); border-radius: 8px; }
+  #quiz-study-preview .quiz-feedback[data-status="incorrect"] { background: var(--quiz-wrong-bg); }
+  #quiz-study-preview .quiz-feedback strong { display: inline-block; margin-right: 8px; }
+  #quiz-study-preview .quiz-feedback p { margin: 4px 0 0; overflow-wrap: anywhere; }
+  #quiz-study-preview .quiz-comparison { color: var(--quiz-muted); font-size: 12px; }
+  #quiz-study-preview .quiz-actions {
+    position: sticky;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 4px;
+    padding: 9px 28px calc(9px + env(safe-area-inset-bottom, 0px));
+    background: var(--quiz-bg);
+    border-top: 1px solid var(--quiz-rule);
+  }
+  #quiz-study-preview .quiz-plain, #quiz-study-preview .quiz-primary, #quiz-study-preview .quiz-numbers button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    min-height: 40px;
+    border-radius: 7px;
+    border: 0;
+    padding: 7px 11px;
+    font: inherit;
+    font-weight: 600;
+    color: var(--quiz-accent);
+    background: transparent;
+  }
+  #quiz-study-preview .quiz-plain:hover:not(:disabled) { background: var(--quiz-selected); }
+  #quiz-study-preview .quiz-primary { min-width: 102px; background: var(--quiz-accent); color: var(--quiz-on-accent); }
+  #quiz-study-preview .quiz-primary:hover:not(:disabled) { background: color-mix(in srgb, var(--quiz-accent) 86%, var(--quiz-ink)); }
+  #quiz-study-preview .quiz-primary:disabled { color: var(--quiz-muted); background: var(--quiz-side); }
+  #quiz-study-preview .quiz-plain:disabled { color: var(--quiz-muted); opacity: .66; }
+  #quiz-study-preview .quiz-plain:focus-visible, #quiz-study-preview .quiz-primary:focus-visible,
+  #quiz-study-preview .quiz-numbers button:focus-visible { outline: 2px solid var(--quiz-accent); outline-offset: 2px; }
+  #quiz-study-preview .quiz-plain svg { width: 15px; height: 15px; }
+  #quiz-study-preview .quiz-open-sheet { display: none; }
+  #quiz-study-preview .quiz-aside { padding: 25px 17px; border-left: 1px solid var(--quiz-rule); background: var(--quiz-side); }
+  #quiz-study-preview h3 { margin: 0; font-size: 16px; font-weight: 680; }
+  #quiz-study-preview .quiz-completed { margin: 6px 0 6px; color: var(--quiz-muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+  #quiz-study-preview progress { display: block; width: 100%; height: 4px; appearance: none; border: 0; border-radius: 4px; background: var(--quiz-rule); }
+  #quiz-study-preview progress::-webkit-progress-bar { background: var(--quiz-rule); border-radius: 4px; }
+  #quiz-study-preview progress::-webkit-progress-value { background: var(--quiz-accent); border-radius: 4px; }
+  #quiz-study-preview progress::-moz-progress-bar { background: var(--quiz-accent); border-radius: 4px; }
+  #quiz-study-preview .quiz-numbers { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 5px; margin-top: 15px; }
+  #quiz-study-preview .quiz-numbers button {
+    position: relative;
+    padding: 0;
+    min-height: 31px;
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+    color: var(--quiz-muted);
+    background: var(--quiz-bg);
+  }
+  #quiz-study-preview .quiz-numbers button:hover { background: var(--quiz-selected); }
+  #quiz-study-preview .quiz-numbers [data-status="correct"] { color: var(--quiz-success); background: var(--quiz-success-bg); }
+  #quiz-study-preview .quiz-numbers [data-status="incorrect"] { color: var(--quiz-wrong); background: var(--quiz-wrong-bg); }
+  #quiz-study-preview .quiz-numbers [data-status="correct"]::after,
+  #quiz-study-preview .quiz-numbers [data-status="incorrect"]::after {
+    position: absolute;
+    inset: 1px 3px auto auto;
+    font-size: 9px;
+    line-height: 1;
+  }
+  #quiz-study-preview .quiz-numbers [data-status="correct"]::after { content: "✓"; }
+  #quiz-study-preview .quiz-numbers [data-status="incorrect"]::after { content: "×"; }
+  #quiz-study-preview .quiz-numbers [aria-current="step"] { box-shadow: inset 0 0 0 2px var(--quiz-accent); font-weight: 750; }
+  #quiz-study-preview .quiz-legend { display: flex; flex-wrap: wrap; gap: 4px 9px; margin-top: 14px; color: var(--quiz-muted); font-size: 11px; }
+  #quiz-study-preview .quiz-dialog { width: min(94%, 380px); margin: auto; padding: 18px; border: 1px solid var(--quiz-rule); border-radius: 12px; color: var(--quiz-ink); background: var(--quiz-side); }
+  #quiz-study-preview .quiz-dialog::backdrop { background: color-mix(in srgb, var(--quiz-ink) 38%, transparent); }
+  #quiz-study-preview .quiz-dialog-head { display: flex; align-items: center; justify-content: space-between; }
+  #quiz-study-preview .quiz-dialog .quiz-numbers button, #quiz-study-preview .quiz-close { min-height: 44px; }
+  #quiz-study-preview .quiz-close { min-width: 44px; }
+  #quiz-study-preview[data-view="compact"] .quiz-screen { max-width: 392px; margin-inline: auto; }
+  #quiz-study-preview[data-view="compact"] .quiz-layout { grid-template-columns: minmax(0, 1fr); }
+  #quiz-study-preview[data-view="compact"] .quiz-aside { display: none; }
+  #quiz-study-preview[data-view="compact"] .quiz-open-sheet { display: inline-flex; }
+  #quiz-study-preview[data-view="compact"] .quiz-top { padding-inline: 15px; min-height: 52px; }
+  #quiz-study-preview[data-view="compact"] .quiz-body { padding: 11px 15px 20px; }
+  #quiz-study-preview[data-view="compact"] .quiz-actions { padding-inline: 9px; }
+  #quiz-study-preview[data-view="compact"] .quiz-actions button { min-height: 44px; }
+  #quiz-study-preview[data-view="compact"] h2 { font-size: 19px; margin: 7px 0 18px; }
+  @container (width < 620px) {
+    #quiz-study-preview .preview-switch { display: none; }
+    #quiz-study-preview .quiz-layout { grid-template-columns: minmax(0, 1fr); }
+    #quiz-study-preview .quiz-aside { display: none; }
+    #quiz-study-preview .quiz-open-sheet { display: inline-flex; }
+    #quiz-study-preview .quiz-top { padding-inline: 15px; min-height: 52px; }
+    #quiz-study-preview .quiz-body { padding: 11px 15px 20px; }
+    #quiz-study-preview .quiz-actions { padding-inline: 9px; }
+    #quiz-study-preview .quiz-actions button { min-height: 44px; }
+    #quiz-study-preview h2 { font-size: 19px; margin: 7px 0 18px; }
+  }
+  @container (width < 420px) {
+    #quiz-study-preview .quiz-dialog { width: 96%; padding: 12px; }
+    #quiz-study-preview .quiz-dialog .quiz-numbers { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+  }
+  @media (pointer: coarse) {
+    #quiz-study-preview .quiz-plain, #quiz-study-preview .quiz-primary,
+    #quiz-study-preview .quiz-numbers button { min-height: 44px; }
+  }
+</style>
+<script>
+  (() => {
+    const root = document.getElementById("quiz-study-preview");
+    const find = selector => root.querySelector(selector);
+    const questions = JSON.parse(find(".quiz-demo-data").textContent);
+    const options = find(".quiz-options");
+    const feedback = find(".quiz-feedback");
+    const primary = find(".quiz-primary");
+    const previous = find(".quiz-prev");
+    const dialog = find(".quiz-dialog");
+    const bookmark = find(".quiz-star");
+    const selections = new Map();
+    const results = new Map();
+    const bookmarks = new Set();
+    let index = 0;
+
+    root.querySelectorAll(".quiz-sheet").forEach(sheet => {
+      sheet.append(find(".quiz-sheet-template").content.cloneNode(true));
+      sheet.querySelector("progress").max = questions.length;
+      const grid = sheet.querySelector(".quiz-numbers");
+      questions.forEach((question, number) => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "cursor-interaction";
+        button.textContent = number + 1;
+        button.addEventListener("click", () => {
+          if (dialog.open) dialog.close();
+          index = number;
+          render();
+        });
+        grid.append(button);
+      });
+    });
+
+    function renderSheet() {
+      root.querySelectorAll(".quiz-sheet").forEach(sheet => {
+        sheet.querySelector(".quiz-completed").textContent = "已完成 " + results.size + " / " + questions.length + " 题";
+        sheet.querySelector("progress").value = results.size;
+        Array.from(sheet.querySelector(".quiz-numbers").children).forEach((button, number) => {
+          const result = results.get(number);
+          const status = result === undefined ? "未答" : result ? "答对" : "待巩固";
+          button.setAttribute("aria-label", "第 " + (number + 1) + " 题，" + status);
+          button.dataset.status = result === undefined ? "" : result ? "correct" : "incorrect";
+          if (number === index) button.setAttribute("aria-current", "step");
+          else button.removeAttribute("aria-current");
+        });
+      });
+    }
+
+    function render() {
+      const question = questions[index];
+      const selected = selections.get(index);
+      const answered = results.has(index);
+      find(".quiz-position").textContent = "第 " + (index + 1) + " / " + questions.length + " 题";
+      find("#quiz-demo-title").textContent = question.question;
+      bookmark.setAttribute("aria-pressed", String(bookmarks.has(index)));
+      bookmark.querySelector("span").textContent = bookmarks.has(index) ? "已收藏" : "收藏";
+      options.replaceChildren(...question.options.map(option => {
+        const choice = document.createElement("label");
+        choice.className = "quiz-option cursor-interaction";
+        const input = document.createElement("input");
+        input.type = "radio";
+        input.name = "quiz-demo-choice";
+        input.value = option.key;
+        input.checked = selected === option.key;
+        input.disabled = answered;
+        const key = document.createElement("span");
+        key.className = "quiz-key";
+        key.textContent = option.key;
+        const text = document.createElement("span");
+        text.className = "quiz-option-text";
+        text.textContent = option.text;
+        if (/^docker |^(FROM|RUN|BASE|MAINTAINER|CMD|ENTRYPOINT|COPY|ADD|WORKDIR|EXPOSE)$/i.test(option.text)) {
+          const code = document.createElement("code");
+          code.textContent = option.text;
+          text.replaceChildren(code);
+        }
+        choice.append(input, key, text);
+        if (answered && (option.key === selected || option.key === question.answer[0])) {
+          const correct = option.key === question.answer[0];
+          choice.dataset.status = correct ? "correct" : "incorrect";
+          const mark = document.createElement("span");
+          mark.className = "quiz-option-mark " + (correct ? "quiz-good" : "quiz-revisit");
+          mark.textContent = correct ? "参考答案" : "你的选择";
+          choice.append(mark);
+        }
+        return choice;
+      }));
+      feedback.hidden = !answered;
+      if (answered) {
+        const correct = results.get(index);
+        feedback.dataset.status = correct ? "correct" : "incorrect";
+        feedback.querySelector("strong").className = correct ? "quiz-good" : "quiz-revisit";
+        feedback.querySelector("strong").textContent = correct ? "回答正确" : "待巩固";
+        feedback.querySelector(".quiz-comparison").textContent = "你的选择 " + selected + "  ·  参考答案 " + question.answer[0];
+        feedback.querySelector("p").textContent = question.explanation;
+      }
+      previous.disabled = index === 0;
+      primary.textContent = answered ? index < questions.length - 1 ? "下一题" : "查看答题卡" : "提交答案";
+      primary.disabled = !answered && !selected;
+      renderSheet();
+    }
+
+    options.addEventListener("change", event => {
+      selections.set(index, event.target.value);
+      primary.disabled = false;
+    });
+    primary.addEventListener("click", () => {
+      if (!results.has(index)) results.set(index, questions[index].answer[0] === selections.get(index));
+      else if (index < questions.length - 1) index++;
+      else {
+        dialog.showModal();
+        return;
+      }
+      render();
+    });
+    previous.addEventListener("click", () => { index--; render(); });
+    bookmark.addEventListener("click", () => {
+      if (bookmarks.has(index)) bookmarks.delete(index);
+      else bookmarks.add(index);
+      bookmark.setAttribute("aria-pressed", String(bookmarks.has(index)));
+      bookmark.querySelector("span").textContent = bookmarks.has(index) ? "已收藏" : "收藏";
+    });
+    find(".quiz-open-sheet").addEventListener("click", () => dialog.showModal());
+    find(".quiz-close").addEventListener("click", () => dialog.close());
+    find(".preview-switch").addEventListener("click", event => {
+      const button = event.target.closest("[data-view]");
+      if (!button) return;
+      root.dataset.view = button.dataset.view;
+      root.querySelectorAll(".preview-switch button").forEach(option => {
+        option.setAttribute("aria-pressed", String(option === button));
+      });
+    });
+    render();
+  })();
+</script>
+
+</main>
+</body>
+</html>
