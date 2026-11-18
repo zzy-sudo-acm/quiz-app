@@ -31,9 +31,11 @@ assert.equal(vm.runInContext('fingerprint(bank)===fingerprint(validateBank(bank)
 const cloud = JSON.parse(fs.readFileSync(path.join(root, 'cloud-questions.json'), 'utf8'));
 context.cloud = cloud;
 assert.equal(vm.runInContext('validateBank(cloud).length', context), 91);
-assert.deepEqual(cloud.filter(q => q.answer.length === 0).map(q => q.id), [6]);
-assert.equal(cloud[5].answerStatus, 'ungraded');
-assert.throws(() => vm.runInContext('validateBank([{...cloud[5], answerStatus: "reference"}])', context));
-assert.throws(() => vm.runInContext('validateBank([{...cloud[5], answer: ["A"]}])', context));
+const corrected = cloud.find(q => q.id === 6);
+assert.deepEqual(corrected.answer, ['A']);
+assert.ok(cloud.every(q => q.answer.length > 0));
+assert.equal(vm.runInContext('validateBank([{...cloud[5], answer: [], answerStatus: "ungraded"}])[0].answer.length', context), 0);
+assert.throws(() => vm.runInContext('validateBank([{...cloud[5], answer: []}])', context));
+assert.throws(() => vm.runInContext('validateBank([{...cloud[5], answerStatus: "ungraded"}])', context));
 
-console.log('PASS: 104 Mayuan questions, 91 cloud questions, ungraded question, schema and grading checks.');
+console.log('PASS: 104 Mayuan questions, 91 cloud questions, corrected question 6, ungraded schema and grading checks.');

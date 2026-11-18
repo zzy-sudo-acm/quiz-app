@@ -8,7 +8,7 @@ const banks = {
     file: "./cloud-questions.json",
     name: "云计算",
     title: "云计算选择题",
-    source: "题目来自《学习通选择题》。参考答案根据课程资料推导。云计算基础第 6 题有歧义，作答后不计分。",
+    source: "题目来自《学习通选择题》。参考答案根据课程资料和作答反馈整理。",
   },
   mayuan: {
     file: "./questions.json",
@@ -104,20 +104,29 @@ function newRound() {
 }
 function readProgress(saved) {
   const round = {};
+  const drafts = saved.drafts && typeof saved.drafts === "object" && !Array.isArray(saved.drafts) ? {...saved.drafts} : {};
   for (const [id, result] of Object.entries(saved.round || {})) {
     const q = byId.get(Number(id));
     if (q && Array.isArray(result?.selected) && result.selected.length && result.selected.every(key => q.options.some(option => option.key === key))) {
-      round[id] = {selected: result.selected, correct: q.answer.length ? equalAnswers(result.selected, q.answer) : null};
+      if (result.correct === null && q.answer.length) drafts[id] = result.selected;
+      else round[id] = {selected: result.selected, correct: q.answer.length ? equalAnswers(result.selected, q.answer) : null};
     }
   }
-  const drafts = saved.drafts && typeof saved.drafts === "object" && !Array.isArray(saved.drafts) ? saved.drafts : {};
   return {round, drafts};
 }
 function activate(bank, bankId) {
   questions=bank; activeBank=bankId; byId=new Map(bank.map(q=>[q.id,q]));
   storageKey="mayuan_progress_v1_"+fingerprint(bank);
-  let saved;
-  try { saved=JSON.parse(localStorage.getItem(storageKey)); } catch {}
+  let saved, migrated = false;
+  try {
+    let raw = localStorage.getItem(storageKey);
+    // The corrected answer changes the built-in cloud bank's fingerprint.
+    if (raw === null && bankId === "cloud" && storageKey === "mayuan_progress_v1_c5242458") {
+      raw = localStorage.getItem("mayuan_progress_v1_712400a1");
+      migrated = raw !== null;
+    }
+    saved = JSON.parse(raw);
+  } catch {}
   state=freshState();
   const validOrder = saved && Array.isArray(saved.order) &&
     saved.order.every(id=>byId.has(id)) && new Set(saved.order).size===saved.order.length;
@@ -153,7 +162,11 @@ function activate(bank, bankId) {
   const types = new Set(questions.map(q => q.type));
   $("typeFilter").hidden = types.size === 1;
   if (types.size === 1) state.type = "all";
-  if (!validOrder || !groupValid) updateOrder(); else render();
+  if (!validOrder || !groupValid) updateOrder();
+  else {
+    if (migrated) save();
+    render();
+  }
 }
 function renderGroups() {
   const groups = new Map();

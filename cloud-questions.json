@@ -181,13 +181,20 @@
         "text": "资源池化"
       }
     ],
-    "answer": [],
+    "answer": [
+      "A"
+    ],
     "topic": "云计算基础",
     "number": 6,
     "source": "学习通选择题.txt",
-    "answerStatus": "ungraded",
-    "answerSource": "原题未附可核实答案",
-    "explanation": "不关心基础设施维护：A 按需自服务与 C 服务自助化接近；题干更像托管管理，不能唯一推出 A/C。"
+    "answerSource": "根据课程题目与作答反馈校订",
+    "explanation": "本题选 A。按需自服务指用户可根据需要自行开通计算、存储等云资源，无需服务商人工介入开通过程。底层基础设施由云服务商维护。",
+    "references": [
+      {
+        "title": "NIST SP 800-145 云计算定义",
+        "url": "https://csrc.nist.gov/pubs/sp/800/145/final"
+      }
+    ]
   },
   {
     "id": 7,
