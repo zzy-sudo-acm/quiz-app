@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#4655ad"><meta name="description" content="云计算与马原选择题练习，支持答题卡、错题和收藏。"><title>云计算选择题 | 刷题簿</title><link rel="icon" href="./icon.svg"><link rel="manifest" href="./manifest.json"><link rel="stylesheet" href="./style.css"><script src="./app.js" defer></script></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="theme-color" content="#f2f4f8"><meta name="description" content="云计算与马原选择题练习，支持答题卡、错题和收藏。"><title>云计算选择题 | 刷题簿</title><link rel="icon" href="./icon.svg"><link rel="manifest" href="./manifest.json"><link rel="stylesheet" href="./style.css"><script src="./app.js" defer></script></head>
 <body>
 <a href="#questionText" class="skip-link">跳到题目</a>
 <header class="topbar">
-  <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h7v15H4zM13 5h7v15h-7M7 9h1M16 9h1M7 13h1M16 13h1"/></svg></span><span><span id="bankTitle">云计算</span><span class="brand-separator">/</span><span class="brand-sub">选择题练习</span></span></a>
+  <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 5h7v15H4zM13 5h7v15h-7M7 9h1M16 9h1M7 13h1M16 13h1"/></svg></span>刷题簿</a>
   <div class="header-actions">
     <select id="bankSelect" aria-label="切换题库">
       <option value="cloud">云计算</option>
@@ -22,18 +22,29 @@
 <button data-mode="random" class="nav-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h3c5 0 7 12 12 12h3m-4-4 4 4-4 4M3 18h3c2 0 3-2 4-4m4-4c1-2 2-4 4-4h3m-4-4 4 4-4 4"/></svg>随机练习</button>
 <button data-mode="wrong" class="nav-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h14v18H5zM9 8l6 6m0-6-6 6"/></svg>错题本 <span id="wrongCount" class="count">0</span></button>
 <button data-mode="starred" class="nav-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg>我的收藏 <span id="starCount" class="count">0</span></button></nav>
-<div class="year-section" id="groupFilter"><label class="sidebar-title" id="groupLabel" for="yearSelect">章节</label><select id="yearSelect"><option value="all">全部章节</option></select><div id="yearList" class="year-list"></div></div>
+<div class="year-section" id="groupFilter"><h2 class="sidebar-title" id="groupLabel">章节</h2><div id="yearList" class="year-list"></div></div>
 <div class="sidebar-note"><span class="save-dot"></span><span id="saveStatus">进度自动保存在此浏览器</span></div></aside>
-<main class="workspace"><div class="workspace-heading"><div><h1 id="modeTitle">顺序练习</h1><p id="bankSummary">正在读取题库…</p></div><button id="restartBtn" class="quiet-button" disabled>再练本组</button></div>
-<div class="toolbar"><div class="type-filter" id="typeFilter" role="group" aria-label="筛选题型"><button data-type="all" class="active">全部题型</button><button data-type="single">单选</button><button data-type="multiple">多选</button></div><label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="searchInput" type="search" placeholder="搜索题目" aria-label="搜索题目" autocomplete="off"></label></div>
-<div class="study-layout"><div class="study-column">
+<main class="workspace" id="workspace">
+<div class="workspace-tools">
+  <h1 id="modeTitle">顺序练习</h1>
+  <div class="toolbar">
+    <select id="yearSelect" aria-label="章节"><option value="all">全部章节</option></select>
+    <div class="type-filter" id="typeFilter" role="group" aria-label="筛选题型"><button data-type="all" class="active">全部题型</button><button data-type="single">单选</button><button data-type="multiple">多选</button></div>
+    <label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input id="searchInput" name="question" type="search" placeholder="搜索题目…" aria-label="搜索题目" autocomplete="off"></label>
+    <button id="restartBtn" class="quiet-button" disabled>再练本组</button>
+  </div>
+</div>
+<div class="study-layout" id="studyLayout"><div class="study-column">
 <section id="quizPanel" class="quiz-panel" hidden aria-label="答题区域">
-<div class="question-meta"><span id="typeText" class="type-tag"></span><span id="sourceText"></span><button id="starBtn" class="star-button" aria-pressed="false" aria-label="收藏本题"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span>收藏</span></button></div>
-<div class="question-heading"><span id="questionNumber" aria-hidden="true"></span><h2 id="questionText" tabindex="-1"></h2></div><p id="selectHint" class="select-hint"></p><div id="optionsList" class="options-list" role="group" aria-label="答案选项"></div>
-<section id="feedback" class="feedback" hidden aria-live="polite"><strong id="resultText"></strong><p id="answerText"></p><p id="explanationText"></p><p id="questionNote" class="question-note" hidden></p><div id="referenceLinks"></div><small id="answerSource"></small></section>
-<div class="quiz-actions"><button id="prevBtn" class="secondary-button">上一题</button><span id="progressText"></span><button id="submitBtn" class="primary-button" disabled>提交答案</button><button id="nextBtn" class="primary-button" hidden>下一题 →</button></div></section>
-<section id="emptyPanel" class="empty-panel" aria-live="polite"><h2 id="emptyTitle" tabindex="-1">正在准备题库</h2><p id="emptyText">稍等片刻，马上开始。</p><button id="emptyAction" class="primary-button" hidden>返回全部题目</button></section>
-<p class="source-note" id="sourceNote"></p><p class="keyboard-note">键盘 <kbd>A</kbd>–<kbd>H</kbd> 选择 · <kbd>Enter</kbd> 提交 / 下一题</p></div>
-<aside class="answer-sheet" aria-label="答题卡"><div class="sheet-heading"><h2>答题卡</h2><span id="sheetTotal">0 题</span></div><div class="progress-track" id="sheetProgress" role="progressbar" aria-label="本组作答进度" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0"><span id="progressBar"></span></div><p id="completionText">尚未开始</p><div class="sheet-legend"><span><i class="correct"></i>答对</span><span><i class="wrong"></i>待巩固</span><span><i></i>未答</span><span id="ungradedLegend" hidden><i class="ungraded"></i>不计分</span></div><div id="questionGrid" class="question-grid"></div><div class="session-summary" id="sessionSummary" hidden></div></aside></div>
-<footer><span id="footerBank"></span><span>专注这一题，就很好。</span></footer></main></div>
+<div class="question-meta"><span id="progressText"></span><span id="typeText" class="type-tag"></span><span id="sourceText"></span><button id="starBtn" class="star-button" aria-pressed="false" aria-label="收藏本题"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h12v18l-6-4-6 4z"/></svg><span>收藏</span></button></div>
+<h2 id="questionText" tabindex="-1"></h2><p id="selectHint" class="select-hint">请选择所有符合题意的选项</p><div id="optionsList" class="options-list" role="group" aria-label="答案选项"></div>
+<section id="feedback" class="feedback" tabindex="-1" hidden aria-label="作答结果" aria-live="polite"><strong id="resultText"></strong><p id="answerText"></p><p id="explanationText"></p><p id="questionNote" class="question-note" hidden></p><div id="referenceLinks"></div><small id="answerSource"></small></section>
+<div class="quiz-actions"><button id="prevBtn" class="secondary-button">上一题</button><button class="secondary-button sheet-toggle" data-open-sheet aria-haspopup="dialog"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>答题卡</button><button id="submitBtn" class="primary-button" disabled>提交答案</button><button id="nextBtn" class="primary-button" hidden>下一题</button></div></section>
+<section id="emptyPanel" class="empty-panel" aria-live="polite"><h2 id="emptyTitle" tabindex="-1">正在准备题库…</h2><p id="emptyText">请稍候。</p><button id="emptyAction" class="primary-button" hidden>返回全部题目</button><button class="secondary-button sheet-toggle" id="emptySheetBtn" data-open-sheet aria-haspopup="dialog" hidden>查看答题卡</button></section>
+</div>
+<aside class="answer-sheet" id="answerSheet" aria-labelledby="sheetTitle"><div class="sheet-heading"><h2 id="sheetTitle">答题卡</h2><button class="quiet-button" id="closeSheetBtn" autofocus>关闭</button></div><p id="completionText">尚未开始</p><div class="progress-track" id="sheetProgress" role="progressbar" aria-label="本组作答进度" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0"><span id="progressBar"></span></div><div id="questionGrid" class="question-grid"></div><div class="sheet-legend"><span><i class="correct" aria-hidden="true">✓</i>答对</span><span><i class="wrong" aria-hidden="true">×</i>待巩固</span><span><i aria-hidden="true">–</i>未答</span><span id="ungradedLegend" hidden><i class="ungraded" aria-hidden="true">·</i>不计分</span></div><div class="session-summary" id="sessionSummary" hidden></div></aside>
+</div>
+<p class="source-note" id="sourceNote"></p><p class="keyboard-note">键盘 <kbd>A</kbd>–<kbd>H</kbd> 选择 · <kbd>Enter</kbd> 提交 / 下一题</p>
+</main></div>
+<dialog id="sheetDialog" aria-labelledby="sheetTitle"></dialog>
 </body></html>

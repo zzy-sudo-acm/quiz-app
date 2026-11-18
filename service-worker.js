@@ -1,4 +1,4 @@
-const CACHE_NAME = "quiz-book-v3";
+const CACHE_NAME = "quiz-book-v4";
 const APP_FILES = [
   "./index.html",
   "./style.css",

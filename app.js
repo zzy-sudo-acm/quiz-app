@@ -21,7 +21,7 @@ const banks = {
 let questions = [], byId = new Map(), state, storageKey = "", activeBank = "cloud";
 let importedBank;
 function freshState() {
-  return {mode:"sequence",year:"all",type:"all",search:"",index:0,order:[],round:{},drafts:{},history:{},wrong:[],starred:[]};
+  return {mode:"sequence",year:"all",type:"all",search:"",index:0,order:[],round:{},drafts:{},history:{},wrong:[],starred:[],modeProgress:{},randomOrder:[]};
 }
 function notice(message, error = false) {
   $("notice").textContent = message;
@@ -81,11 +81,37 @@ function matching() {
     (state.mode!=="starred" || state.starred.includes(q.id))
   );
 }
+function updateOrder(restart = false) {
+  const currentId = current()?.id;
+  const ids = matching().map(q => q.id);
+  if (state.mode === "random") {
+    if (restart || !state.randomOrder.length) state.randomOrder = shuffle(questions.map(q => q.id));
+    const matches = new Set(ids);
+    state.order = state.randomOrder.filter(id => matches.has(id));
+  } else {
+    state.order = ids;
+  }
+  state.index = restart ? 0 : Math.max(0, state.order.indexOf(currentId));
+  save();
+  render();
+}
 function newRound() {
-  const ids=matching().map(q=>q.id);
-  state.order=state.mode==="random"?shuffle(ids):ids;
-  state.index=0; state.round={}; state.drafts={};
-  save(); render();
+  for (const id of state.order) {
+    delete state.round[id];
+    delete state.drafts[id];
+  }
+  updateOrder(true);
+}
+function readProgress(saved) {
+  const round = {};
+  for (const [id, result] of Object.entries(saved.round || {})) {
+    const q = byId.get(Number(id));
+    if (q && Array.isArray(result?.selected) && result.selected.length && result.selected.every(key => q.options.some(option => option.key === key))) {
+      round[id] = {selected: result.selected, correct: q.answer.length ? equalAnswers(result.selected, q.answer) : null};
+    }
+  }
+  const drafts = saved.drafts && typeof saved.drafts === "object" && !Array.isArray(saved.drafts) ? saved.drafts : {};
+  return {round, drafts};
 }
 function activate(bank, bankId) {
   questions=bank; activeBank=bankId; byId=new Map(bank.map(q=>[q.id,q]));
@@ -96,7 +122,8 @@ function activate(bank, bankId) {
   const validOrder = saved && Array.isArray(saved.order) &&
     saved.order.every(id=>byId.has(id)) && new Set(saved.order).size===saved.order.length;
   if(validOrder) {
-    for(const key of ["round","drafts","history"]) if(saved[key] && typeof saved[key]==="object" && !Array.isArray(saved[key])) state[key]=saved[key];
+    Object.assign(state, readProgress(saved));
+    if (saved.history && typeof saved.history === "object" && !Array.isArray(saved.history)) state.history = saved.history;
     for(const key of ["wrong","starred"]) if(Array.isArray(saved[key])) state[key]=[...new Set(saved[key].filter(id=>byId.has(id)))];
     state.mode=Object.hasOwn(modeNames,saved.mode)?saved.mode:"sequence";
     state.type=["all","single","multiple"].includes(saved.type)?saved.type:"all";
@@ -104,17 +131,20 @@ function activate(bank, bankId) {
     state.search=typeof saved.search==="string"?saved.search:"";
     state.order=saved.order;
     state.index=Number.isInteger(saved.index)?Math.max(0,Math.min(saved.index,state.order.length)):0;
-    for (const [id,result] of Object.entries(state.round)) {
-      const q=byId.get(Number(id));
-      if(!q || !Array.isArray(result?.selected) || !result.selected.length || result.selected.some(k=>!q.options.some(o=>o.key===k))) delete state.round[id];
-      else result.correct=q.answer.length ? equalAnswers(result.selected,q.answer) : null;
+    for (const mode of Object.keys(modeNames)) {
+      if (mode !== state.mode && saved.modeProgress?.[mode]) state.modeProgress[mode] = readProgress(saved.modeProgress[mode]);
+    }
+    const randomOrder = new Set(Array.isArray(saved.randomOrder) ? saved.randomOrder : []);
+    if (randomOrder.size === questions.length && questions.every(q => randomOrder.has(q.id))) {
+      state.randomOrder = [...randomOrder];
+    } else if (state.mode === "random") {
+      const savedIds = new Set(state.order);
+      state.randomOrder = [...state.order, ...shuffle(questions.map(q => q.id).filter(id => !savedIds.has(id)))];
     }
   }
   $("bankSelect").querySelector('[value="imported"]').hidden = !importedBank;
   $("bankSelect").value = activeBank;
   $("exportBtn").disabled=false;
-  $("bankTitle").textContent = banks[activeBank].name;
-  $("footerBank").textContent = banks[activeBank].title;
   document.title = banks[activeBank].title + " | 刷题簿";
   $("sourceNote").textContent = banks[activeBank].source;
   $("sourceNote").hidden = !banks[activeBank].source;
@@ -123,7 +153,7 @@ function activate(bank, bankId) {
   const types = new Set(questions.map(q => q.type));
   $("typeFilter").hidden = types.size === 1;
   if (types.size === 1) state.type = "all";
-  if (!validOrder || !groupValid) newRound(); else render();
+  if (!validOrder || !groupValid) updateOrder(); else render();
 }
 function renderGroups() {
   const groups = new Map();
@@ -133,6 +163,7 @@ function renderGroups() {
   }
   const label = activeBank === "cloud" ? "章节" : activeBank === "mayuan" ? "年份" : "分组";
   $("groupFilter").hidden = groups.size <= 1;
+  $("yearSelect").hidden = groups.size <= 1;
   $("groupLabel").textContent = activeBank === "mayuan" ? "试卷年份" : label;
   $("yearSelect").setAttribute("aria-label", label);
   $("yearSelect").replaceChildren();
@@ -157,7 +188,19 @@ function renderGroups() {
   state.year = "all";
   return false;
 }
-function changeFilter(key,value){state[key]=value;newRound();}
+function setMode(mode) {
+  if (state.mode === mode) return;
+  state.modeProgress[state.mode] = {round: state.round, drafts: state.drafts};
+  Object.assign(state, state.modeProgress[mode] || {round: {}, drafts: {}});
+  delete state.modeProgress[mode];
+  state.mode = mode;
+}
+function changeFilter(key, value) {
+  if (state[key] === value) return;
+  if (key === "mode") setMode(value);
+  else state[key] = value;
+  updateOrder();
+}
 function current(){return state && byId.get(state.order[state.index]);}
 function equalAnswers(a,b){return a.length===b.length && b.every(key => a.includes(key));}
 function selectOption(key){
@@ -172,12 +215,20 @@ function submit(){
   if(!q || state.round[q.id] || !selected?.length) return;
   const result={selected:[...selected],correct:q.answer.length ? equalAnswers(selected,q.answer) : null};
   state.round[q.id]=result;
+  delete state.drafts[q.id];
   if (result.correct !== null) {
+    const review = state.modeProgress.wrong;
+    if (!result.correct && !state.wrong.includes(q.id) && review) {
+      delete review.round[q.id];
+      delete review.drafts[q.id];
+    }
     state.history[q.id]=result;
     state.wrong=state.wrong.filter(id=>id!==q.id);
     if(!result.correct) state.wrong.push(q.id);
   }
-  save();render();$("nextBtn").focus();
+  save();render();
+  $("feedback").focus({preventScroll: true});
+  $("feedback").scrollIntoView({block: "nearest"});
 }
 function go(index){
   state.index=Math.max(0,Math.min(index,state.order.length));save();render();
@@ -186,8 +237,6 @@ function go(index){
 }
 function render(){
   $("modeTitle").textContent = modeNames[state.mode];
-  const count = questions.length + " 题";
-  $("bankSummary").textContent = activeBank === "cloud" ? "学习通题库 / " + count : count;
   document.querySelectorAll("[data-mode]").forEach(b=>{b.classList.toggle("active",b.dataset.mode===state.mode);b.setAttribute("aria-pressed",String(b.dataset.mode===state.mode));});
   document.querySelectorAll("[data-type]").forEach(b=>{b.classList.toggle("active",b.dataset.type===state.type);b.setAttribute("aria-pressed",String(b.dataset.type===state.type));});
   for (const button of $("yearList").children) {
@@ -205,7 +254,6 @@ function renderSheet(){
   const results=state.order.map(id=>state.round[id]).filter(Boolean);
   const done=results.length, scored=results.filter(result=>result.correct!==null).length;
   const correct=results.filter(result=>result.correct===true).length;
-  $("sheetTotal").textContent=total+" 题";
   $("completionText").textContent="已完成 "+done+" / "+total+" 题";
   $("progressBar").style.width = (total ? done / total * 100 : 0) + "%";
   $("sheetProgress").setAttribute("aria-valuemax", total || 1);
@@ -227,21 +275,37 @@ function renderSheet(){
       b.classList.add("current");
       b.setAttribute("aria-current", "step");
     }
-    b.addEventListener("click",()=>go(i));cells.append(b);
+    b.addEventListener("click", () => {
+      if ($("sheetDialog").open) $("sheetDialog").close();
+      go(i);
+    });
+    cells.append(b);
   });
   grid.replaceChildren(cells);
+  revealCurrentCell();
+}
+function revealCurrentCell() {
+  const grid = $("questionGrid");
   const active = grid.children[state.index];
-  if (active) {
+  if (active && grid.clientHeight) {
     const viewport = grid.getBoundingClientRect();
     const cell = active.getBoundingClientRect();
     if (cell.bottom > viewport.bottom) grid.scrollTop += cell.bottom - viewport.bottom + 3;
     else if (cell.top < viewport.top) grid.scrollTop += cell.top - viewport.top - 3;
   }
 }
+function openSheet() {
+  if (!state?.order.length) return;
+  const dialog = $("sheetDialog");
+  dialog.append($("answerSheet"));
+  dialog.showModal();
+  revealCurrentCell();
+}
 function showEmpty(title,text){
   $("quizPanel").hidden=true;$("emptyPanel").hidden=false;
   $("emptyTitle").textContent=title;$("emptyText").textContent=text;
   $("emptyAction").hidden=false;
+  $("emptySheetBtn").hidden=!state?.order.length;
   $("emptyAction").textContent = state?.order.length ? "重练本组" : "返回全部题目";
 }
 function renderQuestion(){
@@ -261,9 +325,8 @@ function renderQuestion(){
   $("typeText").textContent=q.type==="multiple"?"多选题":"单选题";
   $("sourceText").textContent = q.topic || [q.year, q.number && "原卷第 "+q.number+" 题", q.page && "第 "+q.page+" 页"].filter(Boolean).join(" / ");
   $("sourceText").title=q.source||"";
-  $("questionNumber").textContent=String(state.index+1).padStart(2,"0");
   $("questionText").textContent=q.question;
-  $("selectHint").textContent = q.type === "multiple" ? "请选择所有符合题意的选项，少选、多选均不算答对" : "选择一个答案，然后提交";
+  $("selectHint").hidden = Boolean(result) || q.type !== "multiple";
   const starred=state.starred.includes(q.id);
   $("starBtn").setAttribute("aria-pressed",String(starred));$("starBtn").setAttribute("aria-label",starred?"取消收藏本题":"收藏本题");
   $("starBtn").querySelector("span").textContent=starred?"已收藏":"收藏";
@@ -274,7 +337,13 @@ function renderQuestion(){
     b.classList.toggle("selected",selected.includes(option.key));
     const correct=Boolean(result)&&q.answer.includes(option.key),wrong=result?.correct===false&&selected.includes(option.key)&&!correct;
     b.classList.toggle("is-correct",correct);b.classList.toggle("is-wrong",wrong);
-    const key=document.createElement("span"),text=document.createElement("span");key.className="option-key";key.textContent=option.key;text.className="option-text";text.textContent=option.text;b.append(key,text);
+    const key = document.createElement("span");
+    const text = document.createElement(/^(?:docker\s+[a-z]|FROM$|RUN$|CMD$|ENTRYPOINT$|COPY$|ADD$|WORKDIR$|EXPOSE$)/i.test(option.text) ? "code" : "span");
+    key.className = "option-key";
+    key.textContent = option.key;
+    text.className = "option-text";
+    text.textContent = option.text;
+    b.append(key, text);
     if(correct||wrong){const badge=document.createElement("span");badge.className="option-state";badge.textContent=correct?"参考答案":"你的选择";b.append(badge);}
     b.addEventListener("click",()=>selectOption(option.key));$("optionsList").append(b);
   }
@@ -282,8 +351,8 @@ function renderQuestion(){
   if(result){
     $("feedback").classList.toggle("wrong",result.correct === false);
     $("feedback").classList.toggle("ungraded",result.correct === null);
-    $("resultText").textContent=result.correct === null ? "本题不计分" : result.correct ? "回答正确" : "回答错误";
-    $("answerText").textContent=(q.answer.length ? "参考答案 "+q.answer.join("、")+" / " : "")+"你的选择 "+selected.join("、");
+    $("resultText").textContent=result.correct === null ? "本题不计分" : result.correct ? "回答正确" : "待巩固";
+    $("answerText").textContent="你的选择 "+selected.join("、")+(q.answer.length ? " · 参考答案 "+q.answer.join("、") : "");
     $("explanationText").textContent=q.explanation||"";
     $("questionNote").textContent=q.note||"";$("questionNote").hidden=!q.note;
     $("answerSource").textContent=q.answerSource||"答案由导入题库提供";
@@ -291,7 +360,7 @@ function renderQuestion(){
     for(const ref of q.references){const a=document.createElement("a");a.textContent="核对资料："+ref.title;a.href=ref.url;a.target="_blank";a.rel="noopener noreferrer";$("referenceLinks").append(a);}
   }
   $("prevBtn").disabled=state.index===0;
-  $("progressText").textContent=(state.index+1)+" / "+state.order.length;
+  $("progressText").textContent="第 "+(state.index+1)+" / "+state.order.length+" 题";
   $("submitBtn").hidden=Boolean(result);$("submitBtn").disabled=!selected.length;
   $("nextBtn").hidden=!result;$("nextBtn").textContent=state.index===state.order.length-1?"完成本组":"下一题";
 }
@@ -340,14 +409,25 @@ $("submitBtn").addEventListener("click",submit);
 $("prevBtn").addEventListener("click",()=>go(state.index-1));
 $("nextBtn").addEventListener("click",()=>go(state.index+1));
 $("starBtn").addEventListener("click",()=>{const q=current();if(!q)return;state.starred=state.starred.includes(q.id)?state.starred.filter(id=>id!==q.id):[...state.starred,q.id];save();render();});
-$("restartBtn").addEventListener("click",()=>{if(confirm("重新练习当前这一组？本轮答题状态会重置，错题和收藏保留。"))newRound();});
+$("restartBtn").addEventListener("click",()=>{if(confirm("重新练习当前这一组？会清空本组作答，保留错题和收藏。"))newRound();});
 $("emptyAction").addEventListener("click",()=>{
   if (!questions.length) { boot(); return; }
   if (!state.order.length) {
-    Object.assign(state,{mode:"sequence",year:"all",type:"all",search:""});
+    setMode("sequence");
+    Object.assign(state,{year:"all",type:"all",search:""});
     $("searchInput").value="";
+    updateOrder();
+  } else {
+    newRound();
   }
-  newRound();
+});
+document.querySelectorAll("[data-open-sheet]").forEach(button => button.addEventListener("click", openSheet));
+$("closeSheetBtn").addEventListener("click", () => $("sheetDialog").close());
+$("sheetDialog").addEventListener("close", () => {
+  if (!$("sheetDialog").open) $("studyLayout").append($("answerSheet"));
+});
+matchMedia("(max-width: 760px)").addEventListener("change", event => {
+  if (!event.matches && $("sheetDialog").open) $("sheetDialog").close();
 });
 $("importBtn").addEventListener("click",()=>$("importFile").click());
 $("importFile").addEventListener("change",async e=>{
@@ -368,10 +448,10 @@ $("exportBtn").addEventListener("click",()=>{
   a.href=url;a.download=banks[activeBank].title+"_"+questions.length+"题.json";a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);document.querySelector(".file-menu").open=false;
 });
 document.addEventListener("keydown",e=>{
-  if(e.ctrlKey||e.metaKey||e.altKey||e.repeat||e.target.closest("input,select,textarea,summary")||!current())return;
+  if(e.ctrlKey||e.metaKey||e.altKey||e.repeat||$("sheetDialog").open||e.target.closest("input,select,textarea,summary")||!current())return;
   const key=e.key.toUpperCase();
   if(/^[A-H]$/.test(key)){e.preventDefault();selectOption(key);}
-  if(e.key==="Enter" && (e.target===document.body||e.target.id==="questionText"||e.target.closest(".option-button"))){e.preventDefault();state.round[current().id]?go(state.index+1):submit();}
+  if(e.key==="Enter" && (e.target===document.body||e.target.id==="questionText"||e.target.id==="feedback"||e.target.closest(".option-button"))){e.preventDefault();state.round[current().id]?go(state.index+1):submit();}
 });
 if("serviceWorker" in navigator){
   window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}));
